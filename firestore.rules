@@ -1,0 +1,28 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // setup hujjati: barcha o'qiy oladi (test savollari kerak), faqat tizimga
+    // kirgan admin yoza oladi (Authentication -> Users orqali yaratilgan hisob).
+    match /meta/{doc} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+
+    // har bir test natijasi alohida hujjat: ishtirokchi (login qilmagan holda)
+    // faqat YANGI natija yarata oladi, lekin o'chira yoki o'zgartira olmaydi.
+    // O'qish, o'chirish, tahrirlash faqat admin uchun (reyting sahifasi ham shu).
+    match /results/{id} {
+      allow read: if request.auth != null;
+      allow create: if request.resource.data.keys().hasAll(
+                        ['ts','stageId','stageN','chainId','branchId','branchName','first','last','score','total','percent','durationSec']
+                      )
+                    && request.resource.data.first is string && request.resource.data.first.size() > 0
+                    && request.resource.data.last is string && request.resource.data.last.size() > 0
+                    && request.resource.data.percent is int
+                    && request.resource.data.percent >= 0 && request.resource.data.percent <= 100
+                    && request.resource.data.durationSec is int && request.resource.data.durationSec >= 0;
+      allow update, delete: if request.auth != null;
+    }
+  }
+}

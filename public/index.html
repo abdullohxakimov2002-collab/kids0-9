@@ -1,0 +1,1242 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kids 0-9 bilim marafoni</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  /* Kids 0-9 qadoqlash ranglari */
+  --blue:#0B62BE;
+  --blue-d:#084E9B;
+  --blue-soft:#E7F0FB;
+  --red:#E0342A;
+  --green:#7AC143;
+  --pink:#E5187E;
+  --yellow:#F5C51F;
+  --teal:#25B392;
+  --purple:#9B4EA0;
+  --orange:#F58220;
+  --lilac:#B9A6D6;
+
+  --ink:#32323C;
+  --muted:#7C7C89;
+  --line:#E3E8F0;
+  --paper:#EFF3F8;
+  --track:#EDF1F6;
+
+  --accent:var(--blue);
+  --display:'Fredoka', 'Nunito Sans', system-ui, sans-serif;
+  --body:'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --mono:'Nunito Sans', ui-monospace, Menlo, monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+#app{max-width:1180px;margin:0 auto;padding:0 16px 80px}
+
+h1,h2,h3{margin:0;font-family:var(--display);font-weight:600}
+.eyebrow{font-family:var(--body);font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.mono,.num{font-variant-numeric:tabular-nums}
+
+/* ---------- header ---------- */
+.top{background:#fff;margin:0 -16px 24px;padding:14px 16px 0;box-shadow:0 2px 12px rgba(16,44,84,.06)}
+.top-in{max-width:1148px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;padding-bottom:13px}
+.brand{display:flex;align-items:center;gap:13px;min-width:0}
+.brand-txt b{display:block;font-family:var(--display);font-size:20px;font-weight:600;color:var(--ink);line-height:1.2}
+.brand-txt span{display:block;font-size:12.5px;color:var(--muted);font-weight:600}
+.logo{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;background:#fff;border:1.5px solid var(--line);border-radius:13px;padding:5px 9px 4px;line-height:1;flex:0 0 auto;box-shadow:0 3px 10px rgba(11,98,190,.13)}
+.logo-kids{display:flex;align-items:center;gap:2.5px;font-family:var(--display);font-weight:600;font-size:14px;line-height:1}
+.logo-kids i{width:3.5px;height:3.5px;border-radius:50%;background:var(--lilac)}
+.logo-09{font-family:var(--display);font-weight:600;font-size:27px;color:var(--blue);letter-spacing:-.03em;margin-top:1px}
+.logo-img{height:52px;width:auto;border-radius:10px}
+.rainbow{height:6px;margin:0 -16px;background:linear-gradient(90deg,
+  var(--blue) 0 14.28%, var(--green) 14.28% 28.56%, var(--yellow) 28.56% 42.84%,
+  var(--orange) 42.84% 57.12%, var(--red) 57.12% 71.4%, var(--pink) 71.4% 85.68%, var(--purple) 85.68% 100%)}
+
+/* ---------- buttons ---------- */
+button{font-family:var(--body);font-size:14.5px;font-weight:700;cursor:pointer;border-radius:999px;transition:.15s ease}
+.btn{background:var(--blue);color:#fff;border:2px solid var(--blue);padding:10px 22px}
+.btn:hover{background:var(--blue-d);border-color:var(--blue-d)}
+.btn-ghost{background:#fff;color:var(--blue);border:2px solid var(--line);padding:9px 18px}
+.btn-ghost:hover{border-color:var(--blue);background:var(--blue-soft)}
+.btn-amber{background:var(--orange);border-color:var(--orange);color:#fff}
+.btn-amber:hover{background:#DB6F12;border-color:#DB6F12}
+.btn-danger{background:#fff;color:var(--red);border:2px solid #F3D3D1;padding:9px 18px}
+.btn-danger:hover{background:var(--red);color:#fff;border-color:var(--red)}
+.btn-sm{padding:6px 14px;font-size:13px}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+
+/* ---------- forms ---------- */
+label{display:block;font-size:11.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+input,select,textarea{width:100%;font-family:var(--body);font-size:15px;font-weight:600;color:var(--ink);background:#fff;border:2px solid var(--line);border-radius:12px;padding:11px 14px}
+textarea{border-radius:14px;line-height:1.6;resize:vertical;font-weight:400}
+input:focus,select:focus,textarea:focus{border-color:var(--blue);outline:none}
+.field{margin-bottom:15px}
+.row{display:grid;gap:15px}
+@media(min-width:620px){.row.c2{grid-template-columns:1fr 1fr}.row.c3{grid-template-columns:1fr 1fr 1fr}}
+.check{display:flex;align-items:flex-start;gap:10px;margin-bottom:11px}
+.check input{width:auto;margin-top:3px;accent-color:var(--blue)}
+.check span{font-size:14.5px;font-weight:600}
+.hint{font-size:13px;color:var(--muted);margin-top:6px}
+
+/* ---------- cards: Kids 0-9 quti uslubi ---------- */
+.card{position:relative;background:#fff;border:1px solid var(--line);border-top:9px solid var(--accent);border-radius:20px;padding:22px;box-shadow:0 4px 18px rgba(16,44,84,.05);overflow:hidden}
+.card+.card{margin-top:16px}
+.card-h{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.card-h h2{background:var(--accent);color:#fff;border-radius:999px;padding:7px 20px;font-size:18px;font-weight:600}
+.card:nth-of-type(2){--accent:var(--teal)}
+.card:nth-of-type(3){--accent:var(--pink)}
+.card:nth-of-type(4){--accent:var(--purple)}
+.card:nth-of-type(5){--accent:var(--orange)}
+.stack{display:flex;gap:9px;flex-wrap:wrap;align-items:center}
+
+/* ---------- ayiqcha ---------- */
+.empty::after{content:'';display:block;width:112px;height:84px;margin:16px auto 0;opacity:.45;
+  background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 92'><g fill='%230B62BE'><circle cx='30' cy='22' r='15'/><circle cx='90' cy='22' r='15'/><path d='M10 92C10 48 32 24 60 24s50 24 50 68z'/></g><g fill='%23fff'><circle cx='44' cy='54' r='5.5'/><circle cx='76' cy='54' r='5.5'/><ellipse cx='60' cy='73' rx='9.5' ry='12'/></g></svg>") no-repeat center/contain}
+
+/* ---------- ishtirokchi ---------- */
+.enter{max-width:540px;margin:0 auto}
+.enter-head{text-align:center;margin-bottom:20px}
+.enter-head h1{font-size:clamp(28px,6.6vw,38px);line-height:1.15;margin:8px 0 8px;color:var(--blue)}
+.enter-head p{color:var(--muted);margin:0;font-size:14.5px;font-weight:600}
+.meta-strip{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:15px}
+.meta-strip span{background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:5px 14px;font-size:12.5px;font-weight:600;color:var(--muted)}
+.meta-strip b{color:var(--blue);font-weight:800}
+
+/* progress: kapsula qatori */
+.blister{display:flex;flex-wrap:wrap;gap:6px;padding:0;background:none;border:none}
+.pill{width:26px;height:11px;border-radius:999px;background:#DDE4EE;border:none;transition:.2s}
+.pill.done{background:var(--green)}
+.pill.now{background:var(--orange);box-shadow:0 0 0 4px rgba(245,130,32,.2)}
+
+.q-num{font-size:11.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.q-text{font-family:var(--display);font-size:clamp(20px,4.2vw,26px);font-weight:600;line-height:1.32;margin:9px 0 20px}
+.opt{display:flex;align-items:center;gap:13px;width:100%;text-align:left;background:#fff;border:2px solid var(--line);border-radius:16px;padding:13px 16px;margin-bottom:10px;font-size:15px;font-weight:600;line-height:1.45;color:var(--ink)}
+.opt:hover{border-color:var(--blue);background:var(--blue-soft)}
+.opt.sel{border-color:var(--blue);background:var(--blue-soft)}
+.opt .key{flex:0 0 auto;font-family:var(--display);font-size:14px;font-weight:600;width:28px;height:28px;display:grid;place-items:center;background:var(--track);border-radius:50%;color:var(--muted)}
+.opt.sel .key{background:var(--blue);color:#fff}
+.opt.ok{border-color:var(--green);background:#F1F9EA}
+.opt.ok .key{background:var(--green);color:#fff}
+.opt.bad{border-color:var(--red);background:#FDEDEC}
+.opt.bad .key{background:var(--red);color:#fff}
+
+.score-ring{display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap;margin:10px 0 18px}
+.score-big{font-family:var(--display);font-weight:600;width:150px;height:150px;border-radius:50%;display:grid;place-items:center;font-size:46px;line-height:1;color:#fff;background:var(--green);box-shadow:0 8px 22px rgba(122,193,67,.32)}
+.score-big.fail{background:var(--red);box-shadow:0 8px 22px rgba(224,52,42,.28)}
+.verdict{display:inline-block;font-size:11.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;padding:6px 14px;border-radius:999px}
+.v-pass{background:#EAF6DF;color:#4E8A22}
+.v-fail{background:#FBE5E3;color:var(--red)}
+
+/* ---------- admin ---------- */
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:4px 0 14px;-webkit-overflow-scrolling:touch}
+.tab{flex:0 0 auto;background:#fff;border:1.5px solid var(--line);padding:9px 18px;color:var(--muted);font-size:13.5px;font-weight:700}
+.tab:hover{color:var(--blue);border-color:var(--blue)}
+.tab.on{background:var(--blue);border-color:var(--blue);color:#fff}
+
+.kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:18px}
+@media(min-width:760px){.kpis{grid-template-columns:repeat(4,1fr)}}
+.kpi{background:#fff;border:1px solid var(--line);border-top:8px solid var(--accent);border-radius:18px;padding:15px 16px;box-shadow:0 4px 14px rgba(16,44,84,.05)}
+.kpis .kpi:nth-child(1){--accent:var(--blue)}
+.kpis .kpi:nth-child(2){--accent:var(--green)}
+.kpis .kpi:nth-child(3){--accent:var(--orange)}
+.kpis .kpi:nth-child(4){--accent:var(--pink)}
+.kpi .k{font-size:10.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.kpi .v{font-family:var(--display);font-weight:600;font-size:34px;line-height:1.15;margin-top:4px;color:var(--accent)}
+.kpi .s{font-size:12.5px;color:var(--muted);font-weight:600}
+
+.gauge{position:relative;height:12px;background:var(--track);border-radius:999px;overflow:hidden}
+.gauge-fill{position:absolute;inset:0 auto 0 0;background:var(--green);border-radius:999px}
+.gauge-fill.warn{background:var(--yellow)}
+.gauge-fill.low{background:var(--red)}
+.gauge-ticks{display:none}
+
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{text-align:left;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:800;padding:9px 10px;background:var(--blue-soft);white-space:nowrap}
+th:first-child{border-radius:10px 0 0 10px}
+th:last-child{border-radius:0 10px 10px 0}
+td{padding:11px 10px;border-bottom:1px solid var(--line);vertical-align:middle;font-weight:600}
+tr:last-child td{border-bottom:none}
+.t-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.rank{font-family:var(--display);font-weight:600;font-size:14px;color:var(--muted);width:30px}
+.rank.medal{color:#fff;background:var(--orange);border-radius:50%;width:26px;height:26px;display:inline-grid;place-items:center;font-size:13px}
+.right{text-align:right}
+.nowrap{white-space:nowrap}
+
+.qrow{border:1.5px solid var(--line);border-radius:16px;background:#fff;padding:14px 16px;margin-bottom:10px}
+.qrow-h{display:flex;gap:12px;align-items:flex-start;justify-content:space-between}
+.qrow-t{font-size:15px;font-weight:700;line-height:1.4}
+.qrow ul{margin:10px 0 0;padding-left:20px;color:var(--muted);font-size:13.5px;font-weight:600}
+.qrow li{margin-bottom:2px}
+.qrow li.ok{color:#4E8A22;font-weight:800}
+.qrow li::marker{color:var(--lilac)}
+.tag{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;background:var(--blue-soft);color:var(--blue);padding:4px 10px;border-radius:999px}
+
+.empty{text-align:center;padding:26px 18px 8px;color:var(--muted);font-weight:600}
+.empty h3{font-family:var(--display);font-size:21px;color:var(--ink);margin-bottom:6px}
+.empty p{margin:0}
+
+.note{background:#FFF8E6;border:1.5px solid #F2E0AE;border-radius:14px;padding:13px 15px;font-size:13.5px;font-weight:600;margin-bottom:15px}
+.danger-zone{--accent:var(--red)}
+.danger-zone .card-h h2{background:var(--red)}
+
+.top-right{display:flex;gap:8px;align-items:center}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:12px 22px;border-radius:999px;font-size:14px;font-weight:700;z-index:99;box-shadow:0 8px 26px rgba(16,44,84,.3)}
+
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+/* --- bosqichlar --- */
+.who{display:flex;justify-content:space-between;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-top:8px solid var(--blue);border-radius:18px;padding:14px 18px;margin-bottom:16px;box-shadow:0 4px 14px rgba(16,44,84,.05);flex-wrap:wrap}
+.who b{display:block;font-family:var(--display);font-size:19px;font-weight:600}
+.who span{display:block;font-size:13px;color:var(--muted);font-weight:600}
+.who-score{text-align:right}
+.who-score b{color:var(--blue);font-size:26px}
+.stage-list{display:grid;gap:10px}
+@media(min-width:720px){.stage-list{grid-template-columns:1fr 1fr}}
+.stage{display:flex;align-items:center;gap:14px;background:#fff;border:2px solid var(--line);border-radius:18px;padding:14px 16px;transition:.15s}
+.stage-n{flex:0 0 auto;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-family:var(--display);font-weight:600;font-size:17px;background:var(--track);color:var(--muted)}
+.stage-b{flex:1;min-width:0}
+.stage-b b{display:block;font-size:15px;font-weight:700;line-height:1.3}
+.stage-s{display:block;font-size:12.5px;color:var(--muted);font-weight:600;margin-top:2px}
+.stage-r{font-family:var(--display);font-weight:600;font-size:20px}
+.stage-r.ok{color:var(--green)}.stage-r.no{color:var(--red)}
+.stage-go{font-size:13px;font-weight:800;color:var(--blue);white-space:nowrap}
+.stage-lock{font-size:19px;color:#C6CEDA}
+.stage.open{border-color:var(--blue);cursor:pointer;box-shadow:0 4px 14px rgba(11,98,190,.13)}
+.stage.open:hover{background:var(--blue-soft);transform:translateY(-1px)}
+.stage.open .stage-n{background:var(--blue);color:#fff}
+.stage.done{border-color:#D6EBC4;background:#F7FCF3}
+.stage.done .stage-n{background:var(--green);color:#fff}
+.stage.locked,.stage.wait,.stage.empty{opacity:.62;background:#FAFBFD}
+/* --- reyting --- */
+.chainbar{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-top:7px solid var(--purple);border-radius:16px;padding:12px 16px;margin-bottom:16px;flex-wrap:wrap}
+.chainbar label{margin:0;white-space:nowrap}
+.chainbar select{width:auto;min-width:210px;flex:1;padding:8px 12px}
+.expl{background:#F7FBF3;border-left:4px solid var(--green);border-radius:10px;padding:11px 14px;margin-top:10px;font-size:13.5px;font-weight:600;color:#3F5F27;line-height:1.55}
+.expl b{display:block;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--green);margin-bottom:4px}
+.formula{background:var(--blue-soft);border:1.5px solid #CBE0F7;border-radius:14px;padding:13px 16px;font-size:14px;font-weight:700;color:var(--blue-d);margin-bottom:16px}
+.formula span{display:block;margin-top:7px;font-size:12.5px;font-weight:600;color:var(--muted);line-height:1.5}
+.podium{display:grid;gap:12px}
+@media(min-width:640px){.podium{grid-template-columns:repeat(3,1fr)}}
+.pod{border:2px solid var(--line);border-radius:18px;padding:16px;text-align:center;background:#fff}
+.pod-m{width:34px;height:34px;margin:0 auto 8px;border-radius:50%;display:grid;place-items:center;font-family:var(--display);font-weight:600;color:#fff;background:var(--muted)}
+.pod.p1{border-color:var(--yellow);background:#FFFBEC}.pod.p1 .pod-m{background:var(--yellow);color:#6A5300}
+.pod.p2{border-color:#CFD8E3}.pod.p2 .pod-m{background:#9AA7B8}
+.pod.p3{border-color:#E8CDB4}.pod.p3 .pod-m{background:var(--orange)}
+.pod-n{font-weight:800;font-size:15px}
+.pod-s{font-family:var(--display);font-weight:600;font-size:27px;color:var(--blue);line-height:1.2}
+.pod-p{display:inline-block;background:var(--green);color:#fff;border-radius:999px;padding:3px 13px;font-size:13px;font-weight:800;margin-top:5px}
+.pod-d{font-size:12px;color:var(--muted);font-weight:600;margin-top:7px}
+tr.dim{opacity:.55}
+/* --- switch --- */
+.sw{width:46px;height:26px;border-radius:999px;background:#D5DCE6;border:none;padding:3px;display:inline-flex;justify-content:flex-start;transition:.18s;cursor:pointer}
+.sw span{width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.25);display:block;transition:.18s}
+.sw.on{background:var(--green);justify-content:flex-end}
+
+</style>
+
+<!-- Firebase: quyidagi firebaseConfig qiymatlarini Firebase Console > Project settings > Your apps dan olib qo'ying -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script>
+var firebaseConfig={
+  apiKey: "AIzaSyDCzCo4nOFrqZd_u3CnR8lMalcXY87QkXA",
+  authDomain: "kids09-84499.firebaseapp.com",
+  projectId: "kids09-84499",
+  storageBucket: "kids09-84499.firebasestorage.app",
+  messagingSenderId: "722547628372",
+  appId: "1:722547628372:web:84bf1b0a592b2b24db10c1"
+};
+firebase.initializeApp(firebaseConfig);
+var db=firebase.firestore();
+var auth=firebase.auth();
+</script>
+
+<div id="app"></div>
+
+<script>
+(function(){
+'use strict';
+
+var SETUP_KEY='setup';
+function uid(){ return Math.random().toString(36).slice(2,9); }
+
+var STAGE_TITLES=[
+  'Kids 0-9 liniyasi bilan tanishuv',
+  'Pain and Fever \u2014 harorat va og\u2018riq',
+  'Colic \u2014 chaqaloq sanchig\u2018i',
+  'Teething \u2014 tish chiqishi',
+  'All Allergies \u2014 allergiya',
+  'Sinus \u2014 burun va sinuslar',
+  'Throat Ease \u2014 tomoq',
+  'Day Syrup \u2014 yo\u2018tal va shamollash',
+  'Calm \u2014 bezovtalik va uyqu',
+  'Homeocoksinum \u2014 gripp'
+];
+
+var BANK_VER=4;
+
+var DEFAULT_SETUP={
+  ver:BANK_VER,
+  config:{
+    org:'Homeocan',
+    testName:'Kids 0-9 bilim marafoni',
+    logoUrl:'',
+    passPercent:60,
+    timeLimitMin:0,
+    shuffle:true,
+    shuffleOptions:false,
+    showReview:false,
+    kFactor:3,
+    minCoverage:70,
+    prizes:['300 $','200 $','100 $']
+  },
+  stages:[{"id": "s1","n": 1,"title": "Vaziyatli maslahat — mahsulot tanlash","open": true},{"id": "s2","n": 2,"title": "Maslahat amaliyoti va dastlabki dozalar","open": false},{"id": "s3","n": 3,"title": "Dozalash va qo‘llash tartibi","open": false},{"id": "s4","n": 4,"title": "Xavfsizlik: qachon shifokorga yo‘naltirish","open": false},{"id": "s5","n": 5,"title": "Xavf belgilari va to‘g‘ri iboralar","open": false},{"id": "s6","n": 6,"title": "Huquqiy chegaralar va mahsulot maqomi","open": false},{"id": "s7","n": 7,"title": "Mahsulotlarni bir-biridan farqlash","open": false},{"id": "s8","n": 8,"title": "E’tirozlar bilan ishlash","open": false},{"id": "s9","n": 9,"title": "Birgalikda tavsiya va qo‘shimcha sotuv","open": false},{"id": "s10","n": 10,"title": "Tarkib va asosiy xususiyatlar","open": false}],
+  chains:[{"id": "c1", "name": "Binar pharm"}, {"id": "c2", "name": "Bilol pharm"}, {"id": "c3", "name": "Zayd-pharm"}, {"id": "c4", "name": "Poli vita pharm"}, {"id": "c5", "name": "Pharm smart"}, {"id": "c6", "name": "Mironshox"}, {"id": "c7", "name": "Prosperiti"}, {"id": "c8", "name": "Eco pharm"}, {"id": "c9", "name": "A-mega bek"}, {"id": "c10", "name": "Grand pharm"}, {"id": "c11", "name": "+03"}, {"id": "c12", "name": "Onko-pharm"}, {"id": "c13", "name": "A5"}],
+  branches:[{"id": "eco1", "chainId": "c8", "name": "1-filial", "staff": 0}, {"id": "eco2", "chainId": "c8", "name": "2-filial", "staff": 0}, {"id": "eco3", "chainId": "c8", "name": "3-filial", "staff": 0}, {"id": "eco4", "chainId": "c8", "name": "4-filial", "staff": 0}, {"id": "eco5", "chainId": "c8", "name": "5-filial", "staff": 0}, {"id": "eco6", "chainId": "c8", "name": "6-filial", "staff": 0}, {"id": "eco7", "chainId": "c8", "name": "7-filial", "staff": 0}, {"id": "eco8", "chainId": "c8", "name": "8-filial", "staff": 0}, {"id": "eco9", "chainId": "c8", "name": "9-filial", "staff": 0}, {"id": "eco10", "chainId": "c8", "name": "10-filial", "staff": 0}, {"id": "eco11", "chainId": "c8", "name": "11-filial", "staff": 0}, {"id": "eco12", "chainId": "c8", "name": "12-filial", "staff": 0}, {"id": "eco13", "chainId": "c8", "name": "13-filial", "staff": 0}, {"id": "eco14", "chainId": "c8", "name": "14-filial", "staff": 0}, {"id": "eco15", "chainId": "c8", "name": "15-filial", "staff": 0}, {"id": "eco16", "chainId": "c8", "name": "16-filial", "staff": 0}, {"id": "eco17", "chainId": "c8", "name": "17-filial", "staff": 0}, {"id": "eco18", "chainId": "c8", "name": "18-filial", "staff": 0}, {"id": "eco19", "chainId": "c8", "name": "19-filial", "staff": 0}, {"id": "eco20", "chainId": "c8", "name": "20-filial", "staff": 0}, {"id": "eco21", "chainId": "c8", "name": "21-filial", "staff": 0}, {"id": "eco22", "chainId": "c8", "name": "22-filial", "staff": 0}, {"id": "eco23", "chainId": "c8", "name": "23-filial", "staff": 0}],
+  questions:[{"id": "q1","stage": "s1","cat": "№1","text": "Xaridor ayol: «Farzandim 5 oylik. Kechqurunlari soatlab yig‘laydi, oyoqlarini qorniga tortadi. Lekin shu bilan birga so‘lagi ham oqmoqda, doimo mushtlarini tishlaydi». Qanday yo‘l tutasiz?","options": ["Yig‘lash xurujlari va oyoqlarini tortishi aytilgani uchun Colic tavsiya qilaman.","So‘lak oqishi va tishlash istagi aytilgani uchun Teething tavsiya qilaman.","Ikkala mahsulotni birga tavsiya qilaman.","Asosiy bezovtalik nimada ekanini aniqlayman — qorinmi yoki milklarmi — va javobga qarab bitta mahsulotni tanlayman."],"correct": 3,"expl": "Bir vaqtning o‘zida ikkita holat tasvirlangan. Ikkala mahsulotni birdan tavsiya qilish (C varianti) maslahat tamoyiliga zid. Asosiy savol — bezovtalik markazi qayerda: qorinmi yoki milklarmi. 5 oylik bolada ikkala holat ham bo‘lishi mumkin, shuning uchun aniqlashtiruvchi savol hal qiluvchi ahamiyatga ega."},{"id": "q2","stage": "s1","cat": "№2","text": "«4 yoshli bolaga biror narsa bering. Har bahor bir xil holat: burnidan suv oqadi, aksiradi, ko‘zlari qichiydi va yoshlanadi». Sizning tanlovingiz?","options": ["Sinus","All Allergies","Day Syrup","Homeocoksinum Kids"],"correct": 1,"expl": "Har yili takrorlanishi va ko‘z qichishi mavsumiy allergiyaga xos belgilar. Sinus esa ko‘proq hozirgi burun bitishi yoki shamollash holatlarida qo‘llaniladi."},{"id": "q3","stage": "s1","cat": "№3","text": "«Bolam 3 yoshda. Kecha burni oqishni boshladi, kechga borib holsizlandi, eti uvishmoqda. Hali jiddiy alomatlar yo‘q, lekin kasallik boshlanayotgandek». Sizning tanlovingiz?","options": ["Day Syrup, chunki gap shamollash haqida ketmoqda.","Homeocoksinum Kids — kasallikning dastlabki 24–48 soatidagi belgilar uchun.","Pain & Fever, chunki eti uvishmoqda.","Profilaktika uchun Throat Ease."],"correct": 1,"expl": "Muhim iboralar: «kecha boshlandi», «hali aniq alomatlar yo‘q», «kasallik boshlanayotgandek». Bu kasallikning dastlabki bosqichi. Day Syrup esa yo‘tal rivojlangan holatlarda qo‘llaniladi."},{"id": "q4","stage": "s1","cat": "№4","text": "«O‘g‘lim 7 yoshda. Bir hafta oldin shamollagan. Hozir kunduzlari yo‘taladi, kechasi yaxshi uxlaydi, isitmasi yo‘q». Sizning tanlovingiz?","options": ["Homeocoksinum Kids","Throat Ease","Day Syrup","Pain & Fever"],"correct": 2,"expl": "Kasallik rivojlangan, asosiy shikoyat — kunduzgi yo‘tal. Homeocoksinum kasallikning boshlanishi uchun mo‘ljallangan."},{"id": "q5","stage": "s1","cat": "№5","text": "«Erim uchun shamollash boshlanishida ichishga biror narsa kerak». Nimadan boshlaysiz?","options": ["Darhol Flu Buster tavsiya qilaman.","Avval yoshini aniqlayman, chunki Flu Buster 12 yoshdan boshlab qo‘llaniladi, shundan keyingina tavsiya qilaman.","Homeocoksinum bolalar tomchilarini tavsiya qilaman, ular yumshoqroq.","Day Syrup tavsiya qilaman."],"correct": 1,"expl": "«Erim uchun» degani yoshni aniqlash zaruratini bekor qilmaydi. Flu Buster faqat 12 yoshdan boshlab qo‘llaniladi. Bolalar tomchilarini kattalarga tavsiya qilish noto‘g‘ri."},{"id": "q6","stage": "s1","cat": "№6","text": "«Qizim 6 yoshda. Kecha tug‘ilgan kunida kun bo‘yi baqirib, qo‘shiq aytdi. Bugun ovozi xirillagan, tomog‘i achishyapti». Sizning tanlovingiz?","options": ["Throat Ease","Day Syrup","Pain & Fever","Homeocoksinum Kids"],"correct": 0,"expl": "Ovoz zo‘riqishidan keyingi xirillash Throat Ease uchun mos holat. Tavsifda infeksiya belgilari yo‘q."},{"id": "q7","stage": "s1","cat": "№7","text": "«Bolam 3 yoshda. Bog‘chaga chiqqandan beri asabiy, injiq bo‘lib qoldi, kechqurun uxlatish qiyin». Sizning tanlovingiz?","options": ["Calm","Teething","Colic","Pain & Fever"],"correct": 0,"expl": "Bog‘chaga moslashish va uyqu buzilishi Calm qo‘llaniladigan holat hisoblanadi."},{"id": "q8","stage": "s1","cat": "№8","text": "«Nabiram 10 yoshda, shamollab qolgan. Sizlarning mahsulotlaringizdan biror narsa bering». To‘g‘ri harakat?","options": ["Homeocoksinum Kids tavsiya qilib, dozani oshirish.","Flu Buster tavsiya qilish, chunki bola katta.","Bolalar liniyasi 0–9 yosh uchun, Flu Buster granulalari esa 12 yoshdan ekanini tushuntirib, ushbu yosh oralig‘ida shifokorga murojaat qilishni yoki boshqa toifadagi vositani tanlashni tavsiya qilish.","Day Syrupni 7–9 yosh dozasi bilan tavsiya qilish."],"correct": 2,"expl": "0–9 yosh bolalar liniyasi va 12+ Flu Buster o‘rtasidagi yosh chegarasini halol tushuntirish eng to‘g‘ri yondashuvdir. Qo‘llash chegaralariga rioya qilish mutaxassislik belgisi hisoblanadi."},{"id": "q9","stage": "s1","cat": "№9","text": "«Bolam 5 yoshda. Burni bitgan, aksiryapti. Uyda hammamiz shamollaganmiz». Sizning tanlovingiz?","options": ["All Allergies","Sinus","Throat Ease","Calm"],"correct": 1,"expl": "«Uyda hammamiz shamollaganmiz» degan ma'lumot infeksion sababni ko‘rsatadi, allergiyani emas."},{"id": "q10","stage": "s1","cat": "№10","text": "«Nabiram 3 haftalik. Yig‘laydi, qayt qiladi, zo‘riqadi. Vazni yaxshi oshmoqda, shifokor ko‘rib, sog‘lom dedi». Sizning tanlovingiz?","options": ["Teething","Calm","Colic","Pain & Fever"],"correct": 2,"expl": "3 haftalik chaqaloqda yig‘lash, qayt qilish va yaxshi vazn ortishi fonida shifokor sog‘lom degan bo‘lsa, bu kolika holatiga mos keladi."},{"id": "q11","stage": "s2","cat": "№11","text": "«2 yoshli bolam bilan 6 soatlik parvoz qilamiz. Aynan hozir oziq tishlari chiqmoqda. Yo‘lga nima olsak bo‘ladi?»","options": ["Teething unidose — safar uchun qulay shakl; kuchli bezovtalik yoki transportda noqulaylik bo‘lsa, Calmni ham muhokama qilish mumkin.","Faqat Day Syrup.","Butun oila uchun Flu Buster.","Sinus."],"correct": 0,"expl": "Unidose shakli safarda juda qulay. Calmni qo‘shimcha tavsiya sifatida aytish mumkin, ammo u majburiy emas."},{"id": "q12","stage": "s2","cat": "№12","text": "«Bolam 4 yoshda, burni oqmoqda. Rostini aytsam, bu shamollashmi yoki allergiyami — bilmayapman». Qaysi savolni berasiz?","options": ["«Ajralmalar qanday rangda?»","«Isitmasi bormi?»","«Bu holat har yili bir xil mavsumda takrorlanadimi va ko‘zlari qichiydimi?»","«Burun oqishi qachondan beri boshlangan?»"],"correct": 2,"expl": "Bu savol allergiyani ajratib ko‘rsatadigan eng muhim ikki belgini aniqlaydi: mavsumiy takrorlanish va ko‘z qichishi."},{"id": "q13","stage": "s2","cat": "№13","text": "Bolalar bo‘yicha har qanday maslahat nimadan boshlanadi?","options": ["Xaridorning byudjetini aniqlashdan.","Bolaning yoshini aniqlashdan.","Eng mashhur mahsulotni taklif qilishdan.","Avval qaysi brendni ishlatganini so‘rashdan."],"correct": 1,"expl": "Bolaning yoshi mahsulot tanlash, dozani belgilash va xavfsizlikni aniqlash uchun birinchi navbatda kerak."},{"id": "q14","stage": "s2","cat": "№14","text": "«Bolam 8 oylik. Tish chiqaryapti, kechalari deyarli uxlamayapmiz». Eng maqbul variant?","options": ["Faqat Teething.","Asosiy tavsiya sifatida Teething, kechki bezovtalik davom etsa Calmni qo‘shimcha tavsiya qilish.","Faqat Calm.","Teething, Calm va Pain & Feverni birgalikda tavsiya qilish."],"correct": 1,"expl": "Asosiy ehtiyojni Teething qoplaydi. Calm esa zarurat bo‘lsa yagona qo‘shimcha tavsiya sifatida beriladi."},{"id": "q15","stage": "s2","cat": "№15","text": "Xaridor alomatlarni aytadi, lekin juda shoshayotganini bildirib, aniqlashtiruvchi savollarga javob bermaydi. Nima qilasiz?","options": ["Eng universal mahsulotni tavsiya qilaman.","Maslahat berishni rad etaman.","Faqat bitta asosiy savolni — bolaning yoshini — so‘rayman. Agar javob bo‘lmasa, tavsiya bermayman va vaqt bo‘lganda qaytib kelishni taklif qilaman.","Xaridorning tashqi ko‘rinishiga qarab mahsulot tavsiya qilaman."],"correct": 2,"expl": "Minimal ma'lumotsiz tavsiya berish xavf tug‘diradi. «Universal mahsulot» mavjud emas, yosh va qo‘llash chegaralari aniqlanmasdan tavsiya berish mumkin emas."},{"id": "q16","stage": "s2","cat": "№16","text": "O‘tkir og‘riqda Teething dozasi:","options": ["15 tomchidan har 15 daqiqada, 4 martagacha","15 tomchidan har 4 soatda","1 pipetka kuniga 3 marta","1/2 choy qoshiq har 15 daqiqada"],"correct": 0,"expl": "O‘tkir holatda: 15 tomchidan har 15 daqiqada, 4 martagacha. B varianti sirop (masalan, Day Syrup) sxemasini takrorlaydi, C varianti esa pipetka bilan dozalanadigan Sinusning tartibi bilan aralashtirilgan."},{"id": "q17","stage": "s2","cat": "№17","text": "O‘tkir holatdan tashqarida Teething dozasi:","options": ["15 tomchidan kuniga 3 marta","15 tomchidan har 8 soatda","30 tomchidan kuniga 2 marta","1 choy qoshiqdan kuniga 3 marta"],"correct": 0,"expl": "O‘tkir holat bartaraf etilgach, 15 tomchidan kuniga 3 marta qabul qilinadi. B varianti Homeocoksinum sxemasidir."},{"id": "q18","stage": "s2","cat": "№18","text": "Colic dozasi:","options": ["Holatdan qat'i nazar 15 tomchidan kuniga 3 marta","Bezovtalikda 15 tomchidan har 15 daqiqada, 4 martagacha","Bezovtalikda 1/2 choy qoshiq","1 pipetka har 8 soatda"],"correct": 1,"expl": "Colic bezovtalik vaqtida Teething kabi o‘tkir sxema bo‘yicha qo‘llaniladi. A varianti ehtiyojga qarab qabul qilishni doimiy qabul qilishga aylantirib yuboradi."},{"id": "q19","stage": "s2","cat": "№19","text": "0–9 yoshdagi bolalar uchun Homeocoksinum Kids dozasi:","options": ["15 tomchidan har 15 daqiqada, 4 martagacha","15 tomchidan bir hafta davomida kuniga 3 marta","Dastlabki belgilar paydo bo‘lgandan boshlab 24 soat davomida har 8 soatda 15 tomchi","1 pipetka kuniga 1–3 marta"],"correct": 2,"expl": "Mahsulotning asosiy xususiyati — har 8 soatda qabul qilinishi va davolashning 24 soat bilan cheklanishidir. A varianti Teething va Colic sxemasini takrorlaydi."},{"id": "q20","stage": "s2","cat": "№20","text": "All Allergies preparatining o‘tkir bo‘lmagan holatdagi dozasi:","options": ["15 tomchidan kuniga 3 marta","15 tomchidan har 4 soatda","1 pipetka kuniga 1–3 marta","1/2 choy qoshiqdan kuniga 3 marta"],"correct": 0,"expl": "Asosiy sxema: 15 tomchidan kuniga 3 marta. Kuchli alomatlarda o‘tkir sxema (har 15 daqiqada, 4 martagacha) qo‘llanishi mumkin. C varianti Sinus sxemasidir."},{"id": "q21","stage": "s3","cat": "№21","text": "Pain & Fever dozasi:","options": ["1 pipetka (0,75 ml) kuniga 1–3 marta","15 tomchidan kuniga 3 marta","1 choy qoshiq har 4 soatda","15 tomchidan har 15 daqiqada, 4 martagacha"],"correct": 1,"expl": "Pain & Fever — 15 tomchidan kuniga 3 marta qabul qilinadi, holat yaxshilanganda doza kamaytiriladi. A varianti — pipetka (0,75 ml) bilan dozalanadigan Sinusning tartibi; bu ikkalasi amalda koʻp aralashtiriladi."},{"id": "q22","stage": "s3","cat": "№22","text": "Day Syrup dozasi:","options": ["0–6 yosh — 1/2 choy qoshiq har 4 soatda; 7–9 yosh — 1 choy qoshiq har 4 soatda","0–6 yosh — 1/2 choy qoshiq kuniga 3 marta; 7–9 yosh — 1 choy qoshiq kuniga 3 marta","0–5 yosh — 1/2 choy qoshiq kuniga 3–4 marta; 6–9 yosh — 1 choy qoshiq kuniga 3–4 marta","Barcha yoshlar uchun bir xil: 1 choy qoshiq har 4 soatda"],"correct": 0,"expl": "Day Syrup har 4 soatda qabul qilinadi. B varianti Throat Ease, C varianti esa Calm sxemasidir."},{"id": "q23","stage": "s3","cat": "№23","text": "Throat Ease dozasi:","options": ["0–6 yosh — 1/2 choy qoshiq har 4 soatda; 7–9 yosh — 1 choy qoshiq har 4 soatda","0–6 yosh — 1/2 choy qoshiq kuniga 3 marta; 7–9 yosh — 1 choy qoshiq kuniga 3 marta","0–5 yosh — 1/2 choy qoshiq kuniga 3–4 marta; 6–9 yosh — 1 choy qoshiq kuniga 3–4 marta","15 tomchidan kuniga 3 marta"],"correct": 1,"expl": "Throat Ease kuniga 3 marta qabul qilinadi. Tashqi ko‘rinishi va hajmi Day Syrupga o‘xshash bo‘lsa-da, qabul qilish tartibi boshqacha."},{"id": "q24","stage": "s3","cat": "№24","text": "Calm dozasi:","options": ["0–6 yosh — 1/2 choy qoshiq har 4 soatda; 7–9 yosh — 1 choy qoshiq har 4 soatda","0–6 yosh — 1/2 choy qoshiq kuniga 3 marta; 7–9 yosh — 1 choy qoshiq kuniga 3 marta","0–5 yosh — 1/2 choy qoshiq kuniga 3–4 marta; 6–9 yosh — 1 choy qoshiq kuniga 3–4 marta","Barcha yoshlar uchun: 1 choy qoshiq kuniga 3 marta"],"correct": 2,"expl": "Calm nafaqat qabul qilish soni (kuniga 3–4 marta), balki yosh guruhlari bilan ham farq qiladi: 0–5 va 6–9 yosh."},{"id": "q25","stage": "s3","cat": "№25","text": "Flu Buster qabul qilish tartibi:","options": ["Dastlabki alomatlarda bitta tubaning ichidagini til ostiga qo‘yish, 8 soatlik interval bilan 3 martagacha","Bir hafta davomida kuniga 3 marta 1 tuba","Tuba ichidagini suvda eritib, har 4 soatda ichish","Bir martada 2 tuba"],"correct": 0,"expl": "Bitta tubaning ichidagini til ostiga qo‘yish, 8 soat oralig‘ida 3 martagacha. C varianti chiqarilish shakliga zid."},{"id": "q26","stage": "s3","cat": "№26","text": "Ona 8 yoshli bolasi uchun bir vaqtning o‘zida Day Syrup va Throat Ease olmoqda. Qaysi qabul qilish tartibini tushuntirish kerak?","options": ["Har ikkala preparat: 1 choy qoshiqdan har 4 soatda","Har ikkala preparat: 1 choy qoshiqdan kuniga 3 marta","Day Syrup — 1 choy qoshiq har 4 soatda; Throat Ease — 1 choy qoshiq kuniga 3 marta","Day Syrup — 1 choy qoshiq kuniga 3 marta; Throat Ease — 1 choy qoshiq har 4 soatda"],"correct": 2,"expl": "Ikki siropni birga tavsiya qilganda ularning sxemalarini alohida tushuntirish kerak. Amaliy tavsiya — xaridorga ikkala sxemani yozib berish."},{"id": "q27","stage": "s3","cat": "№27","text": "Bola 6 yoshda. Dozalashning yosh chegaralari bo‘yicha qaysi fikr to‘g‘ri?","options": ["Liniyadagi uchala sirop uchun ham u kichik yosh guruhiga kiradi.","Day Syrup va Throat Ease uchun u hali kichik guruhda (0–6 yosh), Calm uchun esa katta guruhda (6–9 yosh).","Uchala sirop uchun ham katta yosh guruhiga kiradi.","Barcha siroplarda yosh chegaralari bir xil, faqat qabul qilish soni farq qiladi."],"correct": 1,"expl": "6 yosh — yosh chegaralari farq qiladigan yagona nuqta: Day Syrup va Throat Ease uchun hali kichik guruh, Calm uchun esa katta guruh."},{"id": "q28","stage": "s3","cat": "№28","text": "Bir maslahat davomida liniyadagi nechta mahsulotni tavsiya qilish mumkin?","options": ["Bitta","Ikkitadan ko‘p emas","Uchtadan ko‘p emas","Mahsulotlar mos kelsa, cheklov yo‘q"],"correct": 1,"expl": "Bir maslahat davomida ikkitadan ortiq mahsulot tavsiya qilinmaydi. Bu xaridor uchun sxemani bajarishni osonlashtiradi."},{"id": "q29","stage": "s3","cat": "№29","text": "Ovqatlanishdan tashqari vaqtda qabul qilish tavsiyasi, birinchi navbatda, qaysi mahsulotlarga tegishli?","options": ["Day Syrup, Throat Ease va Calm siroplariga","Teething va Colic tomchilariga","Flu Buster granulalariga","Liniyadagi barcha mahsulotlarga"],"correct": 1,"expl": "Ovqatdan tashqari qabul qilish tavsiyasi Teething va Colic tomchilariga tegishli. D varianti bu qoidani noto‘g‘ri ravishda barcha mahsulotlarga tatbiq qiladi."},{"id": "q30","stage": "s3","cat": "№30","text": "Liniyaning yosh qamrovi haqida qaysi fikr to‘g‘ri?","options": ["Barcha 10 ta mahsulot 0–9 yosh uchun mo‘ljallangan.","9 ta mahsulot 0–9 yosh uchun, Flu Buster granulalari esa 12 yoshdan boshlab qo‘llaniladi.","Butun liniya 3 oylikdan boshlab qo‘llaniladi.","Flu Busterni dozani kamaytirib 9 yoshdan ham qo‘llash mumkin."],"correct": 1,"expl": "Flu Buster uchun 12+ yosh chegarasi dozani kamaytirish orqali o‘zgarmaydi (D varianti noto‘g‘ri). Bu savoldagi xato muhim xatolar qatoriga kiradi."},{"id": "q31","stage": "s4","cat": "№31","text": "«Chaqaloq 2 oylik. Harorati 38,0 °C, kasallik boshlanayotganga o‘xshaydi. Homeocoksinum bering». Nima qilasiz?","options": ["Mahsulotni tavsiya qilaman, chunki u tug‘ilgandan boshlab qo‘llaniladi.","Mahsulot va isitma tushiruvchi vositani tavsiya qilaman.","Darhol shifokorga yuboraman: 3 oygacha bo‘lgan bolada har qanday isitma shoshilinch tibbiy ko‘rikni talab qiladi.","12 soat kuzatishni tavsiya qilaman."],"correct": 2,"expl": "Mahsulot tug‘ilgandan boshlab qo‘llanishi mumkinligi 3 oygacha bo‘lgan boladagi har qanday isitma shoshilinch holat ekanini bekor qilmaydi. Bu savol aynan shu jihatni tekshiradi."},{"id": "q32","stage": "s4","cat": "№32","text": "«4 oylik chaqaloqda kolika bor, oyoqlarini qorniga tortadi. Kecha tagligida qon ko‘rdim». Nima qilasiz?","options": ["Colic tavsiya qilaman, chunki belgilar mos keladi.","Colic va onaning ovqatlanishini o‘zgartirishni tavsiya qilaman.","Zudlik bilan shifokorga yuboraman.","Colic tavsiya qilib, bir kun kuzatishni maslahat beraman."],"correct": 2,"expl": "Kolika belgilariga qaramay, chaqaloq najasidagi qon ichak invaginatsiyasini istisno qilishni talab qiladi. Bunday vaziyatda vaqtni yo‘qotish xavfli."},{"id": "q33","stage": "s4","cat": "№33","text": "«Bola 2 yoshda. Yo‘tali hurayotgan itning ovoziga o‘xshaydi, nafas olayotganda hushtak ovozi eshitiladi, kechasi yomonlashadi». Nima qilasiz?","options": ["Day Syrup tavsiya qilaman.","Day Syrup va Throat Ease tavsiya qilaman.","Zudlik bilan shifokorga yuboraman.","Havoni namlantirish va Day Syrup tavsiya qilaman."],"correct": 2,"expl": "Hurayotgan itga o‘xshash yo‘tal va nafas olayotganda hushtak ovozi krup belgilaridir. D varianti xavfli, chunki havoni namlantirish foydali ko‘rinsa ham, shifokorga yo‘llashni kechiktiradi."},{"id": "q34","stage": "s4","cat": "№34","text": "«Bola 4 yoshda. Tomog‘i shunchalik og‘riyaptiki, yuta olmaydi, og‘zidan so‘lak oqmoqda, bo‘yni shishgan». Nima qilasiz?","options": ["Throat Ease tavsiya qilaman.","Throat Ease va Pain & Fever tavsiya qilaman.","Zudlik bilan shifokorga yuboraman.","Tomoqni chayish va Throat Ease tavsiya qilaman."],"correct": 2,"expl": "Yuta olmaslik, so‘lak oqishi va bo‘yin shishi shoshilinch tibbiy yordam talab qiladigan holatdir."},{"id": "q35","stage": "s4","cat": "№35","text": "«Bola 3 yoshda. Isitmasi bor va toshma chiqdi. Toshma bosilganda oqarib ketmaydi». Nima qilasiz?","options": ["Pain & Fever tavsiya qilaman.","All Allergies tavsiya qilaman, ehtimol allergik toshmadir.","Zudlik bilan shifokorga yuboraman.","Pain & Fever tavsiya qilib, kuzatishni maslahat beraman."],"correct": 2,"expl": "Isitma fonida bosilganda oqarib ketmaydigan toshma darhol baholanishi kerak bo‘lgan xavfli belgidir. B varianti ishonarli ko‘rinsada, noto‘g‘ri yo‘naltiradi."},{"id": "q36","stage": "s4","cat": "№36","text": "«Bola 4 yoshda. Uyquda qattiq xurrak otadi, ba'zida bir necha soniyaga nafas olishi to‘xtab qolgandek bo‘ladi, kunduzi uyquchan. Uyqu uchun biror narsa bering». Nima qilasiz?","options": ["Calm tavsiya qilaman.","Calmni ko‘proq qabul qilishni tavsiya qilaman.","Shifokorga yuboraman: uyqu paytidagi nafas to‘xtash epizodlari tibbiy baholashni talab qiladi.","Calm va kun tartibini yaxshilash bo‘yicha tavsiyalar beraman."],"correct": 2,"expl": "Uyqu paytidagi nafas to‘xtashi (apnoe) shifokor baholashi zarur bo‘lgan holatdir. Savolda «uyqu uchun» so‘ralgani Calmni tanlashga undashi mumkin, ammo bu noto‘g‘ri."},{"id": "q37","stage": "s4","cat": "№37","text": "«Qizim 5 yoshda. Har bahor allergiyasi bo‘ladi, lekin bu yil yugurganda nafasi qisilib, hushtaklab nafas olyapti». Nima qilasiz?","options": ["All Allergies qabul qilish sonini oshiraman.","Sinus qo‘shaman.","Shifokorga yuboraman: hushtaklab nafas olish va nafas qisishi tibbiy baholashni talab qiladi.","Butun mavsum davomida All Allergies qabul qilishni tavsiya qilaman."],"correct": 2,"expl": "Avvalgi mavsumiy allergiyaga endi hushtaklab nafas olish va nafas qisishi qo‘shilgan — bu yangi va jiddiy alomat."},{"id": "q38","stage": "s4","cat": "№38","text": "«Bola 8 oylik. Qusmoqda, ertalabdan beri tagligi quruq, ko‘z yoshisiz yig‘laydi, holsiz». Nima qilasiz?","options": ["Colic tavsiya qilaman.","Zudlik bilan shifokorga yuboraman: bu suvsizlanish belgilaridir.","Ko‘p suyuqlik ichirish va uyda kuzatishni tavsiya qilaman.","Pain & Fever tavsiya qilaman."],"correct": 1,"expl": "Quruq taglik, ko‘z yoshisiz yig‘lash, holsizlik va qusish suvsizlanish belgilaridir. C varianti shifokorga murojaatni kechiktirishi bilan xavfli."},{"id": "q39","stage": "s4","cat": "№39","text": "«Shifokor antibiotik yozdi, lekin bolamni kimyoviy dorilar bilan davolamoqchi emasman. O‘rniga sizning mahsulotingizni bering». Nima qilasiz?","options": ["Liniyadagi mahsulotni antibiotik o‘rniga tavsiya qilaman.","Rozi bo‘laman, lekin ahvoli yomonlashsa antibiotikka qaytishni tavsiya qilaman.","Qat'iy rad etaman, biologik faol qo‘shimcha (BAA) shifokor buyurgan davolashni almashtirmasligini va antibiotikni shifokorsiz bekor qilish xavfli ekanini tushuntiraman; zarur bo‘lsa, uni asosiy davolash bilan birga qo‘llab-quvvatlovchi vosita sifatida tavsiya qilaman.","Javob berishdan qochib, boshqa farmatsevtga murojaat qilishni tavsiya qilaman."],"correct": 2,"expl": "To‘g‘ri javob uch qismdan iborat: antibiotikni almashtirishni rad etish, xavfni tushuntirish va asosiy davolash bilan birga qo‘llab-quvvatlovchi vosita sifatida yordam taklif qilish."},{"id": "q40","stage": "s4","cat": "№40","text": "«Bola 1 yoshda. Ikkinchi kundan beri harorati 39,5 °C. Kuchliroq biror narsa bering». Nima qilasiz?","options": ["Pain & Fever tavsiya qilaman.","Pain & Fever va Day Syrup tavsiya qilaman.","Shifokorga yuboraman; biologik faol qo‘shimchalar orasida «kuchliroq» mahsulot yo‘qligini va bu holatda tibbiy ko‘rik zarurligini tushuntiraman.","Pain & Fever dozasini ikki baravar oshirishni tavsiya qilaman."],"correct": 2,"expl": "Bir yoshli bolada ikki kun davom etayotgan 39,5 °C isitma shifokor ko‘rigini talab qiladi. «Kuchliroq» biologik faol qo‘shimcha mavjud emasligini halol tushuntirish ishonchni oshiradi."},{"id": "q41","stage": "s5","cat": "№41","text": "«Bola 3 yoshda. Bir haftadan beri faqat bitta burun teshigidan ajralma kelmoqda, hidi yomon, isitmasi yo‘q». Nima qilasiz?","options": ["Sinus tavsiya qilaman.","Sinus va All Allergies tavsiya qilaman.","Shifokorga yuboraman: kichik yoshdagi bolalarda bir tomonlama badbo‘y ajralma burun bo‘shlig‘ida begona jism bo‘lishini istisno qilishni talab qiladi.","Burunni yuvish va Sinus tavsiya qilaman."],"correct": 2,"expl": "Kichik yoshdagi bolada faqat bitta burun teshigidan kelayotgan badbo‘y ajralma burunda begona jism bo‘lishining klassik belgisidir."},{"id": "q42","stage": "s5","cat": "№42","text": "«O‘g‘lim to‘rt haftadan beri yo‘talyapti. Isitmasi yo‘q, boshqa shikoyati yo‘q». Nima qilasiz?","options": ["Day Syrup tavsiya qilaman.","Day Syrup va Throat Ease tavsiya qilaman.","Shifokorga yuboraman: 2–3 haftadan ortiq davom etgan yo‘tal tibbiy baholashni talab qiladi.","Day Syrupni bir oy davomida qabul qilishni tavsiya qilaman."],"correct": 2,"expl": "To‘rt hafta davom etgan yo‘tal shifokor baholashi kerak bo‘lgan holatdir. D varianti asossiz ravishda juda uzoq davolash kursini taklif qiladi."},{"id": "q43","stage": "s5","cat": "№43","text": "Siz xavfli belgini aniqladingiz va shifokorga murojaat qilishni tavsiya qildingiz. Xaridor esa: «Shifokorga bormayman, shunchaki biror narsa soting» dedi. Nima qilasiz?","options": ["Xaridorning qarori o‘ziga tegishli deb, mahsulotni sotaman.","Xotirjam tarzda tavsiyani yana takrorlayman, aniq xavfni tushuntiraman va ushbu shikoyat bo‘yicha mahsulot sotmayman.","Mahsulotni sotaman, lekin xavflar haqida ogohlantiraman.","Mahsulotni sotaman va xaridor rad etganini qayd etaman."],"correct": 1,"expl": "Farmatsevtning vazifasi — aniq xavfni tushuntirib, shifokorga murojaat qilish tavsiyasini qat'iy takrorlash va bu shikoyat bo‘yicha mahsulot sotmaslikdir."},{"id": "q44","stage": "s5","cat": "№44","text": "«Bolaning burni ikki oydan beri bitmayapti, hamma narsani sinab ko‘rdik». Nima qilasiz?","options": ["Sinus tavsiya qilaman.","All Allergies tavsiya qilaman, ehtimol allergiyadir.","Shifokorga yuboraman: uzoq davom etayotgan holat tashxis qo‘yishni talab qiladi, qo‘llab-quvvatlovchi vositalar esa ko‘rikdan keyin muhokama qilinadi.","Sinus va All Allergiesni navbatma-navbat qo‘llashni tavsiya qilaman."],"correct": 2,"expl": "Uzoq davom etayotgan burun oqishi tashxis qo‘yishni talab qiladi. D variantidagi mahsulotlarni navbatma-navbat qo‘llashning ilmiy asosi yo‘q."},{"id": "q45","stage": "s5","cat": "№45","text": "Shifokorga yo‘llashning qaysi iborasi to‘g‘ri?","options": ["«Sizga hech narsa sota olmayman».","«Balki jiddiyroq muammo bordir, tekshirtirib ko‘rganingiz ma'qul».","«Bu holatda imkon qadar tezroq shifokorga murojaat qilishingiz kerak. Bizning vositalarimiz bu vaziyatda mos emas va kerakli yordamni kechiktirishi mumkin. Shifokor ko‘rigidan keyin sizga mos qo‘llab-quvvatlovchi vositalarni tanlashda yordam beraman».","«Avval bizning vositamizni sinab ko‘ring, yordam bermasa, keyin shifokorga boring»."],"correct": 2,"expl": "To‘g‘ri javob vaziyatning jiddiyligini aniq tushuntiradi, kechikish xavfini aytadi va xaridor bilan muloqotni ijobiy saqlab qoladi. D varianti esa shifokorga murojaatni kechiktiradi va shu bilan birga mahsulot sotishni taklif qiladi."},{"id": "q46","stage": "s5","cat": "№46","text": "Liniya mahsulotlari bo‘yicha maslahat berishda qaysi iboralarni ishlatish mumkin?","options": ["«Davolaydi», «sababini bartaraf etadi», «terapiya»","«Yordam beradi», «yengillashishga ko‘maklashadi», «qo‘llab-quvvatlaydi», «quyidagi holatlarda», «davrida»","«To‘liq davolaydi», «tiklaydi», «funksiyani normallashtiradi»","«Kasallikda tavsiya etiladi», «kurs tarzida buyuriladi»"],"correct": 1,"expl": "Neytral iboralar kasallikni davolashni emas, balki organizmni qo‘llab-quvvatlashni ifodalaydi. A, V va G variantlaridagi iboralar biologik faol qo‘shimchalar uchun ruxsat etilmaydigan davolovchi da’volardir."},{"id": "q47","stage": "s5","cat": "№47","text": "Qaysi iborani hech qanday holatda ishlatish mumkin emas?","options": ["«Milkdagi og‘riqni yengillashtirishga yordam beradi»","«Bezovtalikni kamaytirishga yordam beradi»","«Bolalar uchun shamollashga qarshi dori»","«Tish chiqishi davrida qo‘llaniladi»"],"correct": 2,"expl": "«Dori» so‘zi mahsulotni boshqa huquqiy toifaga o‘tkazadi va har qanday holatda ham ishlatilishi mumkin emas."},{"id": "q48","stage": "s5","cat": "№48","text": "«Belladonnasiz» degan ta’rif qaysi mahsulotlarga nisbatan qo‘llanilmaydi?","options": ["Teething va Colic","Pain & Fever va Day Syrup","Calm va Throat Ease","Sinus va All Allergies"],"correct": 1,"expl": "Pain & Fever tarkibida Belladonna D8, Day Syrup tarkibida esa Belladonna 3CH mavjud. Shu sababli ularga «Belladonnasiz» degan ta’rif noto‘g‘ri bo‘ladi. Teething uchun esa bu ta’rif to‘g‘ri va amaliy ahamiyatga ega."},{"id": "q49","stage": "s5","cat": "№49","text": "«Shakarsiz» va «Laktozasiz» degan ta’rif qaysi mahsulotga nisbatan qo‘llanilmaydi?","options": ["Teething","Calm","Homeocoksinum Flu Buster (granulalar)","Homeocoksinum Kids (tomchilar)"],"correct": 2,"expl": "Flu Buster granulalarining asosi saxaroza va laktozadan iborat. Tomchilar va siroplar uchun «shakarsiz» va «laktozasiz» ta’riflari to‘g‘ri, granulalar uchun esa noto‘g‘ri."},{"id": "q50","stage": "s5","cat": "№50","text": "«Toza formula — lidokain, benzokain, laktoza, shakar, spirt, bo‘yoqlar va parabenlarsiz» degan ta’rif qaysi mahsulot uchun to‘g‘ri?","options": ["Kids 0–9 liniyasidagi barcha mahsulotlar uchun","Liniyadagi barcha tomchilar uchun","Teething mahsuloti uchun","Flu Buster granulalaridan tashqari barcha mahsulotlar uchun"],"correct": 2,"expl": "Ushbu ta’rif faqat Teething tarkibiga tegishli. Uni butun liniyaga yoki barcha tomchilarga tatbiq etish Pain & Fever tarkibida Belladonna mavjudligi sababli noto‘g‘ri."},{"id": "q51","stage": "s6","cat": "№51","text": "O‘zbekiston Respublikasidagi xaridor bilan suhbatda Kanadadagi DIN-HM va NPN raqamlari qanday to‘g‘ri izohlanadi?","options": ["O‘zbekistonda ham tan olingan davolash samaradorligining tasdig‘i sifatida","Xorijiy ro‘yxatdan o‘tganligi, xavfsizlik, ishlab chiqarish sifati va tarkibning yorliqqa mosligi tekshirilganini bildiruvchi fakt sifatida, ammo O‘zbekistonda davolash samaradorligini tasdiqlamaydi","Mahsulotni dori vositasi deb hisoblash uchun asos sifatida","O‘zbekistonda biologik faol qo‘shimchalarni ro‘yxatdan o‘tkazishning majburiy talabi sifatida"],"correct": 1,"expl": "Xorijiy ro‘yxatdan o‘tganlik faktini davolash samaradorligini tasdiqlash bilan aralashtirmaslik muhim. A varianti ruxsat etilmagan da’voni o‘z ichiga oladi."},{"id": "q52","stage": "s6","cat": "№52","text": "Dorixona mudirasi bolalar javoni uchun qo‘lda narx ko‘rsatkichini yozishni so‘radi. Qaysi yozuv to‘g‘ri?","options": ["«Bolalar uchun grippga qarshi tomchilar»","«Tish chiqishini davolash»","«Homeocan Kids 0–9 — bolalar uchun biologik faol qo‘shimchalar»","«Kanadada ishlab chiqarilgan bolalar gomeopatik dori vositalari»"],"correct": 2,"expl": "Yozma materiallarga ham og‘zaki maslahatdagi kabi cheklovlar qo‘llaniladi. A va B variantlarida davolash haqidagi da’volar, D variantida esa «dori» so‘zi ishlatilgan."},{"id": "q53","stage": "s6","cat": "№53","text": "Xaridor mahsulot samaradorligi isbotlanganmi, deb so‘raydi. Qaysi javob to‘g‘ri?","options": ["«Ha, klinik jihatdan isbotlangan.»","«Samaradorligi Kanada regulyatori tomonidan tasdiqlangan.»","«Plasebodan ustun klinik samaradorlik ilmiy jihatdan isbotlanmagan — men buning aksini da’vo qilmayman. Bu yuqori xavfsizlik profiliga ega bo‘lgan qo‘llab-quvvatlovchi vosita, tanlov sizniki.»","«Tadqiqotlar bor, lekin ular yopiq.»"],"correct": 2,"expl": "Ilmiy konsensusni tan olish va suhbatni tekshiriladigan faktlarga yo‘naltirish eng to‘g‘ri yondashuvdir. Kanada regulyatori xavfsizlik va sifatni baholaydi, klinik samaradorlikni emas."},{"id": "q54","stage": "s6","cat": "№54","text": "Xaridor mahsulotni bolaga buyurilgan antibiotik bilan solishtirishni so‘raydi. To‘g‘ri yondashuv qaysi?","options": ["Mahsulot antibiotikka qaraganda yumshoqroq va xavfsizroq ekanini aytish.","Biologik faol qo‘shimcha va shifokor buyurgan davolash turli toifaga kirishini, ularning samaradorligini to‘g‘ridan-to‘g‘ri taqqoslash noto‘g‘ri ekanini hamda shifokor davolashi asosiy o‘rinda qolishini tushuntirish.","Har qanday izoh berishdan bosh tortish.","Kasallik yengil kechsa, mahsulot antibiotik o‘rnini bosishi mumkinligini aytish."],"correct": 1,"expl": "Mahsulotni antibiotikdan ustun yoki uning o‘rnini bosuvchi sifatida ko‘rsatish mumkin emas. Shifokor buyurgan davolash asosiy o‘rinda qoladi."},{"id": "q55","stage": "s6","cat": "№55","text": "Biologik faol qo‘shimchalar bo‘yicha maslahat berishda farmatsevt vakolatiga nimalar kiradi?","options": ["Tashxis qo‘yish va davolashni tanlash.","Zarurat bo‘lsa, shifokor buyurgan davolashni bekor qilish.","Tarkibi, shakli, yoshi va qabul qilish tartibi bo‘yicha maslahat berish; mos holatda biologik faol qo‘shimchani tavsiya qilish; kerak bo‘lsa shifokorga murojaat qilishni tavsiya etish.","Shifokor tayinlagan davolashning to‘g‘riligini baholash."],"correct": 2,"expl": "Farmatsevtning vakolatiga mahsulot tarkibi, qo‘llanishi va qabul qilish tartibi bo‘yicha maslahat berish hamda zarur hollarda shifokorga murojaat qilishni tavsiya etish kiradi. Tashxis qo‘yish yoki davolashni o‘zgartirish esa uning vakolatiga kirmaydi."},{"id": "q56","stage": "s6","cat": "№56","text": "Og‘zaki maslahatdagi huquqiy xavflarning aksariyatini kamaytiradigan to‘rtta asosiy ibora qaysilar?","options": ["«Bu dori», «sinovdan o‘tgan», «hammaga yordam beradi», «bemalol oling».","«Bu biologik faol qo‘shimcha», «yordam beradi / yengillashishga ko‘maklashadi», «shifokor maslahati va buyurilgan davolashni almashtirmaydi», «ahvol yomonlashsa yoki xavotirli belgilar paydo bo‘lsa — shifokorga murojaat qiling».","«Kanadada ishlab chiqarilgan», «sertifikatlangan», «nojo‘ya ta’siri yo‘q», «hamma qabul qilishi mumkin».","«Gomeopatiya», «tabiiy», «xavfsiz», «sinab ko‘ring»."],"correct": 1,"expl": "Ushbu to‘rtta ibora og‘zaki maslahatdagi asosiy huquqiy xavflarning oldini oladi: mahsulot toifasini ko‘rsatadi, neytral ifodani ishlatadi, shifokor o‘rnini bosmasligini eslatadi va qachon shifokorga murojaat qilish kerakligini belgilaydi."},{"id": "q57","stage": "s6","cat": "№57","text": "Xaridor qat’iy so‘raydi: «Rostini ayting, yordam beradimi yoki yo‘qmi?» To‘g‘ri javob qaysi?","options": ["«Albatta yordam beradi.»","«Natijani kafolatlay olmayman. Mahsulot simptomlarni yengillashtirishga yordam beradi va odatda yaxshi o‘zlashtiriladi. Agar 2–3 kun ichida yaxshilanish bo‘lmasa yoki xavotirli belgilar paydo bo‘lsa, shifokorga murojaat qiling.»","«Hech kim bilmaydi, sinab ko‘ring.»","«Mening barcha xaridorlarimga yordam beradi.»"],"correct": 1,"expl": "Bu javob halol va foydali: natija kafolatlanmasligini aytadi, neytral ta’rif beradi va aniq muddatni ko‘rsatadi. A va G variantlari natijani va’da qiladi."},{"id": "q58","stage": "s6","cat": "№58","text": "Flu Busterni grippning oldini olish vositasi, jumladan emlashga muqobil sifatida tavsiya qilish mumkinmi?","options": ["Epidemiya mavsumida mumkin.","Xaridorning o‘zi profilaktika haqida so‘rasa mumkin.","Mumkin emas: yuqumli kasallikning oldini olish yoki emlash o‘rnini bosishi haqida da’vo qilish biologik faol qo‘shimcha maqomidan tashqariga chiqadi.","Kattalar uchun mumkin, bolalar uchun mumkin emas."],"correct": 2,"expl": "Yuqumli kasallikning oldini olish yoki emlash o‘rnini bosishi haqida da’vo qilish biologik faol qo‘shimchalar uchun ruxsat etilmaydi."},{"id": "q59","stage": "s6","cat": "№59","text": "Ona shifokor buyurgan dorini berishni to‘xtatib, liniya mahsulotiga o‘tganini aytdi. Farmatsevt nima qilishi kerak?","options": ["Qarorni ma’qullash, chunki tanlov ota-onaniki.","Hech qanday izoh bermaslik.","Biologik faol qo‘shimcha shifokor buyurgan davolashni almashtirmasligini tushuntirish va shifokor bilan bu masalani qayta muhokama qilishni qat’iy tavsiya etish.","Mahsulot dozasini oshirishni tavsiya qilish."],"correct": 2,"expl": "Biologik faol qo‘shimcha shifokor buyurgan davolashni almashtirmaydi. Shu sababli shifokor bilan qayta maslahatlashishni tavsiya qilish zarur."},{"id": "q60","stage": "s6","cat": "№60","text": "Homeocoksinum Kids haqida qaysi ibora biologik faol qo‘shimcha maqomiga to‘liq mos keladi?","options": ["«Tug‘ilgandan boshlab bolalarda gripp va O‘RVI ni davolaydi.»","«Shamollashning dastlabki belgilarini yengillashtirishga yordam beradi; tug‘ilgandan boshlab qo‘llaniladi, tarkibida spirt va shakar yo‘q; shifokor maslahatini almashtirmaydi.»","«Bolalar uchun klinik jihatdan isbotlangan virusga qarshi vosita.»","«Erta qabul qilinsa, gripp rivojlanishining oldini oladi.»"],"correct": 1,"expl": "Ushbu ibora neytral ta’rifni, mahsulotning haqiqiy xususiyatlarini va shifokor maslahatini almashtirmasligi haqidagi muhim eslatmani o‘z ichiga oladi. D variantida esa profilaktika haqidagi ruxsat etilmagan da’vo mavjud."},{"id": "q61","stage": "s7","cat": "№61","text": "Sinus va All Allergies mahsulotlarini farqlash uchun qaysi savol eng samarali?","options": ["«Burundan ajralma qanday rangda?»","«Bu shamollash fonidami yoki har yili bir xil mavsumda takrorlanadimi?»","«Harorat bormi?»","«Tumov necha kundan beri davom etmoqda?»"],"correct": 1,"expl": "Asosiy farqlovchi belgi — mavsumiy takrorlanishidir. Burun ajralmasining rangi yoki isitma hal qiluvchi mezon emas. Allergiyaning qo‘shimcha belgisi — ko‘z qichishi."},{"id": "q62","stage": "s7","cat": "№62","text": "Bir yoshgacha bo‘lgan bezovta bola. Teething va Colic mahsulotlarini farqlashga qaysi savol yordam beradi?","options": ["«Bu qachondan boshlangan?»","«Bola ona suti bilanmi yoki sun’iy ovqat bilanmi oziqlanadi?»","«Bezovtalikning asosiy sababi qayerda — og‘iz va milkdami yoki qorin va oyoqlardami?»","«Kunning qaysi vaqtida kuchayadi?»"],"correct": 2,"expl": "Bir yoshgacha bo‘lgan bolalarda bezovtalikning qayerda ekanligi (og‘iz/milk yoki qorin/oyoqlar) Teething va Colic ni ishonchli farqlashga yordam beradi."},{"id": "q63","stage": "s7","cat": "№63","text": "Homeocoksinum Kids va Day Syrup o‘rtasida tanlovni qaysi belgi belgilaydi?","options": ["Bolaning yoshi","Kasallik bosqichi: dastlabki 24–48 soatdagi ilk belgilar yoki yo‘tal bilan kechayotgan rivojlangan shamollash","Haroratning mavjudligi","Dori shakliga bo‘lgan afzallik"],"correct": 1,"expl": "Farq yoshda emas, kasallik bosqichida. Ikkala mahsulot ham 0–9 yosh uchun mo‘ljallangan."},{"id": "q64","stage": "s7","cat": "№64","text": "Bola shamollagan, o‘rtacha isitma va kunduzgi yo‘tal bor. To‘g‘ri yondashuv qaysi?","options": ["Pain & Fever va Day Syrup ni bir vaqtda to‘liq dozada tavsiya qilish","Asosiy simptomga qarab mahsulotni tanlash; ikkala mahsulot ham Belladonna saqlagani uchun ularni birgalikda tavsiya qilish maqsadga muvofiq emas","Faqat Day Syrup ni tavsiya qilish, chunki u isitmani ham qoplaydi","Barcha simptomlarni qamrab olish uchun uchta mahsulotni tavsiya qilish"],"correct": 1,"expl": "Tanlov asosiy simptomga qarab amalga oshiriladi. Ikkala mahsulot ham Belladonna saqlagani sababli ularni birga tavsiya qilish maqsadga muvofiq emas."},{"id": "q65","stage": "s7","cat": "№65","text": "Shamollashning boshlanishi, bola tomog‘idan shikoyat qilmoqda. Homeocoksinum Kids va Throat Ease o‘rtasida qanday tanlov qilinadi?","options": ["Har doim Throat Ease tavsiya qilish","Agar tomoq asosiy shikoyat bo‘lsa — Throat Ease; agar faqat umumiy holsizlik bo‘lsa — Homeocoksinum Kids, tomoq shikoyati kuchaysa Throat Ease qo‘shish","Har doim Homeocoksinum Kids tavsiya qilish","Har qanday holatda ikkala mahsulotni birga tavsiya qilish"],"correct": 1,"expl": "Asosiy shikoyat hal qiluvchi omildir. Tomoq asosiy muammo bo‘lsa — Throat Ease, aks holda Homeocoksinum Kids tanlanadi."},{"id": "q66","stage": "s7","cat": "№66","text": "All Allergies tarkibini Sinusdan ajratib turuvchi komponent qaysi?","options": ["Sabadilla","Sticta pulmonaria","Cuprum metallicum","Euphrasia officinalis"],"correct": 1,"expl": "Sticta pulmonaria faqat All Allergies tarkibida mavjud. Qolgan komponentlar ikkala formulada ham bor."},{"id": "q67","stage": "s7","cat": "№67","text": "Qaysi mahsulotlar sirop shaklida ishlab chiqariladi?","options": ["Teething, Colic, Homeocoksinum","Day Syrup, Calm, Throat Ease","Sinus, All Allergies, Pain & Fever","Flu Buster dan tashqari barcha mahsulotlar"],"correct": 1,"expl": "Day Syrup, Calm va Throat Ease sirop shaklida ishlab chiqariladi. Teething, Colic, Homeocoksinum, Sinus, All Allergies va Pain & Fever tomchi shaklida, Flu Buster esa granulalar shaklida chiqariladi."},{"id": "q68","stage": "s7","cat": "№68","text": "Butun oila shamollagan: ona, ota va 6 yoshli bola. Hammasida shamollashning ilk belgilari bor. To‘g‘ri tavsiya qaysi?","options": ["Uchalasiga ham Flu Buster granulalari","Uchalasiga ham Homeocoksinum Kids tomchilari","Ota-onaga — Flu Buster (12+), bolaga — Homeocoksinum Kids tomchilari","Ota-onaga — Day Syrup, bolaga — Flu Buster"],"correct": 2,"expl": "Yosh cheklovlariga rioya qilinadi: Flu Buster granulalari bolalarga tavsiya etilmaydi, Homeocoksinum Kids esa kattalar uchun mo‘ljallanmagan."},{"id": "q69","stage": "s7","cat": "№69","text": "Ikki sirop tashqi ko‘rinishidan o‘xshash dozaga ega, ammo qabul qilish tezligi turlicha. Qaysilar va farqi nimada?","options": ["Calm va Throat Ease: kuniga 3 marta va kuniga 4 marta","Day Syrup (har 4 soatda) va Throat Ease (kuniga 3 marta)","Day Syrup va Calm: qabul qilish sxemasi bir xil","Siroplar orasida qabul qilish tezligi bo‘yicha farq yo‘q"],"correct": 1,"expl": "Muhim farq shundaki, Day Syrup har 4 soatda, Throat Ease esa kuniga 3 marta qabul qilinadi. Birgalikda tavsiya qilinganda har birining sxemasi alohida tushuntirilishi kerak."},{"id": "q70","stage": "s7","cat": "№70","text": "Qaysi ikki mahsulot tarkibida Belladonna mavjud?","options": ["Teething va Colic","Pain & Fever va Day Syrup","Calm va Throat Ease","Sinus va All Allergies"],"correct": 1,"expl": "Belladonna Pain & Fever (D8) va Day Syrup (3CH) tarkibida mavjud. Bu savoldagi xato muhim hisoblanadi."},{"id": "q71","stage": "s8","cat": "№71","text": "«Gomeopatiya ishlamaydi, bu isbotlangan.» Eng to‘g‘ri javob qaysi?","options": ["Ko‘p yillik amaliyot samaradorlikni tasdiqlashini aytish","Ilmiy pozitsiyani tan olish, suhbatni xavfsizlik, tarkib va tanlov erkinligiga yo‘naltirish, mahsulot shifokor o‘rnini bosmasligini aytish","Ishlab chiqaruvchining yopiq tadqiqotlariga tayanish","Mavzuni chetlab o‘tib boshqa mahsulotni taklif qilish"],"correct": 1,"expl": "Ilmiy konsensus bilan bahslashish samarasiz. Uni tan olib, suhbatni xavfsizlik, tarkib va tanlov erkinligiga yo‘naltirish eng to‘g‘ri yondashuvdir."},{"id": "q72","stage": "s8","cat": "№72","text": "«Tish chiqarish uchun gomeopatik tabletkalar Belladonna sabab qaytarib olinganini o‘qidim.» Javob?","options": ["Bu noto‘g‘ri ma’lumot ekanini aytish","Qaytarib olish boshqa ishlab chiqaruvchiga tegishli bo‘lganini, sabab yorliqdagi va amaldagi Belladonna miqdori mos kelmaganini tushuntirish; Teething umuman Belladonna saqlamasligini, Belladonna mavjud mahsulotlar esa Kanada litsenziyasi asosida tarkib nazorati bilan ishlab chiqarilishini aytish","Belladonna har qanday miqdorda xavfsizligini aytish","Suhbatni boshqa mahsulotga o‘tkazish"],"correct": 1,"expl": "To‘g‘ri javob uch qismdan iborat: qaytarib olish sababi, boshqa ishlab chiqaruvchi ekanligi va Teething tarkibida Belladonna yo‘qligi."},{"id": "q73","stage": "s8","cat": "№73","text": "«Qimmat ekan.» Eng to‘g‘ri javob?","options": ["Raqobatchining arzonroq mahsulotini taklif qilish","Flakon butun kurs uchun yetishini va dozasi tejamkorligini tushuntirish, yakuniy tanlov xaridorniki ekanini aytish","Arzon vositalar xavfli ekanini aytish","Chegirma taklif qilish"],"correct": 1,"expl": "Qo‘llash iqtisodiy jihatini tushuntirish mumkin, ammo yakuniy qaror xaridorniki bo‘lib qoladi."},{"id": "q74","stage": "s8","cat": "№74","text": "«Biz doim Aflubin olamiz, nega boshqasini olishimiz kerak?» To‘g‘ri yondashuv?","options": ["Aflubin samarasizligini aytish","Tarkibdagi faktik farqlarni tushuntirish: Aflubin tarkibida taxminan 43 % etanol mavjudligi va shunga bog‘liq yosh cheklovlari borligi; Homeocoksinum Kids tomchilarida spirt yo‘qligi va tug‘ilgandan qo‘llanishi mumkinligini aytish. Taqqoslash samaradorlik emas, tarkib asosida olib boriladi.","Aflubin savdodan olib tashlanganini aytish","Farqi yo‘qligini aytish"],"correct": 1,"expl": "Mahsulotlarni faqat tarkibi va yosh cheklovlari bo‘yicha taqqoslash mumkin, samaradorligi bo‘yicha emas."},{"id": "q75","stage": "s8","cat": "№75","text": "«Bolam buni ichmaydi, unga hech narsa yoqmaydi.» Javob?","options": ["Ta’mi muhim emasligini aytish","Liniyadagi ta’mlarni (apelsin, malina, banan, olcha, uzum) sanab o‘tish va unidose shaklining qulayligini aytish","Hech qanday izohsiz ovqatga qo‘shib berishni tavsiya qilish","Boshqa toifadagi mahsulotni tavsiya qilish"],"correct": 1,"expl": "Mahsulotlarning ta’mi va qulay shaklini aytish e’tirozni amaliy tarzda bartaraf etadi."},{"id": "q76","stage": "s8","cat": "№76","text": "«Yangi tug‘ilgan chaqaloq uchun xavfsizmi?» Eng to‘g‘ri javob?","options": ["«Mutlaqo xavfsiz, hech qanday xavf yo‘q.»","«Liniyadagi mahsulotlarning ko‘pchiligi tug‘ilgandan qo‘llaniladi, tarkibida spirt, shakar va bo‘yoqlar yo‘q. Ammo yuqori harorat yoki simptomlar 2–3 kundan ortiq davom etsa, albatta shifokorga murojaat qilish kerak.»","«Har qanday doridan xavfsizroq.»","«Hech qanday nojo‘ya ta’sir bo‘lmaydi.»"],"correct": 1,"expl": "«Mutlaqo xavfsiz» yoki «hech qachon nojo‘ya ta’sir qilmaydi» kabi mutlaq iboralarni ishlatish mumkin emas."},{"id": "q77","stage": "s8","cat": "№77","text": "«Yaxshisi milk uchun gel bering, dugonam tavsiya qilgan.» Javob?","options": ["Barcha gellar xavfli ekanini aytish","Mahalliy og‘riqsizlantiruvchi moddalar (anestetiklar) mavjud gellarga nisbatan regulyatorlarning cheklovlari borligini aytish va lidokain hamda benzokainsiz Teething mahsulotini taklif qilish; yakuniy tanlov xaridorniki ekanini ta’kidlash","Rozi bo‘lib gelni izohsiz sotish","O‘zbekistonda gellar taqiqlanganini aytish"],"correct": 1,"expl": "Javob regulyatorlarning cheklovlariga va mahsulot tarkibiga asoslanadi, yakuniy tanlov esa xaridorga qoldiriladi."},{"id": "q78","stage": "s8","cat": "№78","text": "«Shifokor ortiqcha hech narsa bermang dedi. Lekin baribir biror narsa tavsiya qilasizmi?» Javob?","options": ["Mahsulot zararsizligini aytib tavsiya qilish","Shifokor tavsiyasi ustuvorligini tushuntirish va mahsulot nomi hamda tarkibini yozib berib, keyingi qabulda shifokor bilan muhokama qilishni taklif etish","Mahsulotni tavsiya qilib, shifokorga aytmaslikni maslahat berish","Umuman suhbatni davom ettirmaslik"],"correct": 1,"expl": "Shifokor tavsiyasi ustuvor hisoblanadi. Farmatsevt uni bekor qila olmaydi."},{"id": "q79","stage": "s8","cat": "№79","text": "«Tarkibida mishyak va Belladonna bor ekan, shuni bolalarga sotasizmi?» Javob?","options": ["Bu nomlar shartli, tarkibda bunday moddalar yo‘q deb aytish","Tarkib haqida gapirishdan bosh tortish","Suyultirish darajasini (taxminan yuz milliondan bir) tushuntirish, odatiy oziq-ovqat orqali qabul qilinadigan fon miqdori bilan taqqoslash va tarkibning yorliqqa mosligi litsenziya asosida nazorat qilinishini aytish","Bu moddalar kichik dozada foydali ekanini aytish"],"correct": 2,"expl": "Ochiq va faktlarga asoslangan tushuntirish ishonchni oshiradi. Tarkibni inkor etish yoki foydali deb da’vo qilish noto‘g‘ri."},{"id": "q80","stage": "s8","cat": "№80","text": "«Bu shunchaki plasebo-ku.» Javob?","options": ["«Yo‘q, bu to‘liq dori vositasi.»","«Bu masala bo‘yicha ilmiy bahs davom etmoqda va men uni dorixona peshtaxtasi ortida hal qilmayman. Mahsulotning amaliy afzalliklari — qulay shakli, tarkibida spirt va mahalliy anestetiklarning yo‘qligi, tug‘ilgandan qo‘llash mumkinligi. Davolashni talab qiladigan holatlarda esa shifokorga murojaat qilish kerak.»","«Plasebo ham ishlaydi, farqi yo‘q.»","«Buni sinab ko‘rmaganlar shunday deydi.»"],"correct": 1,"expl": "Javob ilmiy bahsni tan oladi, amaliy afzalliklarni tushuntiradi va davolash zarur bo‘lgan holatlarda shifokorga murojaat qilish kerakligini eslatadi."},{"id": "q81","stage": "s9","cat": "№81","text": "Liniya mahsulotlarini birgalikda tavsiya qilishning asosiy qoidasi qaysi?","options": ["Tavsiyada faqat bitta mahsulot bo‘lishi kerak.","Ikkitadan ortiq mahsulot tavsiya qilinmaydi; isitma bo‘lsa, yo‘riqnomaga muvofiq qo‘shimcha ravishda paratsetamol yoki ibuprofen qo‘llash mumkin.","Mahsulotlar mos kelsa, to‘rttagacha tavsiya qilish mumkin.","Hech qanday cheklov yo‘q, mahsulotlar o‘zaro ta’sirlashmaydi."],"correct": 1,"expl": "Ikkitadan ortiq mahsulot tavsiya qilinmaydi. Bu ota-onaga qabul qilish sxemasini adashtirmaslik uchun muhim. Shu bilan birga, zarurat bo‘lsa, paratsetamol yoki ibuprofen yo‘riqnoma asosida qo‘llanishi mumkin."},{"id": "q82","stage": "s9","cat": "№82","text": "Bolada shamollashning ilk belgilari bor va tomog‘idan shikoyat qilmoqda. Qaysi juftlik mos?","options": ["Homeocoksinum Kids + Throat Ease","Homeocoksinum Kids + Colic","Day Syrup + Pain & Fever","Sinus + All Allergies"],"correct": 0,"expl": "Bu juftlik kasallik bosqichi (ilk belgilar) va asosiy shikoyat (tomoq)ga mos keladi."},{"id": "q83","stage": "s9","cat": "№83","text": "Mavsumiy allergiya va kuchli burun bitishi. Qaysi juftlik mos?","options": ["All Allergies + Calm","All Allergies + Sinus","Sinus + Day Syrup","All Allergies + Throat Ease"],"correct": 1,"expl": "Kuchli burun bitishida All Allergies va Sinusni birga tavsiya qilish asosli hisoblanadi."},{"id": "q84","stage": "s9","cat": "№84","text": "Tish chiqishi uyqu buzilishi bilan kechmoqda. Qaysi juftlik mos?","options": ["Teething + Colic","Teething + Pain & Fever","Teething + Calm","Teething + Day Syrup"],"correct": 2,"expl": "Teething asosiy muammoni hal qiladi, Calm esa uyqu buzilishi uchun qo‘shimcha tavsiya hisoblanadi."},{"id": "q85","stage": "s9","cat": "№85","text": "Qaysi kombinatsiya odatiy emas va alohida asoslashni talab qiladi?","options": ["Homeocoksinum + Throat Ease","Teething + Calm","Sinus + All Allergies bir vaqtda, aniq sabab bo‘lmasa","Bolaga mo‘ljallangan mahsulot + ota-onaga Flu Buster"],"correct": 2,"expl": "Sinus va All Allergies tarkibining 8 ta komponenti bir xil. Shu sababli ularni bir vaqtda tavsiya qilish faqat aniq asos bo‘lgandagina to‘g‘ri bo‘ladi."},{"id": "q86","stage": "s9","cat": "№86","text": "Liniya mahsulotlarining paratsetamol yoki ibuprofen bilan birga qo‘llanishini qanday to‘g‘ri tushuntirish kerak?","options": ["«Bizning mahsulotlar isitma tushiruvchi dorilar ta’sirini kuchaytiradi.»","«O‘zaro ta’siri haqida ma’lumot yo‘q, shuning uchun birga qo‘llash mumkin. Isitma tushiruvchi dori esa o‘z yo‘riqnomasiga muvofiq qabul qilinadi.»","«Bizning mahsulotlar isitma tushiruvchi dori dozasini kamaytirishga imkon beradi.»","«Mosligi klinik tadqiqotlar bilan tasdiqlangan.»"],"correct": 1,"expl": "O‘zaro ta’siri haqida ma’lumot yo‘qligi sababli ularni birga qo‘llash mumkin. Boshqa variantlarda tasdiqlanmagan farmakologik da’volar mavjud."},{"id": "q87","stage": "s9","cat": "№87","text": "Qaysi holatda qo‘shimcha mahsulotni faol taklif qilish o‘rinli?","options": ["Xaridor shoshmoqda va tezroq hisob-kitob qilishni so‘rayapti.","Xaridor tish chiqargich yoki bolalar mahsulotlarini xarid qilmoqda.","Xaridor bolalar bilan bog‘liq bo‘lmagan mahsulotlarni sotib olyapti.","Xaridor shu suhbat davomida qo‘shimcha taklifni allaqachon rad etgan."],"correct": 1,"expl": "Bolalar mahsulotlarini xarid qilish qo‘shimcha tavsiya berish uchun tabiiy vaziyat hisoblanadi."},{"id": "q88","stage": "s9","cat": "№88","text": "Qo‘shimcha mahsulot taklif qilishda qaysi savol to‘g‘ri?","options": ["«Sizga albatta yana nimadir kerak.»","«Ko‘ryapman, tish chiqargich olayapsiz. Chaqalog‘ingiz necha oylik? Milklarini bezovta qilyaptimi?»","«Nega bolangiz uchun vosita olmayapsiz?»","«Hamma yana shuni ham oladi.»"],"correct": 1,"expl": "Savol vaziyatga mos, aniq va bolaning yoshini aniqlashdan boshlanadi."},{"id": "q89","stage": "s9","cat": "№89","text": "Xaridor qo‘shimcha mahsulotni rad etdi. Nima qilish kerak?","options": ["Taklifni boshqa so‘zlar bilan yana takrorlash.","Liniyadagi boshqa mahsulotni taklif qilish.","Mavzuni yopish va asosiy so‘rov bo‘yicha maslahatni yakunlash.","Rad etish noto‘g‘ri ekanini tushuntirish."],"correct": 2,"expl": "Xaridor rad etsa, mavzuni davom ettirmaslik kerak. Bosim ishonchni kamaytiradi."},{"id": "q90","stage": "s9","cat": "№90","text": "Ona 7 oylik bolasi uchun Teething olayapti va o‘zi ham shamollay boshlaganini aytdi. To‘g‘ri harakat qaysi?","options": ["Unga Homeocoksinum Kids tomchilarini tavsiya qilish.","Yoshini so‘rash shart emas, darhol Flu Buster tavsiya qilish.","Kattalar (12+) uchun mo‘ljallangan mahsulot mavjudligini aytib, Flu Busterni bitta qo‘shimcha tavsiya sifatida taklif qilish.","Butun oila uchun uchta mahsulotni tavsiya qilish."],"correct": 2,"expl": "Oilaviy holatni hisobga olib, 12+ yosh uchun Flu Busterni bitta qo‘shimcha tavsiya sifatida taklif qilish mumkin. Homeocoksinum Kids esa faqat 0–9 yosh uchun mo‘ljallangan."},{"id": "q91","stage": "s10","cat": "№91","text": "Teething tarkibi qaysi?","options": ["Colocynthis, Magnesia phosphorica, Chamomilla, Dioscorea villosa","Chamomilla, Arnica montana, Borax, Hypericum perforatum","Arnica, Ferrum phosphoricum, Hypericum, Belladonna, Thuja, Ledum","Anas barbariae hepatis et cordis extractum"],"correct": 1,"expl": "Teething tarkibi: Chamomilla, Arnica montana, Borax va Hypericum perforatum (barchasi 5CH). C varianti Pain & Fever tarkibini bildiradi."},{"id": "q92","stage": "s10","cat": "№92","text": "Colic tarkibi qaysi?","options": ["Chamomilla, Arnica montana, Borax, Hypericum perforatum","Colocynthis, Magnesia phosphorica, Chamomilla, Dioscorea villosa","Pulsatilla, Allium cepa, Arsenicum album, Nux vomica","Drosera, Arnica, Bryonia, Ipecacuanha"],"correct": 1,"expl": "Colic tarkibi: Colocynthis, Magnesia phosphorica, Chamomilla va Dioscorea villosa (barchasi 6X). Teething bilan umumiy komponent faqat Chamomilla hisoblanadi."},{"id": "q93","stage": "s10","cat": "№93","text": "Homeocoksinum Kids va Flu Buster ning faol komponenti qaysi?","options": ["Chamomilla 5CH","Belladonna D8","Anas barbariae hepatis et cordis extractum 200CH","Pulsatilla D8"],"correct": 2,"expl": "Ikkala mahsulotning faol komponenti bir xil. Farqi — chiqarilish shakli, asos moddasi va yosh chegarasida."},{"id": "q94","stage": "s10","cat": "№94","text": "Sinus va All Allergies tarkibida mos ravishda nechta komponent mavjud?","options": ["4 va 5","6 va 7","8 va 9","9 va 10"],"correct": 2,"expl": "Sinus tarkibida 8 ta, All Allergies tarkibida esa 9 ta komponent mavjud. To‘qqizinchi komponent — Sticta pulmonaria."},{"id": "q95","stage": "s10","cat": "№95","text": "Belladonna liniya mahsulotlarida qaysi suyultirishlarda mavjud?","options": ["Pain & Fever — D8; Day Syrup — 3CH","Pain & Fever — 5CH; Day Syrup — 6X","Teething — D8; Colic — 3CH","Liniyada Belladonna umuman yo‘q"],"correct": 0,"expl": "Pain & Fever tarkibida Belladonna D8, Day Syrup tarkibida esa Belladonna 3CH mavjud."},{"id": "q96","stage": "s10","cat": "№96","text": "Flu Buster granulalarining asosini nima tashkil qiladi va bundan qanday xulosa kelib chiqadi?","options": ["Sorbitol; bu hech qanday qo‘shimcha xulosani talab qilmaydi.","Saxaroza va laktoza; shu sababli «shakarsiz» va «laktozasiz» degan ta’riflarni qo‘llash mumkin emas, laktozani o‘zlashtira olmaydigan xaridor ogohlantirilishi kerak.","Kraxmal; laktozani o‘zlashtira olmaydiganlarga mos.","Tozalangan suv; mahsulot tarkibida shakar yo‘q."],"correct": 1,"expl": "Granulalarning asosini saxaroza va laktoza tashkil qiladi. Shu sababli «shakarsiz» va «laktozasiz» degan ta’riflarni qo‘llash mumkin emas. Bu muhim savollardan biridir."},{"id": "q97","stage": "s10","cat": "№97","text": "Quyidagilardan qaysi biri Teething tarkibida mavjud emas?","options": ["Lidokain, benzokain, laktoza, shakar, spirt, bo‘yoqlar, parabenlar, Belladonna","Faqat lidokain va benzokain","Faqat spirt va shakar","Moychechak (Chamomilla) va arnika"],"correct": 0,"expl": "Teething tarkibida lidokain, benzokain, laktoza, shakar, spirt, bo‘yoqlar, parabenlar va Belladonna yo‘q. Moychechak va arnika esa mavjud."},{"id": "q98","stage": "s10","cat": "№98","text": "Mahsulotlarni ta’mi bilan moslang.","options": ["Teething — uzum; Colic — olcha; All Allergies — apelsin","Teething — apelsin; Colic — malina; All Allergies — banan; Pain & Fever — olcha; Calm — uzum","Barcha mahsulotlar malina ta’miga ega.","Liniyada ta’m beruvchi qo‘shimchalar ishlatilmaydi."],"correct": 1,"expl": "Mahsulotlarning ta’mini bilish «Bolam ichmaydi» degan e’tirozga javob berishda foydalidir."},{"id": "q99","stage": "s10","cat": "№99","text": "Mahsulotlarning chiqarilish shakllari va hajmlari qaysi?","options": ["Tomchilar — 25 ml; siroplar — 100 ml va 250 ml; granulalar — unidose (tubalar) shaklida","Barcha mahsulotlar 25 ml tomchi shaklida chiqariladi.","Tomchilar — 50 ml; siroplar — 200 ml.","Barcha mahsulotlar unidose shaklida chiqariladi."],"correct": 0,"expl": "Tomchilar — 25 ml flakonlarda (Teething qo‘shimcha ravishda unidose shaklida ham mavjud), siroplar — 100 ml va 250 ml, Flu Buster esa granulalar ko‘rinishidagi tubalarda chiqariladi."},{"id": "q100","stage": "s10","cat": "№100","text": "Calm mahsulotining ayrim partiyalarida Tarentula hispanica mavjud. Bu amalda nimani anglatadi?","options": ["Bunday partiyalarni alohida mahsulot deb hisoblash kerak.","Maslahat berish va o‘quv materiallarini yangilashdan oldin aynan shu partiyaning yorlig‘ini tekshirish kerak.","Bunday partiyalarni bolalarga tavsiya qilmaslik kerak.","Hech qanday amaliy ahamiyati yo‘q."],"correct": 1,"expl": "Har bir partiyaning amaldagi yorlig‘ini tekshirish maslahat berishda va o‘quv materiallarini yangilashda majburiy hisoblanadi."}]
+};
+
+function sGet(k){
+  return db.collection('meta').doc(k).get().then(function(doc){
+    return doc.exists?doc.data().payload:null;
+  }).catch(function(){ return null; });
+}
+function sSet(k,v){
+  return db.collection('meta').doc(k).set({payload:v}).then(function(){return true;}).catch(function(){return false;});
+}
+function loadResults(){
+  return db.collection('results').get().then(function(qs){
+    var out=[]; qs.forEach(function(doc){ var d=doc.data(); d.id=doc.id; out.push(d); }); return out;
+  }).catch(function(){ return []; });
+}
+function addResultDoc(r){
+  var data={}; for(var k in r) if(k!=='id') data[k]=r[k];
+  return db.collection('results').add(data).then(function(ref){ r.id=ref.id; return r; });
+}
+function deleteResultDoc(id){ return db.collection('results').doc(id).delete(); }
+function clearAllResults(){
+  return db.collection('results').get().then(function(qs){
+    var batch=db.batch();
+    qs.forEach(function(doc){ batch.delete(doc.ref); });
+    return qs.empty?Promise.resolve():batch.commit();
+  });
+}
+function chunk(arr,n){ var out=[]; for(var i=0;i<arr.length;i+=n) out.push(arr.slice(i,i+n)); return out; }
+function bulkAddResults(list){
+  return chunk(list,400).reduce(function(p,g){
+    return p.then(function(){
+      var batch=db.batch();
+      g.forEach(function(r){
+        var ref=db.collection('results').doc(), data={};
+        for(var k in r) if(k!=='id') data[k]=r[k];
+        batch.set(ref,data);
+      });
+      return batch.commit();
+    });
+  },Promise.resolve());
+}
+function batchUpdateResults(ids,patch){
+  if(!ids.length) return Promise.resolve();
+  return chunk(ids,400).reduce(function(p,g){
+    return p.then(function(){
+      var batch=db.batch();
+      g.forEach(function(id){ batch.update(db.collection('results').doc(id),patch); });
+      return batch.commit();
+    });
+  },Promise.resolve());
+}
+
+var S={ready:false,view:'enter',tab:'rank',authed:false,setup:null,results:[],
+  me:null,session:null,review:null,editQ:null,editP:null,editS:null,bulk:false,
+  enterChain:'',enterBranch:'',enterBranchId:'',enterOther:false,chain:'',mergeFrom:null,
+  stageFilter:'all',qStage:'all'};
+var app=document.getElementById('app'), timerId=null;
+
+function esc(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function pct(a,b){ return b>0?Math.round(a/b*100):0; }
+function fmtDate(ts){ var d=new Date(ts); function p(n){return n<10?'0'+n:''+n;} return p(d.getDate())+'.'+p(d.getMonth()+1)+'.'+d.getFullYear()+' '+p(d.getHours())+':'+p(d.getMinutes()); }
+function fmtDur(s){ var m=Math.floor(s/60); return m+' daq '+(s%60<10?'0':'')+(s%60)+' s'; }
+function shuffle(a){ a=a.slice(); for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t;} return a; }
+function norm(s){ return String(s||'').trim().toLowerCase().replace(/\s+/g,' '); }
+function toast(m){ var t=document.createElement('div'); t.className='toast'; t.textContent=m; document.body.appendChild(t); setTimeout(function(){ if(t.parentNode)t.parentNode.removeChild(t); },2600); }
+function branchById(id){ var a=S.setup.branches,i; for(i=0;i<a.length;i++) if(a[i].id===id) return a[i]; return null; }
+function chainById(id){ var a=S.setup.chains,i; for(i=0;i<a.length;i++) if(a[i].id===id) return a[i]; return null; }
+function branchesOf(cid){
+  return S.setup.branches.filter(function(b){ return b.chainId===cid; }).sort(function(a,b){
+    var na=parseInt(a.name,10), nb=parseInt(b.name,10);
+    if(!isNaN(na)&&!isNaN(nb)&&na!==nb) return na-nb;
+    return a.name.localeCompare(b.name,'uz');
+  });
+}
+function findOrCreateBranch(cid,name){
+  var nm=String(name).trim().replace(/\s+/g,' '), list=branchesOf(cid), i;
+  for(i=0;i<list.length;i++) if(norm(list[i].name)===norm(nm)) return list[i];
+  var b={id:uid(),chainId:cid,name:nm,staff:0};
+  S.setup.branches.push(b); saveSetup(); return b;
+}
+function activeChain(){
+  if(S.chain && chainById(S.chain)) return S.chain;
+  var used={}; S.results.forEach(function(r){ if(r.chainId) used[r.chainId]=(used[r.chainId]||0)+1; });
+  var best=null,n=-1; Object.keys(used).forEach(function(k){ if(used[k]>n){n=used[k];best=k;} });
+  return best || (S.setup.chains[0]&&S.setup.chains[0].id) || '';
+}
+function stageById(id){ var a=S.setup.stages,i; for(i=0;i<a.length;i++) if(a[i].id===id) return a[i]; return null; }
+function stageQs(sid){ return S.setup.questions.filter(function(q){ return q.stage===sid; }); }
+function openStages(){ return S.setup.stages.filter(function(s){ return s.open && stageQs(s.id).length; }); }
+function gaugeClass(p){ return p>=70?'':(p>=50?'warn':'low'); }
+function saveSetup(){ return sSet(SETUP_KEY,S.setup); }
+function refreshBank(){
+  var fresh=JSON.parse(JSON.stringify(DEFAULT_SETUP));
+  var wasOpen={}; (S.setup.stages||[]).forEach(function(st){ wasOpen[st.id]=st.open; });
+  fresh.stages.forEach(function(st){ if(wasOpen[st.id]!==undefined) st.open=wasOpen[st.id]; });
+  S.setup.ver=fresh.ver;
+  S.setup.stages=fresh.stages;
+  S.setup.questions=fresh.questions;
+  S.setup.chains=fresh.chains;
+  var have={};
+  (S.setup.branches||[]).forEach(function(b){ have[b.chainId+'|'+norm(b.name)]=1; });
+  fresh.branches.forEach(function(b){ if(!have[b.chainId+'|'+norm(b.name)]) S.setup.branches.push(b); });
+  return saveSetup();
+}
+function download(name,text,mime){
+  try{
+    var b=new Blob(['\ufeff'+text],{type:mime||'text/csv;charset=utf-8'}), u=URL.createObjectURL(b);
+    var a=document.createElement('a'); a.href=u; a.download=name; document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(function(){URL.revokeObjectURL(u);},1500);
+  }catch(e){ toast('Yuklab olish ishlamadi'); }
+}
+
+/* ====== BALL HISOBI ====== */
+function personKey(r){ return r.branchId+'|'+norm(r.first+' '+r.last); }
+
+function bestByStage(list){
+  var m={}; list.forEach(function(r){ if(!m[r.stageId]||r.percent>m[r.stageId].percent) m[r.stageId]=r; }); return m;
+}
+// Har bir qatnashuvchi: ochilgan bosqichlar bo'yicha o'rtacha (topshirmagan bosqich = 0)
+function people(){
+  var open=openStages(), map={};
+  S.results.forEach(function(r){
+    var k=personKey(r);
+    if(!map[k]) map[k]={key:k,chainId:r.chainId,branchId:r.branchId,branchName:r.branchName,first:r.first,last:r.last,rs:[],time:0};
+    map[k].rs.push(r);
+  });
+  return Object.keys(map).map(function(k){
+    var p=map[k], best=bestByStage(p.rs), sum=0, done=0, time=0;
+    open.forEach(function(st){ if(best[st.id]){ sum+=best[st.id].percent; done++; time+=best[st.id].durationSec; } });
+    p.best=best; p.done=done; p.openCount=open.length;
+    p.score=open.length?Math.round(sum/open.length):0;
+    p.time=time;
+    return p;
+  });
+}
+function branchStats(cid){
+  cid=cid||activeChain();
+  var ppl=people().filter(function(p){ return p.chainId===cid; }), c=S.setup.config, K=c.kFactor||3;
+  var global=ppl.length?ppl.reduce(function(a,p){return a+p.score;},0)/ppl.length:0;
+  var map={};
+  branchesOf(cid).forEach(function(b){ map[b.id]={id:b.id,name:b.name,staff:b.staff||0,list:[]}; });
+  ppl.forEach(function(p){
+    if(!map[p.branchId]) map[p.branchId]={id:p.branchId,name:p.branchName,staff:0,list:[]};
+    map[p.branchId].list.push(p);
+  });
+  var out=Object.keys(map).map(function(k){
+    var m=map[k], n=m.list.length;
+    m.n=n;
+    m.raw=n?Math.round(m.list.reduce(function(a,p){return a+p.score;},0)/n):0;
+    m.adj=n?Math.round(((n*m.raw + K*global)/(n+K))*10)/10:0;
+    m.coverage=m.staff?Math.min(100,Math.round(n/m.staff*100)):0;
+    m.hasStaff=m.staff>0;
+    m.qualified=m.hasStaff && m.coverage>=(c.minCoverage||0) && n>0;
+    m.time=m.list.reduce(function(a,p){return a+p.time;},0);
+    return m;
+  });
+  out.sort(function(a,b){
+    if(a.qualified!==b.qualified) return a.qualified?-1:1;
+    return b.adj-a.adj || b.coverage-a.coverage || a.time-b.time;
+  });
+  out.globalAvg=Math.round(global*10)/10;
+  return out;
+}
+
+/* ====== KO'RINISHLAR ====== */
+function logoMark(){
+  var u=S.setup.config.logoUrl;
+  if(u) return '<img class="logo-img" src="'+esc(u)+'" alt="">';
+  return '<span class="logo"><span class="logo-kids">'+
+    '<span style="color:var(--blue)">k</span><i></i><span style="color:var(--green)">i</span><i></i>'+
+    '<span style="color:var(--pink)">d</span><i></i><span style="color:var(--orange)">s</span>'+
+    '</span><span class="logo-09">0-9</span></span>';
+}
+function header(){
+  var c=S.setup.config;
+  return '<div class="top"><div class="top-in"><div class="brand">'+logoMark()+
+    '<div class="brand-txt"><b>'+esc(c.org)+'</b><span>'+esc(c.testName)+'</span></div></div>'+
+    '<div class="top-right">'+
+    (S.view==='admin'
+      ? '<button class="btn-ghost btn-sm" data-act="exit-admin">Test paneli</button>'+
+        (S.authed?'<button class="btn-ghost btn-sm" data-act="admin-logout">Admin chiqish</button>':'')
+      : (S.me?'<button class="btn-ghost btn-sm" data-act="logout">Chiqish</button>':'')+
+        '<button class="btn-ghost btn-sm" data-act="go-admin">Admin panel</button>')+
+    '</div></div><div class="rainbow"></div></div>';
+}
+
+function viewEnter(){
+  var copts='<option value="">\u2014 tarmoqni tanlang \u2014</option>';
+  S.setup.chains.forEach(function(c){ copts+='<option value="'+c.id+'"'+(S.enterChain===c.id?' selected':'')+'>'+esc(c.name)+'</option>'; });
+  var dl='', bopts='', known=S.enterChain?branchesOf(S.enterChain):[];
+  known.forEach(function(b){
+    dl+='<option value="'+esc(b.name)+'"></option>';
+    bopts+='<option value="'+b.id+'"'+(S.enterBranchId===b.id?' selected':'')+'>'+esc(b.name)+'</option>';
+  });
+  var n=openStages().length;
+  return '<div class="enter"><div class="enter-head"><div class="eyebrow">'+S.setup.stages.length+' bosqichli marafon</div>'+
+    '<h1>'+esc(S.setup.config.testName)+'</h1>'+
+    '<p>Dorixona tarmog\u2018ini tanlang, filialingiz nomini yozing va marafonga qo\u2018shiling.</p>'+
+    '<div class="meta-strip"><span><b>'+n+'</b> bosqich ochiq</span><span>jami <b>'+S.setup.stages.length+'</b> bosqich</span></div></div>'+
+    '<div class="card">'+
+    '<div class="field"><label for="f-chain">Dorixona tarmog\u2018i</label><select id="f-chain">'+copts+'</select></div>'+
+    (known.length && !S.enterOther
+      ? '<div class="field"><label for="f-branch-sel">Filial</label><select id="f-branch-sel">'+
+          '<option value="">\u2014 filialni tanlang \u2014</option>'+bopts+
+          '<option value="__other">Ro\u2018yxatda yo\u2018q \u2014 qo\u2018lda yozaman</option></select>'+
+        '<p class="hint">O\u2018zingiz ishlaydigan filial raqamini tanlang. Raqamni bilmasangiz, mudirangizdan so\u2018rang.</p></div>'
+      : '<div class="field"><label for="f-branch">Filial nomi</label>'+
+          '<input id="f-branch" list="branch-list" autocomplete="off" placeholder="Masalan: Chilonzor, 12-filial" value="'+esc(S.enterBranch||'')+'">'+
+          '<datalist id="branch-list">'+dl+'</datalist>'+
+          (known.length?'<p class="hint"><a href="#" data-act="use-list">\u2190 Ro\u2018yxatdan tanlashga qaytish</a></p>':'<p class="hint">Filial nomini hamkasblaringiz bilan bir xil yozishga kelishing.</p>')+'</div>')+
+    '<div class="row c2"><div class="field"><label for="f-first">Ism</label><input id="f-first" placeholder="Nilufar"></div>'+
+    '<div class="field"><label for="f-last">Familiya</label><input id="f-last" placeholder="Karimova"></div></div>'+
+    '<button class="btn" style="width:100%" data-act="login-me">Marafonga kirish</button>'+
+    '<p class="hint" style="text-align:center">Ism-familiya va filial nomini har safar bir xil yozing \u2014 natijalar shunga qarab birlashtiriladi.</p></div></div>';
+}
+
+function myData(){
+  var mine=S.results.filter(function(r){
+    return r.branchId===S.me.branchId && norm(r.first)===norm(S.me.first) && norm(r.last)===norm(S.me.last);
+  });
+  return {best:bestByStage(mine),count:mine.length};
+}
+function stageState(st,idx,best){
+  if(best[st.id]) return 'done';
+  if(stageQs(st.id).length===0) return 'empty';
+  if(!st.open) return 'locked';
+  if(idx>0){
+    var prev=S.setup.stages[idx-1];
+    if(stageQs(prev.id).length && !best[prev.id]) return 'wait';
+  }
+  return 'open';
+}
+
+function viewStages(){
+  var d=myData(), best=d.best, open=openStages();
+  var sum=0,done=0;
+  open.forEach(function(st){ if(best[st.id]){ sum+=best[st.id].percent; done++; } });
+  var total=open.length?Math.round(sum/open.length):0;
+  var html='<div class="who"><div><b>'+esc(S.me.first+' '+S.me.last)+'</b><span>'+esc(S.me.chainName+' \u00B7 '+S.me.branchName)+'</span></div>'+
+    '<div class="who-score"><b>'+total+'%</b><span>'+done+' / '+open.length+' bosqich</span></div></div>';
+  html+='<div class="stage-list">';
+  S.setup.stages.forEach(function(st,i){
+    var stt=stageState(st,i,best), qn=stageQs(st.id).length;
+    var label={done:'Tugallandi',open:'Ochiq',locked:'Admin ruxsati kutilmoqda',wait:'Avval '+i+'-bosqichni tugating',empty:'Savollar kiritilmagan'}[stt];
+    var res=best[st.id];
+    html+='<div class="stage '+stt+'"'+(stt==='open'?' data-act="start-stage" data-id="'+st.id+'" role="button" tabindex="0"':'')+'>'+
+      '<div class="stage-n">'+st.n+'</div>'+
+      '<div class="stage-b"><b>'+esc(st.title)+'</b>'+
+        '<span class="stage-s">'+(stt==='done'?'\u2713 ':stt==='locked'||stt==='wait'?'\u25CF ':'')+label+
+        (qn?' \u00B7 '+qn+' savol':'')+'</span></div>'+
+      (res?'<div class="stage-r '+(res.percent>=S.setup.config.passPercent?'ok':'no')+'">'+res.percent+'%</div>'
+          :stt==='open'?'<div class="stage-go">Boshlash \u2192</div>':'<div class="stage-lock">\u26BF</div>')+
+    '</div>';
+  });
+  return html+'</div>';
+}
+
+function viewTest(){
+  var s=S.session,q=s.questions[s.idx],c=S.setup.config,blister='',i;
+  for(i=0;i<s.questions.length;i++) blister+='<span class="pill '+(i===s.idx?'now':(s.answers[i]!=null?'done':''))+'"></span>';
+  var opts='';
+  q.options.forEach(function(o,k){
+    opts+='<button class="opt'+(s.answers[s.idx]===k?' sel':'')+'" data-act="pick" data-i="'+k+'">'+
+      '<span class="key">'+String.fromCharCode(65+k)+'</span><span>'+esc(o)+'</span></button>';
+  });
+  var last=s.idx===s.questions.length-1;
+  return '<div class="enter">'+
+    '<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px">'+
+    '<span class="eyebrow">'+s.stageN+'-bosqich \u00B7 '+esc(s.stageTitle)+'</span>'+
+    (c.timeLimitMin>0?'<span class="num" id="timer">--:--</span>':'')+'</div>'+
+    '<div class="blister" style="margin-bottom:18px">'+blister+'</div>'+
+    '<div class="card"><div class="q-num">Savol '+(s.idx+1)+' / '+s.questions.length+'</div>'+
+    '<div class="q-text">'+esc(q.text)+'</div>'+opts+
+    '<div style="display:flex;justify-content:space-between;gap:10px;margin-top:18px">'+
+    '<button class="btn-ghost" data-act="prev"'+(s.idx===0?' disabled style="opacity:.4"':'')+'>Orqaga</button>'+
+    (last?'<button class="btn btn-amber" data-act="finish">Bosqichni yakunlash</button>'
+        :'<button class="btn" data-act="next">Keyingi savol</button>')+
+    '</div></div></div>';
+}
+
+function viewDone(){
+  var r=S.review,c=S.setup.config,ok=r.percent>=c.passPercent;
+  var html='<div class="enter"><div class="card" style="text-align:center">'+
+    '<div class="eyebrow">'+r.stageN+'-bosqich natijasi</div>'+
+    '<div class="score-ring"><div class="score-big'+(ok?'':' fail')+'">'+r.percent+'%</div>'+
+    '<div style="text-align:left"><div class="num" style="font-size:20px;font-weight:800">'+r.score+' / '+r.total+'</div>'+
+    '<div style="font-size:12.5px;color:var(--muted);font-weight:700">to\u2018g\u2018ri javob</div>'+
+    '<div style="margin-top:10px"><span class="verdict '+(ok?'v-pass':'v-fail')+'">'+(ok?'O\u2018tdi':'O\u2018tmadi')+'</span></div></div></div>'+
+    '<p style="color:var(--muted);font-weight:600;margin:0">'+fmtDur(r.durationSec)+'</p>'+
+    '<button class="btn" style="margin-top:16px" data-act="to-stages">Bosqichlar ro\u2018yxatiga qaytish</button></div>';
+  if(c.showReview){
+    html+='<div class="card"><div class="card-h"><h2>Javoblar tahlili</h2></div>';
+    r.detail.forEach(function(d,i){
+      html+='<div style="margin-bottom:18px"><div class="q-num">Savol '+(i+1)+'</div>'+
+        '<div style="font-size:15.5px;font-weight:700;margin:6px 0 10px">'+esc(d.text)+'</div>';
+      d.options.forEach(function(o,oi){
+        var cl=oi===d.correct?' ok':(oi===d.chosen?' bad':'');
+        var mk=oi===d.correct?' \u2713':(oi===d.chosen?' \u2715':'');
+        html+='<div class="opt'+cl+'" style="cursor:default"><span class="key">'+String.fromCharCode(65+oi)+'</span><span>'+esc(o)+mk+'</span></div>';
+      });
+      if(d.expl) html+='<div class="expl"><b>Izoh</b>'+esc(d.expl)+'</div>';
+      html+='</div>';
+    });
+    html+='</div>';
+  }
+  return html+'</div>';
+}
+/* ====== ADMIN ====== */
+function viewLogin(){
+  return '<div class="enter"><div class="card"><div class="card-h"><h2>Admin panel</h2></div>'+
+    '<div class="field"><label for="ad-email">Email</label><input id="ad-email" type="email" autocomplete="username" placeholder="admin@example.com"></div>'+
+    '<div class="field"><label for="ad-pass">Parol</label><input id="ad-pass" type="password" autocomplete="current-password" placeholder="\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022"></div>'+
+    '<button class="btn" style="width:100%" data-act="login">Kirish</button>'+
+    '<p class="hint">Admin hisobi Firebase konsolida yaratiladi: Authentication \u2192 Users \u2192 Add user.</p></div></div>';
+}
+function tabs(){
+  var t=[['rank','Reyting'],['stages','Bosqichlar'],['results','Natijalar'],['questions','Savollar'],['branches','Filiallar'],['settings','Sozlamalar']];
+  return '<div class="tabs">'+t.map(function(x){
+    return '<button class="tab'+(S.tab===x[0]?' on':'')+'" data-act="tab" data-t="'+x[0]+'">'+x[1]+'</button>';
+  }).join('')+'</div>';
+}
+
+function viewRank(){
+  var cid=activeChain(), c=S.setup.config, open=openStages();
+  var bs=branchStats(cid), ppl=people().filter(function(p){return p.chainId===cid;});
+  var brs=branchesOf(cid);
+  var totalStaff=brs.reduce(function(a,p){return a+(p.staff||0);},0);
+  var noStaff=brs.filter(function(b){return !b.staff;}).length;
+  var csel='';
+  S.setup.chains.forEach(function(x){
+    var cnt=S.results.filter(function(r){return r.chainId===x.id;}).length;
+    csel+='<option value="'+x.id+'"'+(cid===x.id?' selected':'')+'>'+esc(x.name)+(cnt?' ('+cnt+')':'')+'</option>';
+  });
+  var head='<div class="chainbar"><label for="rank-chain">Qaysi tarmoq bo\u2018yicha</label>'+
+    '<select id="rank-chain">'+csel+'</select></div>'+
+    (noStaff?'<div class="note"><b>'+noStaff+' ta filialda farmatsevtlar soni kiritilmagan.</b> Ular sovrin uchun kurashda qatnasha olmaydi \u2014 Filiallar bo\u2018limiga kirib raqamni kiriting.</div>':'');
+  var qualified=bs.filter(function(m){return m.qualified;});
+  var html=head+'<div class="kpis">'+
+    '<div class="kpi"><div class="k">Qatnashuvchilar</div><div class="v">'+ppl.length+'</div><div class="s">'+totalStaff+' xodimdan ('+pct(ppl.length,totalStaff)+'%)</div></div>'+
+    '<div class="kpi"><div class="k">Ochiq bosqichlar</div><div class="v">'+open.length+'</div><div class="s">10 tadan</div></div>'+
+    '<div class="kpi"><div class="k">Tarmoq o\u2018rtachasi</div><div class="v">'+bs.globalAvg+'%</div><div class="s">formulada ishlatiladi</div></div>'+
+    '<div class="kpi"><div class="k">Sovrinbop filial</div><div class="v">'+qualified.length+'</div><div class="s">'+c.minCoverage+'% qamrov shartini bajardi</div></div></div>';
+
+  // podium
+  if(!qualified.length){
+    html+='<div class="card"><div class="card-h"><h2>Yakuniy sovrin egalari</h2></div>'+
+      '<div class="empty"><h3>Hali hech bir filial shart bajarmadi</h3>'+
+      '<p>Sovrin uchun kurashish uchun filialning kamida '+c.minCoverage+'% farmatsevti qatnashishi kerak.</p></div></div>';
+  }
+  if(qualified.length){
+    html+='<div class="card"><div class="card-h"><h2>Yakuniy sovrin egalari</h2><span class="eyebrow">moslashtirilgan ball bo\u2018yicha</span></div><div class="podium">';
+    qualified.slice(0,3).forEach(function(m,i){
+      html+='<div class="pod p'+(i+1)+'"><div class="pod-m">'+(i+1)+'</div>'+
+        '<div class="pod-n">'+esc(m.name)+'</div>'+
+        '<div class="pod-s">'+m.adj+' ball</div>'+
+        '<div class="pod-p">'+esc((c.prizes&&c.prizes[i])||'')+'</div>'+
+        '<div class="pod-d">'+m.n+' farmatsevt \u00B7 qamrov '+m.coverage+'%</div></div>';
+    });
+    html+='</div></div>';
+  }
+
+  html+='<div class="card"><div class="card-h"><h2>Filiallar reytingi</h2>'+
+    '<button class="btn-ghost btn-sm" data-act="export-csv">CSV</button></div>'+
+    '<div class="formula">Moslashtirilgan ball = (n \u00D7 filial o\u2018rtachasi + '+c.kFactor+' \u00D7 '+bs.globalAvg+') / (n + '+c.kFactor+')<br>'+
+    '<span>n \u2014 filialda testni topshirgan farmatsevtlar soni. Kam odam topshirgan filial tarmoq o\u2018rtachasiga tortiladi, shuning uchun 2 kishilik filial 10 kishilik filialdan ustunlik ola olmaydi.</span></div>';
+  if(!ppl.length){
+    html+='<div class="empty"><h3>Hali natija yo\u2018q</h3><p>Farmatsevtlar 1-bosqichni topshirgach reyting shakllanadi.</p></div></div>';
+  }else{
+    html+='<div class="t-wrap"><table><thead><tr><th></th><th>Filial</th><th class="right">Xodim</th><th class="right">Topshirdi</th><th class="right">Qamrov</th><th class="right">Xom o\u2018rtacha</th><th>Moslashtirilgan ball</th></tr></thead><tbody>';
+    bs.forEach(function(m,i){
+      html+='<tr'+(m.qualified?'':' class="dim"')+'><td>'+(m.qualified?'<span class="rank'+(i<3?' medal':'')+'">'+(i+1)+'</span>':'<span class="rank">\u2014</span>')+'</td>'+
+        '<td style="min-width:150px;font-weight:700">'+esc(m.name)+(m.qualified?'':' <span class="tag" style="background:#FBE5E3;color:var(--red)">qamrov past</span>')+'</td>'+
+        '<td class="right num">'+(m.staff||'\u2014')+'</td>'+
+        '<td class="right num">'+m.n+'</td>'+
+        '<td class="right num">'+m.coverage+'%</td>'+
+        '<td class="right num">'+m.raw+'%</td>'+
+        '<td style="min-width:170px"><div style="display:flex;align-items:center;gap:10px">'+
+        '<div class="gauge" style="flex:1"><div class="gauge-fill '+gaugeClass(m.adj)+'" style="width:'+m.adj+'%"></div></div>'+
+        '<b class="num" style="width:44px;text-align:right">'+m.adj+'</b></div></td></tr>';
+    });
+    html+='</tbody></table></div></div>';
+  }
+
+  // top farmatsevtlar
+  html+='<div class="card"><div class="card-h"><h2>Eng yaxshi farmatsevtlar</h2><span class="eyebrow">barcha bosqichlar yig\u2018indisi</span></div>';
+  if(!ppl.length){ html+='<div class="empty"><p>Natijalar to\u2018plangach ro\u2018yxat chiqadi.</p></div>'; }
+  else{
+    var top=ppl.slice().sort(function(a,b){ return b.score-a.score || b.done-a.done || a.time-b.time; }).slice(0,15);
+    html+='<div class="t-wrap"><table><thead><tr><th></th><th>Farmatsevt</th><th>Filial</th><th class="right">Bosqich</th><th class="right">Umumiy ball</th></tr></thead><tbody>';
+    top.forEach(function(p,i){
+      html+='<tr><td><span class="rank'+(i<3?' medal':'')+'">'+(i+1)+'</span></td>'+
+        '<td style="font-weight:700">'+esc(p.first+' '+p.last)+'</td>'+
+        '<td style="color:var(--muted)">'+esc(p.branchName)+'</td>'+
+        '<td class="right num">'+p.done+' / '+p.openCount+'</td>'+
+        '<td class="right num" style="font-weight:800">'+p.score+'%</td></tr>';
+    });
+    html+='</tbody></table></div>';
+  }
+  return html+'</div>';
+}
+
+function viewStagesAdmin(){
+  var html='';
+  if(S.editS){
+    var st=S.editS;
+    html+='<div class="card"><div class="card-h"><h2>'+st.n+'-bosqich</h2></div>'+
+      '<div class="field"><label for="st-title">Bosqich nomi</label><input id="st-title" value="'+esc(st.title)+'"></div>'+
+      '<div class="stack"><button class="btn" data-act="save-stage">Saqlash</button>'+
+      '<button class="btn-ghost" data-act="cancel-stage">Bekor qilish</button></div></div>';
+    return html;
+  }
+  html+='<div class="card"><div class="card-h"><h2>Bosqichlar boshqaruvi</h2>'+
+    '<button class="btn-ghost btn-sm" data-act="open-next">Keyingi bosqichni ochish</button></div>'+
+    '<div class="note">1-bosqich hammaga ochiq. Har bir keyingi bosqichga siz ruxsat bergandan keyingina o\u2018tiladi \u2014 va faqat oldingi bosqichni tugatgan farmatsevt uchun.</div>';
+  var ppl=people();
+  html+='<div class="t-wrap"><table><thead><tr><th></th><th>Bosqich</th><th class="right">Savol</th><th class="right">Tugatgan</th><th class="right">O\u2018rtacha</th><th class="right">Ruxsat</th><th></th></tr></thead><tbody>';
+  S.setup.stages.forEach(function(st){
+    var rs=S.results.filter(function(r){return r.stageId===st.id;});
+    var uniq={}; rs.forEach(function(r){ uniq[r.branchId+'|'+norm(r.first+' '+r.last)]=r.percent; });
+    var ks=Object.keys(uniq), avg=ks.length?Math.round(ks.reduce(function(a,k){return a+uniq[k];},0)/ks.length):0;
+    html+='<tr><td class="rank">'+st.n+'</td>'+
+      '<td style="font-weight:700;min-width:170px">'+esc(st.title)+'</td>'+
+      '<td class="right num">'+stageQs(st.id).length+'</td>'+
+      '<td class="right num">'+ks.length+'</td>'+
+      '<td class="right num">'+(ks.length?avg+'%':'\u2014')+'</td>'+
+      '<td class="right"><button class="sw'+(st.open?' on':'')+'" data-act="toggle-stage" data-id="'+st.id+'" title="Ruxsat"><span></span></button></td>'+
+      '<td class="right"><button class="btn-ghost btn-sm" data-act="edit-stage" data-id="'+st.id+'">Nomi</button></td></tr>';
+  });
+  return html+'</tbody></table></div></div>';
+}
+
+function viewResults(){
+  var rs=S.results.slice().sort(function(a,b){return b.ts-a.ts;});
+  if(S.stageFilter!=='all') rs=rs.filter(function(r){return r.stageId===S.stageFilter;});
+  var sel='<option value="all">Barcha bosqichlar</option>';
+  S.setup.stages.forEach(function(st){ sel+='<option value="'+st.id+'"'+(S.stageFilter===st.id?' selected':'')+'>'+st.n+'. '+esc(st.title)+'</option>'; });
+  var html='<div class="card"><div class="card-h"><h2>Natijalar</h2><div class="stack">'+
+    '<select id="f-stage" data-act="filter-stage" style="width:auto;min-width:190px;padding:7px 12px;font-size:13.5px">'+sel+'</select>'+
+    '<button class="btn-ghost btn-sm" data-act="export-csv">CSV</button>'+
+    '<button class="btn-danger btn-sm" data-act="clear-results">Tozalash</button></div></div>';
+  if(!rs.length) return html+'<div class="empty"><h3>Natijalar yo\u2018q</h3><p>Bu bosqich bo\u2018yicha hali hech kim topshirmagan.</p></div></div>';
+  html+='<div class="t-wrap"><table><thead><tr><th>Sana</th><th>Bosqich</th><th>Farmatsevt</th><th>Filial</th><th class="right">Ball</th><th class="right">Vaqt</th><th></th></tr></thead><tbody>';
+  rs.forEach(function(r){
+    html+='<tr><td class="num nowrap" style="color:var(--muted)">'+fmtDate(r.ts)+'</td>'+
+      '<td class="num">'+r.stageN+'</td>'+
+      '<td style="font-weight:700">'+esc(r.first+' '+r.last)+'</td>'+
+      '<td style="color:var(--muted)">'+esc(r.branchName)+'</td>'+
+      '<td class="right num" style="font-weight:800">'+r.percent+'%</td>'+
+      '<td class="right num" style="color:var(--muted)">'+fmtDur(r.durationSec)+'</td>'+
+      '<td class="right"><button class="btn-danger btn-sm" data-act="del-result" data-id="'+r.id+'">\u2715</button></td></tr>';
+  });
+  return html+'</tbody></table></div></div>';
+}
+
+function viewQuestions(){
+  var html='';
+  if(S.editQ){
+    var q=S.editQ, o='';
+    q.options.forEach(function(x,i){
+      o+='<div style="display:flex;gap:9px;align-items:center;margin-bottom:9px">'+
+        '<input type="radio" name="correct"'+(q.correct===i?' checked':'')+' style="width:auto;flex:0 0 auto" data-act="set-correct" data-i="'+i+'">'+
+        '<input class="q-opt" data-i="'+i+'" value="'+esc(x)+'" placeholder="Variant '+String.fromCharCode(65+i)+'">'+
+        (q.options.length>2?'<button class="btn-danger btn-sm" data-act="rm-opt" data-i="'+i+'">\u2715</button>':'')+'</div>';
+    });
+    var ss='';
+    S.setup.stages.forEach(function(st){ ss+='<option value="'+st.id+'"'+(q.stage===st.id?' selected':'')+'>'+st.n+'. '+esc(st.title)+'</option>'; });
+    html+='<div class="card"><div class="card-h"><h2>'+(q.id?'Savolni tahrirlash':'Yangi savol')+'</h2></div>'+
+      '<div class="field"><label for="q-stage">Bosqich</label><select id="q-stage">'+ss+'</select></div>'+
+      '<div class="field"><label for="q-text">Savol matni</label><textarea id="q-text" rows="2">'+esc(q.text)+'</textarea></div>'+
+      '<div class="field"><label for="q-cat">Mavzu (ixtiyoriy)</label><input id="q-cat" value="'+esc(q.cat||'')+'"></div>'+
+      '<div class="field"><label>Javoblar \u2014 to\u2018g\u2018risini belgilang</label>'+o+
+      (q.options.length<6?'<button class="btn-ghost btn-sm" data-act="add-opt">+ Variant</button>':'')+'</div>'+
+      '<div class="stack"><button class="btn" data-act="save-q">Saqlash</button><button class="btn-ghost" data-act="cancel-q">Bekor</button></div></div>';
+    return html;
+  }
+  if(S.bulk){
+    var bs='';
+    S.setup.stages.forEach(function(st){ bs+='<option value="'+st.id+'">'+st.n+'. '+esc(st.title)+'</option>'; });
+    return '<div class="card"><div class="card-h"><h2>Ommaviy kiritish</h2></div>'+
+      '<div class="note">Birinchi qator \u2014 savol, keyingilari \u2014 javoblar. To\u2018g\u2018ri javob oldiga <b>*</b> qo\u2018ying. Bloklar orasida bo\u2018sh qator.</div>'+
+      '<div class="field"><label for="bulk-stage">Qaysi bosqichga</label><select id="bulk-stage">'+bs+'</select></div>'+
+      '<div class="field"><textarea id="bulk-text" rows="11" placeholder="Colic qaysi ta\u2019mda?&#10;*Malina&#10;Apelsin&#10;Gilos"></textarea></div>'+
+      '<div class="stack"><button class="btn" data-act="save-bulk">Qo\u2018shish</button><button class="btn-ghost" data-act="cancel-bulk">Bekor</button></div></div>';
+  }
+  var sel='<option value="all">Barcha bosqichlar</option>';
+  S.setup.stages.forEach(function(st){ sel+='<option value="'+st.id+'"'+(S.qStage===st.id?' selected':'')+'>'+st.n+'. '+esc(st.title)+'</option>'; });
+  var qs=S.setup.questions.filter(function(q){ return S.qStage==='all'||q.stage===S.qStage; });
+  html+='<div class="card"><div class="card-h"><h2>Savollar ('+qs.length+')</h2><div class="stack">'+
+    '<select id="qf" data-act="filter-q" style="width:auto;min-width:180px;padding:7px 12px;font-size:13.5px">'+sel+'</select>'+
+    '<button class="btn-ghost btn-sm" data-act="bulk">Ommaviy</button>'+
+    '<button class="btn btn-sm" data-act="new-q">+ Savol</button></div></div>';
+  if(!qs.length) html+='<div class="empty"><h3>Savol yo\u2018q</h3><p>Bu bosqichga savol qo\u2018shing.</p></div>';
+  else qs.forEach(function(q,i){
+    var st=stageById(q.stage);
+    html+='<div class="qrow"><div class="qrow-h"><div style="flex:1">'+
+      '<span class="tag">'+(st?st.n+'-bosqich':'\u2014')+'</span> '+(q.cat?'<span class="tag" style="background:#F3EEF9;color:var(--purple)">'+esc(q.cat)+'</span>':'')+
+      '<div class="qrow-t" style="margin-top:7px">'+esc(q.text)+'</div>'+
+      '<ul>'+q.options.map(function(x,k){return '<li'+(k===q.correct?' class="ok"':'')+'>'+esc(x)+(k===q.correct?' \u2713':'')+'</li>';}).join('')+'</ul></div>'+
+      '<div class="stack" style="flex-direction:column">'+
+      '<button class="btn-ghost btn-sm" data-act="edit-q" data-id="'+q.id+'">Tahrir</button>'+
+      '<button class="btn-danger btn-sm" data-act="del-q" data-id="'+q.id+'">\u2715</button></div></div></div>';
+  });
+  return html+'</div>';
+}
+
+function viewBranches(){
+  if(S.editP){
+    var p=S.editP, co='';
+    S.setup.chains.forEach(function(x){ co+='<option value="'+x.id+'"'+(p.chainId===x.id?' selected':'')+'>'+esc(x.name)+'</option>'; });
+    return '<div class="card"><div class="card-h"><h2>'+(p.id?'Filialni tahrirlash':'Yangi filial')+'</h2></div>'+
+      '<div class="field"><label for="p-chain">Tarmoq</label><select id="p-chain">'+co+'</select></div>'+
+      '<div class="row c2"><div class="field"><label for="p-name">Filial nomi</label><input id="p-name" value="'+esc(p.name)+'"></div>'+
+      '<div class="field"><label for="p-staff">Farmatsevtlar soni</label><input id="p-staff" type="number" min="0" value="'+(p.staff||0)+'"></div></div>'+
+      '<p class="hint" style="margin-top:-8px;margin-bottom:14px">Xodimlar soni qamrov foizini va adolatli reytingni hisoblash uchun kerak. 0 qolsa, filial sovrin uchun kurashda qatnashmaydi.</p>'+
+      '<div class="stack"><button class="btn" data-act="save-p">Saqlash</button><button class="btn-ghost" data-act="cancel-p">Bekor</button></div></div>';
+  }
+  var cid=activeChain(), brs=branchesOf(cid), bs=branchStats(cid), byId={};
+  bs.forEach(function(m){byId[m.id]=m;});
+  var csel='';
+  S.setup.chains.forEach(function(x){ csel+='<option value="'+x.id+'"'+(cid===x.id?' selected':'')+'>'+esc(x.name)+' ('+branchesOf(x.id).length+')</option>'; });
+  var html='<div class="chainbar"><label for="rank-chain">Tarmoq</label><select id="rank-chain">'+csel+'</select></div>';
+
+  if(S.mergeFrom){
+    var from=branchById(S.mergeFrom), o2='';
+    branchesOf(cid).forEach(function(b){ if(b.id!==S.mergeFrom) o2+='<option value="'+b.id+'">'+esc(b.name)+'</option>'; });
+    html+='<div class="card"><div class="card-h"><h2>Filiallarni birlashtirish</h2></div>'+
+      '<p style="margin-top:0"><b>'+esc(from?from.name:'')+'</b> filialining barcha natijalari tanlangan filialga ko\u2018chiriladi, o\u2018zi esa o\u2018chiriladi.</p>'+
+      (o2?'<div class="field"><label for="merge-to">Qaysi filialga</label><select id="merge-to">'+o2+'</select></div>'+
+      '<div class="stack"><button class="btn" data-act="do-merge">Birlashtirish</button><button class="btn-ghost" data-act="cancel-merge">Bekor</button></div>'
+      :'<p class="hint">Bu tarmoqda boshqa filial yo\u2018q.</p><button class="btn-ghost" data-act="cancel-merge">Yopish</button>')+'</div>';
+  }
+
+  var total=brs.reduce(function(a,p){return a+(p.staff||0);},0);
+  html+='<div class="card"><div class="card-h"><h2>Filiallar ('+brs.length+' \u00B7 '+total+' xodim)</h2>'+
+    '<button class="btn btn-sm" data-act="new-p">+ Filial</button></div>';
+  if(!brs.length){
+    html+='<div class="empty"><h3>Bu tarmoqda filial yo\u2018q</h3><p>Farmatsevtlar kirganda filiallar avtomatik qo\u2018shiladi, yoki qo\u2018lda kiritishingiz mumkin.</p></div>';
+  }else{
+    html+='<div class="t-wrap"><table><thead><tr><th>Filial</th><th class="right">Xodim</th><th class="right">Qatnashdi</th><th class="right">Qamrov</th><th></th></tr></thead><tbody>';
+    brs.forEach(function(b){
+      var m=byId[b.id]||{n:0,coverage:0};
+      html+='<tr'+(b.staff?'':' class="dim"')+'><td style="font-weight:700">'+esc(b.name)+
+        (b.staff?'':' <span class="tag" style="background:#FBE5E3;color:var(--red)">xodim soni yo\u2018q</span>')+'</td>'+
+        '<td class="right num">'+(b.staff||'\u2014')+'</td><td class="right num">'+m.n+'</td>'+
+        '<td class="right num">'+(b.staff?m.coverage+'%':'\u2014')+'</td>'+
+        '<td class="right"><div class="stack" style="justify-content:flex-end">'+
+        '<button class="btn-ghost btn-sm" data-act="edit-p" data-id="'+b.id+'">Tahrir</button>'+
+        '<button class="btn-ghost btn-sm" data-act="merge-p" data-id="'+b.id+'">Birlashtirish</button>'+
+        '<button class="btn-danger btn-sm" data-act="del-p" data-id="'+b.id+'">\u2715</button></div></td></tr>';
+    });
+    html+='</tbody></table></div>';
+  }
+  html+='</div>';
+
+  // tarmoqlar
+  html+='<div class="card"><div class="card-h"><h2>Dorixona tarmoqlari</h2>'+
+    '<button class="btn-ghost btn-sm" data-act="new-chain">+ Tarmoq</button></div>'+
+    '<div class="t-wrap"><table><thead><tr><th>Nomi</th><th class="right">Filial</th><th class="right">Natija</th><th></th></tr></thead><tbody>';
+  S.setup.chains.forEach(function(x){
+    var rn=S.results.filter(function(r){return r.chainId===x.id;}).length;
+    html+='<tr><td style="font-weight:700">'+esc(x.name)+'</td>'+
+      '<td class="right num">'+branchesOf(x.id).length+'</td><td class="right num">'+rn+'</td>'+
+      '<td class="right"><div class="stack" style="justify-content:flex-end">'+
+      '<button class="btn-ghost btn-sm" data-act="ren-chain" data-id="'+x.id+'">Nomi</button>'+
+      '<button class="btn-danger btn-sm" data-act="del-chain" data-id="'+x.id+'">\u2715</button></div></td></tr>';
+  });
+  return html+'</tbody></table></div></div>';
+}
+
+function viewSettings(){
+  var c=S.setup.config;
+  return '<div class="card"><div class="card-h"><h2>Umumiy sozlamalar</h2></div>'+
+    '<div class="row c2"><div class="field"><label for="s-org">Tashkilot</label><input id="s-org" value="'+esc(c.org)+'"></div>'+
+    '<div class="field"><label for="s-name">Konkurs nomi</label><input id="s-name" value="'+esc(c.testName)+'"></div></div>'+
+    '<div class="field"><label for="s-logo">Logotip havolasi</label><input id="s-logo" value="'+esc(c.logoUrl||'')+'" placeholder="https://... .png"></div>'+
+    '<div class="row c2"><div class="field"><label for="s-time">Vaqt chegarasi (daq, 0=yo\u2018q)</label><input id="s-time" type="number" min="0" value="'+c.timeLimitMin+'"></div>'+
+    '<div class="field"><label for="s-pass">O\u2018tish chegarasi %</label><input id="s-pass" type="number" min="0" max="100" value="'+c.passPercent+'"></div></div>'+
+    '<p class="hint">Admin login/parolni Firebase Console \u2192 Authentication \u2192 Users bo\u2018limidan boshqarasiz.</p>'+
+    '<div class="check"><input type="checkbox" id="s-shuffle"'+(c.shuffle?' checked':'')+'><span>Savollarni aralashtirish</span></div>'+
+    '<div class="check"><input type="checkbox" id="s-shopt"'+(c.shuffleOptions?' checked':'')+'><span>Javob variantlarini aralashtirish</span></div>'+
+    '<div class="check"><input type="checkbox" id="s-review"'+(c.showReview?' checked':'')+'><span>Test oxirida to\u2018g\u2018ri javoblarni ko\u2018rsatish</span></div>'+
+    '<button class="btn" data-act="save-settings">Saqlash</button></div>'+
+
+    '<div class="card"><div class="card-h"><h2>Adolatli hisob formulasi</h2></div>'+
+    '<div class="formula">Moslashtirilgan ball = (n \u00D7 filial o\u2018rtachasi + K \u00D7 tarmoq o\u2018rtachasi) / (n + K)</div>'+
+    '<div class="row c2"><div class="field"><label for="s-k">K \u2014 ishonch koeffitsienti</label><input id="s-k" type="number" min="0" max="20" value="'+c.kFactor+'">'+
+    '<p class="hint">Tavsiya: filiallardagi o\u2018rtacha farmatsevt soniga teng (sizda ~3). K qancha katta bo\u2018lsa, kichik filiallar shunchalik kuchli tortiladi.</p></div>'+
+    '<div class="field"><label for="s-cov">Minimal qamrov, %</label><input id="s-cov" type="number" min="0" max="100" value="'+c.minCoverage+'">'+
+    '<p class="hint">Shu foizdan kam xodimi qatnashgan filial sovrin uchun kurashmaydi.</p></div></div>'+
+    '<div class="row c3"><div class="field"><label for="s-p1">1-o\u2018rin sovrini</label><input id="s-p1" value="'+esc(c.prizes[0])+'"></div>'+
+    '<div class="field"><label for="s-p2">2-o\u2018rin</label><input id="s-p2" value="'+esc(c.prizes[1])+'"></div>'+
+    '<div class="field"><label for="s-p3">3-o\u2018rin</label><input id="s-p3" value="'+esc(c.prizes[2])+'"></div></div>'+
+    '<button class="btn" data-act="save-fair">Formulani saqlash</button></div>'+
+
+    '<div class="card"><div class="card-h"><h2>Ma\u2019lumotlar</h2></div>'+
+    '<div class="note">Fayldagi asl savol banki: <b>'+DEFAULT_SETUP.questions.length+' savol, '+DEFAULT_SETUP.stages.length+' bosqich</b>. '+
+    'Hozir tizimda: <b>'+S.setup.questions.length+' savol</b>. Agar farq bo\u2018lsa, quyidagi tugmani bosing \u2014 natijalar saqlanib qoladi.</div>'+
+    '<div class="stack" style="margin-bottom:14px"><button class="btn btn-sm" data-act="refresh-bank">Savol bankini fayldan yangilash</button></div>'+
+    '<div class="stack"><button class="btn-ghost btn-sm" data-act="export-json">Zaxira (JSON)</button>'+
+    '<button class="btn-ghost btn-sm" data-act="export-csv">Natijalar (CSV)</button>'+
+    '<button class="btn-ghost btn-sm" data-act="import-json">Zaxiradan tiklash</button></div></div>'+
+
+    '<div class="card danger-zone"><div class="card-h"><h2>Xavfli amallar</h2></div>'+
+    '<div class="stack"><button class="btn-danger btn-sm" data-act="clear-results">Natijalarni o\u2018chirish</button>'+
+    '<button class="btn-danger btn-sm" data-act="factory">Boshlang\u2018ich holat</button></div></div>';
+}
+
+function viewAdmin(){
+  if(!S.authed) return viewLogin();
+  var b=S.tab==='rank'?viewRank():S.tab==='stages'?viewStagesAdmin():S.tab==='results'?viewResults():
+        S.tab==='questions'?viewQuestions():S.tab==='branches'?viewBranches():viewSettings();
+  return tabs()+b;
+}
+
+/* ====== RENDER ====== */
+function render(){
+  if(!S.ready){ app.innerHTML='<div class="empty" style="padding-top:70px"><p>Yuklanmoqda\u2026</p></div>'; return; }
+  var b=S.view==='admin'?viewAdmin():S.view==='test'?viewTest():S.view==='done'?viewDone():
+        (S.me?viewStages():viewEnter());
+  app.innerHTML=header()+b;
+  if(S.view==='test'&&S.setup.config.timeLimitMin>0) tick();
+}
+function tick(){
+  var el=document.getElementById('timer'); if(!el||!S.session) return;
+  var left=Math.max(0,S.session.endAt-Date.now()), m=Math.floor(left/60000), s=Math.floor((left%60000)/1000);
+  el.textContent=m+':'+(s<10?'0':'')+s;
+  el.style.color=left<60000?'var(--red)':'var(--muted)';
+  if(left<=0) finish(true);
+}
+
+/* ====== AMALLAR ====== */
+function startStage(sid){
+  var st=stageById(sid), c=S.setup.config, qs=stageQs(sid);
+  if(!qs.length){ toast('Bu bosqichda savol yo\u2018q'); return; }
+  if(c.shuffle) qs=shuffle(qs);
+  qs=qs.map(function(q){
+    if(!c.shuffleOptions) return {id:q.id,text:q.text,expl:q.expl,options:q.options.slice(),correct:q.correct};
+    var pr=shuffle(q.options.map(function(o,i){return {o:o,i:i};}));
+    return {id:q.id,text:q.text,expl:q.expl,options:pr.map(function(p){return p.o;}),correct:pr.map(function(p){return p.i;}).indexOf(q.correct)};
+  });
+  S.session={stageId:sid,stageN:st.n,stageTitle:st.title,questions:qs,answers:new Array(qs.length).fill(null),
+    idx:0,startedAt:Date.now(),endAt:Date.now()+(c.timeLimitMin>0?c.timeLimitMin*60000:0)};
+  S.view='test'; render(); window.scrollTo(0,0);
+  if(c.timeLimitMin>0){ clearInterval(timerId); timerId=setInterval(tick,1000); }
+}
+function finish(auto){
+  var s=S.session; if(!s) return;
+  if(!auto){
+    var un=s.answers.filter(function(a){return a==null;}).length;
+    if(un>0&&!confirm(un+' ta savol javobsiz. Baribir yakunlaysizmi?')) return;
+  }
+  clearInterval(timerId); timerId=null;
+  var score=0,detail=[];
+  s.questions.forEach(function(q,i){
+    if(s.answers[i]===q.correct) score++;
+    detail.push({text:q.text,expl:q.expl,options:q.options,correct:q.correct,chosen:s.answers[i]});
+  });
+  var r={ts:Date.now(),stageId:s.stageId,stageN:s.stageN,
+    chainId:S.me.chainId,chainName:S.me.chainName,branchId:S.me.branchId,branchName:S.me.branchName,first:S.me.first,last:S.me.last,
+    score:score,total:s.questions.length,percent:pct(score,s.questions.length),
+    durationSec:Math.round((Date.now()-s.startedAt)/1000),detail:detail};
+  S.review=r; S.session=null; S.view='done';
+  render(); window.scrollTo(0,0);
+  addResultDoc(r).then(function(saved){ S.results.push(saved); }).catch(function(){ toast('Natija saqlanmadi — internetni tekshiring'); });
+}
+function csv(){
+  var rows=[['Sana','Bosqich','Tarmoq','Filial','Ism','Familiya','Ball','Jami','Foiz','Vaqt (s)']];
+  S.results.slice().sort(function(a,b){return b.ts-a.ts;}).forEach(function(r){
+    rows.push([fmtDate(r.ts),r.stageN,r.chainName||'',r.branchName,r.first,r.last,r.score,r.total,r.percent,r.durationSec]);
+  });
+  return rows.map(function(row){ return row.map(function(c){ c=String(c); return /[";\n]/.test(c)?'"'+c.replace(/"/g,'""')+'"':c; }).join(';'); }).join('\n');
+}
+function syncQ(){
+  if(!S.editQ) return;
+  var t=document.getElementById('q-text'),c=document.getElementById('q-cat'),s=document.getElementById('q-stage');
+  if(t) S.editQ.text=t.value; if(c) S.editQ.cat=c.value; if(s) S.editQ.stage=s.value;
+  var ins=app.querySelectorAll('.q-opt'),i;
+  for(i=0;i<ins.length;i++) S.editQ.options[parseInt(ins[i].getAttribute('data-i'),10)]=ins[i].value;
+}
+
+app.addEventListener('change',function(e){
+  var el=e.target;
+  if(el.id==='f-chain'){ S.enterChain=el.value; S.enterBranch=''; S.enterBranchId=''; S.enterOther=false; render(); return; }
+  if(el.id==='f-branch-sel'){
+    if(el.value==='__other'){ S.enterOther=true; S.enterBranchId=''; render(); }
+    else S.enterBranchId=el.value;
+    return;
+  }
+  if(el.id==='rank-chain'){ S.chain=el.value; render(); return; }
+  if(el.id==='f-stage'){ S.stageFilter=el.value; render(); }
+  if(el.id==='qf'){ S.qStage=el.value; render(); }
+});
+
+app.addEventListener('click',function(e){
+  var el=e.target.closest('[data-act]'); if(!el) return;
+  var a=el.getAttribute('data-act'), id=el.getAttribute('data-id');
+
+  if(a==='go-admin'){ S.view='admin'; render(); window.scrollTo(0,0); return; }
+  if(a==='exit-admin'){ S.view='enter'; S.editQ=S.editP=S.editS=null; S.bulk=false; render(); return; }
+  if(a==='admin-logout'){ auth.signOut(); S.view='enter'; render(); return; }
+  if(a==='logout'){ S.me=null; S.view='enter'; render(); return; }
+  if(a==='use-list'){ e.preventDefault(); S.enterOther=false; render(); return; }
+  if(a==='login'){
+    var em=document.getElementById('ad-email').value.trim(), pw=document.getElementById('ad-pass').value;
+    if(!em||!pw){ toast('Email va parolni kiriting'); return; }
+    auth.signInWithEmailAndPassword(em,pw).catch(function(err){ toast('Kirish xato: '+err.message); });
+    return;
+  }
+  if(a==='tab'){ S.tab=el.getAttribute('data-t'); S.editQ=S.editP=S.editS=null; S.bulk=false; render(); window.scrollTo(0,0); return; }
+
+  if(a==='login-me'){
+    var cid=document.getElementById('f-chain').value,
+        sel=document.getElementById('f-branch-sel'),
+        inp=document.getElementById('f-branch'),
+        f=document.getElementById('f-first').value.trim(),
+        l=document.getElementById('f-last').value.trim();
+    if(!cid){ toast('Dorixona tarmog\u2018ini tanlang'); return; }
+    var br=null;
+    if(sel){
+      if(!sel.value){ toast('Filialni tanlang'); return; }
+      br=branchById(sel.value);
+      if(!br){ toast('Filial topilmadi'); return; }
+    }else{
+      var bn=inp?inp.value.trim():'';
+      if(!bn){ toast('Filial nomini yozing'); return; }
+      br=findOrCreateBranch(cid,bn);
+    }
+    if(!f||!l){ toast('Ism va familiyani yozing'); return; }
+    var ch=chainById(cid);
+    S.me={chainId:cid,chainName:ch?ch.name:'',branchId:br.id,branchName:br.name,first:f,last:l};
+    S.enterChain=cid; S.enterBranch=br.name; S.enterBranchId=br.id;
+    render(); window.scrollTo(0,0); return;
+  }
+  if(a==='start-stage'){ startStage(id); return; }
+  if(a==='pick'){ S.session.answers[S.session.idx]=parseInt(el.getAttribute('data-i'),10); render(); return; }
+  if(a==='next'){ if(S.session.idx<S.session.questions.length-1){S.session.idx++;render();window.scrollTo(0,0);} return; }
+  if(a==='prev'){ if(S.session.idx>0){S.session.idx--;render();window.scrollTo(0,0);} return; }
+  if(a==='finish'){ finish(false); return; }
+  if(a==='to-stages'){ S.review=null; S.view='enter'; render(); window.scrollTo(0,0); return; }
+
+  if(a==='toggle-stage'){
+    var st=stageById(id); st.open=!st.open; saveSetup(); render();
+    toast(st.n+'-bosqich '+(st.open?'ochildi':'yopildi')); return;
+  }
+  if(a==='open-next'){
+    var nx=null,i;
+    for(i=0;i<S.setup.stages.length;i++) if(!S.setup.stages[i].open){ nx=S.setup.stages[i]; break; }
+    if(!nx){ toast('Barcha bosqichlar ochiq'); return; }
+    nx.open=true; saveSetup(); render(); toast(nx.n+'-bosqichga ruxsat berildi'); return;
+  }
+  if(a==='edit-stage'){ var s2=stageById(id); S.editS={id:s2.id,n:s2.n,title:s2.title}; render(); return; }
+  if(a==='save-stage'){
+    var t2=document.getElementById('st-title').value.trim();
+    if(t2) stageById(S.editS.id).title=t2;
+    S.editS=null; saveSetup(); render(); toast('Saqlandi'); return;
+  }
+  if(a==='cancel-stage'){ S.editS=null; render(); return; }
+
+  if(a==='new-q'){ S.editQ={id:'',stage:(S.qStage!=='all'?S.qStage:'s1'),cat:'',text:'',options:['','','',''],correct:0}; render(); return; }
+  if(a==='edit-q'){
+    S.setup.questions.forEach(function(q){ if(q.id===id) S.editQ={id:q.id,stage:q.stage,cat:q.cat||'',text:q.text,options:q.options.slice(),correct:q.correct}; });
+    render(); window.scrollTo(0,0); return;
+  }
+  if(a==='del-q'){
+    if(!confirm('Savol o\u2018chirilsinmi?')) return;
+    S.setup.questions=S.setup.questions.filter(function(q){return q.id!==id;});
+    saveSetup(); render(); return;
+  }
+  if(a==='add-opt'){ syncQ(); S.editQ.options.push(''); render(); return; }
+  if(a==='rm-opt'){
+    syncQ(); var i2=parseInt(el.getAttribute('data-i'),10);
+    S.editQ.options.splice(i2,1);
+    if(S.editQ.correct>=S.editQ.options.length) S.editQ.correct=0; else if(S.editQ.correct>i2) S.editQ.correct--;
+    render(); return;
+  }
+  if(a==='set-correct'){ S.editQ.correct=parseInt(el.getAttribute('data-i'),10); return; }
+  if(a==='save-q'){
+    syncQ(); var q=S.editQ, cl=q.options.map(function(x){return x.trim();});
+    if(!q.text.trim()){ toast('Savol matnini yozing'); return; }
+    if(cl.filter(Boolean).length<2){ toast('Kamida 2 ta javob kerak'); return; }
+    if(!cl[q.correct]){ toast('To\u2018g\u2018ri javob bo\u2018sh'); return; }
+    var kept=[],nc=0;
+    cl.forEach(function(x,i){ if(x){ if(i===q.correct) nc=kept.length; kept.push(x); } });
+    if(q.id) S.setup.questions.forEach(function(x){ if(x.id===q.id){x.text=q.text.trim();x.cat=q.cat.trim();x.stage=q.stage;x.options=kept;x.correct=nc;} });
+    else S.setup.questions.push({id:uid(),stage:q.stage,cat:q.cat.trim(),text:q.text.trim(),options:kept,correct:nc});
+    S.editQ=null; saveSetup(); render(); toast('Saqlandi'); return;
+  }
+  if(a==='cancel-q'){ S.editQ=null; render(); return; }
+  if(a==='bulk'){ S.bulk=true; render(); return; }
+  if(a==='cancel-bulk'){ S.bulk=false; render(); return; }
+  if(a==='save-bulk'){
+    var sid=document.getElementById('bulk-stage').value, n=0;
+    document.getElementById('bulk-text').value.split(/\n\s*\n/).forEach(function(bk){
+      var ls=bk.split('\n').map(function(x){return x.trim();}).filter(Boolean);
+      if(ls.length<3) return;
+      var ops=[],cor=-1;
+      ls.slice(1).forEach(function(x){ if(x.charAt(0)==='*'){cor=ops.length;ops.push(x.slice(1).trim());} else ops.push(x); });
+      if(ops.length<2||cor<0) return;
+      S.setup.questions.push({id:uid(),stage:sid,cat:'',text:ls[0],options:ops,correct:cor}); n++;
+    });
+    if(!n){ toast('Format tanilmadi'); return; }
+    S.bulk=false; saveSetup(); render(); toast(n+' ta savol qo\u2018shildi'); return;
+  }
+
+  if(a==='new-p'){ S.editP={id:'',chainId:activeChain(),name:'',staff:0}; render(); return; }
+  if(a==='edit-p'){ S.setup.branches.forEach(function(p){ if(p.id===id) S.editP={id:p.id,chainId:p.chainId,name:p.name,staff:p.staff||0}; }); render(); window.scrollTo(0,0); return; }
+  if(a==='del-p'){
+    if(!confirm('Filial o\u2018chirilsinmi?')) return;
+    S.setup.branches=S.setup.branches.filter(function(p){return p.id!==id;});
+    saveSetup(); render(); return;
+  }
+  if(a==='save-p'){
+    var nm=document.getElementById('p-name').value.trim(), sf=parseInt(document.getElementById('p-staff').value,10)||0;
+    if(!nm){ toast('Nomini yozing'); return; }
+    var pc=document.getElementById('p-chain').value;
+    if(S.editP.id) S.setup.branches.forEach(function(p){ if(p.id===S.editP.id){p.name=nm;p.staff=sf;p.chainId=pc;} });
+    else S.setup.branches.push({id:uid(),chainId:pc,name:nm,staff:sf});
+    S.editP=null; saveSetup(); render(); toast('Saqlandi'); return;
+  }
+  if(a==='cancel-p'){ S.editP=null; render(); return; }
+  if(a==='merge-p'){ S.mergeFrom=id; render(); window.scrollTo(0,0); return; }
+  if(a==='cancel-merge'){ S.mergeFrom=null; render(); return; }
+  if(a==='do-merge'){
+    var to=document.getElementById('merge-to').value, tb=branchById(to);
+    var from=S.mergeFrom;
+    var affected=S.results.filter(function(r){ return r.branchId===from; });
+    var ids=affected.map(function(r){ return r.id; });
+    S.setup.branches=S.setup.branches.filter(function(b){return b.id!==from;});
+    S.mergeFrom=null; saveSetup();
+    batchUpdateResults(ids,{branchId:to,branchName:tb.name}).then(function(){
+      S.results.forEach(function(r){ if(r.branchId===from){ r.branchId=to; r.branchName=tb.name; } });
+      render(); toast('Filiallar birlashtirildi');
+    });
+    return;
+  }
+  if(a==='new-chain'){
+    var nn=prompt('Yangi tarmoq nomi:'); if(!nn||!nn.trim()) return;
+    S.setup.chains.push({id:uid(),name:nn.trim()}); saveSetup(); render(); return;
+  }
+  if(a==='ren-chain'){
+    var ch=chainById(id); if(!ch) return;
+    var nv=prompt('Tarmoq nomi:',ch.name); if(!nv||!nv.trim()) return;
+    ch.name=nv.trim(); saveSetup();
+    var affected=S.results.filter(function(r){ return r.chainId===id; });
+    var ids=affected.map(function(r){ return r.id; });
+    batchUpdateResults(ids,{chainName:ch.name}).then(function(){
+      S.results.forEach(function(r){ if(r.chainId===id) r.chainName=ch.name; });
+      render();
+    });
+    return;
+  }
+  if(a==='del-chain'){
+    if(branchesOf(id).length){ toast('Avval bu tarmoq filiallarini o\u2018chiring'); return; }
+    if(!confirm('Tarmoq o\u2018chirilsinmi?')) return;
+    S.setup.chains=S.setup.chains.filter(function(x){return x.id!==id;});
+    saveSetup(); render(); return;
+  }
+
+  if(a==='save-settings'){
+    var c=S.setup.config;
+    c.org=document.getElementById('s-org').value.trim()||'Homeocan';
+    c.testName=document.getElementById('s-name').value.trim()||'Bilim marafoni';
+    c.logoUrl=document.getElementById('s-logo').value.trim();
+    c.timeLimitMin=Math.max(0,parseInt(document.getElementById('s-time').value,10)||0);
+    c.passPercent=Math.min(100,Math.max(0,parseInt(document.getElementById('s-pass').value,10)||0));
+    c.shuffle=document.getElementById('s-shuffle').checked;
+    c.shuffleOptions=document.getElementById('s-shopt').checked;
+    c.showReview=document.getElementById('s-review').checked;
+    saveSetup(); render(); toast('Sozlamalar saqlandi'); return;
+  }
+  if(a==='save-fair'){
+    var c2=S.setup.config;
+    c2.kFactor=Math.max(0,parseInt(document.getElementById('s-k').value,10)||0);
+    c2.minCoverage=Math.min(100,Math.max(0,parseInt(document.getElementById('s-cov').value,10)||0));
+    c2.prizes=[document.getElementById('s-p1').value,document.getElementById('s-p2').value,document.getElementById('s-p3').value];
+    saveSetup(); render(); toast('Formula saqlandi'); return;
+  }
+  if(a==='refresh-bank'){
+    if(!confirm('Savollar va bosqichlar fayldagi asl holatga qaytariladi. Natijalar saqlanib qoladi. Davom etilsinmi?')) return;
+    refreshBank(); render(); toast(S.setup.questions.length+' savol yuklandi'); return;
+  }
+  if(a==='export-csv'){ if(!S.results.length){toast('Natijalar yo\u2018q');return;} download('kids09-natijalar.csv',csv()); return; }
+  if(a==='export-json'){ download('kids09-zaxira.json',JSON.stringify({setup:S.setup,results:S.results},null,2),'application/json'); return; }
+  if(a==='import-json'){
+    var raw=prompt('Zaxira JSON matnini joylashtiring:'); if(!raw) return;
+    try{ var d=JSON.parse(raw);
+      if(d.setup&&d.setup.config&&d.setup.stages){
+        S.setup=d.setup; saveSetup();
+        clearAllResults().then(function(){ return bulkAddResults(d.results||[]); })
+          .then(function(){ return loadResults(); })
+          .then(function(list){ S.results=list; render(); toast('Tiklandi'); });
+      }else toast('Tuzilish mos emas');
+    }catch(x){ toast('JSON o\u2018qilmadi'); }
+    return;
+  }
+  if(a==='del-result'){
+    if(!confirm('O\u2018chirilsinmi?')) return;
+    deleteResultDoc(id).then(function(){
+      S.results=S.results.filter(function(r){return r.id!==id;}); render();
+    }).catch(function(){ toast('O\u2018chirib bo\u2018lmadi'); });
+    return;
+  }
+  if(a==='clear-results'){
+    if(!confirm('BARCHA natijalar o\u2018chiriladi. Davom etilsinmi?')) return;
+    clearAllResults().then(function(){ S.results=[]; render(); toast('Tozalandi'); });
+    return;
+  }
+  if(a==='factory'){
+    if(!confirm('Hammasi boshlang\u2018ich holatga qaytariladi. Davom etilsinmi?')) return;
+    S.setup=JSON.parse(JSON.stringify(DEFAULT_SETUP)); S.me=null;
+    saveSetup(); clearAllResults().then(function(){ S.results=[]; render(); });
+    return;
+  }
+});
+app.addEventListener('keydown',function(e){
+  if(e.key!=='Enter') return;
+  if(!S.me&&S.view==='enter'&&e.target.id&&e.target.id.indexOf('f-')===0){ e.preventDefault(); app.querySelector('[data-act="login-me"]').click(); }
+});
+
+Promise.all([sGet(SETUP_KEY),loadResults()]).then(function(v){
+  var su=v[0];
+  if(su&&su.config&&su.stages&&su.questions){
+    S.setup=su;
+    for(var k in DEFAULT_SETUP.config) if(S.setup.config[k]===undefined) S.setup.config[k]=DEFAULT_SETUP.config[k];
+    if(!Array.isArray(S.setup.chains)||!S.setup.chains.length) S.setup.chains=DEFAULT_SETUP.chains.slice();
+    if(!Array.isArray(S.setup.branches)) S.setup.branches=[];
+    if(S.setup.ver!==BANK_VER){
+      refreshBank();
+      setTimeout(function(){ toast('Savol banki yangilandi: '+S.setup.questions.length+' savol, '+S.setup.stages.length+' bosqich'); },800);
+    }
+  }else{
+    S.setup=JSON.parse(JSON.stringify(DEFAULT_SETUP)); sSet(SETUP_KEY,S.setup);
+  }
+  S.results=v[1];
+  S.ready=true; render();
+}).catch(function(){ S.setup=JSON.parse(JSON.stringify(DEFAULT_SETUP)); S.results=[]; S.ready=true; render(); });
+
+auth.onAuthStateChanged(function(u){
+  S.authed=!!u;
+  if(S.ready) render();
+});
+
+})();
+</script>
