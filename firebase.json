@@ -3,6 +3,8 @@
     "public": "public",
     "ignore": ["firebase.json", "**/.*"],
     "rewrites": [
+      { "source": "/bilim-marafoni", "destination": "/bilim-marafoni/index.html" },
+      { "source": "/bilim-marafoni/**", "destination": "/bilim-marafoni/index.html" },
       { "source": "**", "destination": "/index.html" }
     ]
   },
