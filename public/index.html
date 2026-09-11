@@ -99,9 +99,12 @@ a.cart-btn{background:var(--blue);color:#fff;padding:9px 17px;display:inline-fle
 .hero-facts b{color:var(--blue)}
 /* signature: quti devori */
 .boxwall{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding-bottom:40px}
-.boxwall a{position:relative;aspect-ratio:3/4;border-radius:16px;background:var(--c);display:flex;flex-direction:column;justify-content:space-between;padding:12px 11px;color:#fff;overflow:hidden;box-shadow:0 6px 16px rgba(16,44,84,.14);transition:transform .18s ease,box-shadow .18s ease}
+.boxwall a{position:relative;aspect-ratio:3/4;border-radius:16px;background:var(--c);display:flex;flex-direction:column;justify-content:flex-end;padding:12px 11px;color:#fff;overflow:hidden;box-shadow:0 6px 16px rgba(16,44,84,.14);transition:transform .18s ease,box-shadow .18s ease}
 .boxwall a:hover{transform:translateY(-5px);box-shadow:0 14px 26px rgba(16,44,84,.2);text-decoration:none}
+.boxwall a img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;z-index:0}
+.boxwall a::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.72) 100%);z-index:1}
 .boxwall .bw-09{font-family:var(--display);font-size:26px;font-weight:600;line-height:1;opacity:.95}
+.boxwall .bw-txt{position:relative;z-index:2}
 .boxwall .bw-n{font-family:var(--display);font-size:15px;font-weight:600;line-height:1.15}
 .boxwall .bw-s{font-size:11px;font-weight:700;opacity:.88;line-height:1.3}
 @media(max-width:520px){.boxwall{grid-template-columns:repeat(2,1fr)}}
@@ -110,8 +113,9 @@ a.cart-btn{background:var(--blue);color:#fff;padding:9px 17px;display:inline-fle
 .pcard{background:#fff;border:1px solid var(--line);border-top:9px solid var(--c);border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:10px;box-shadow:0 4px 18px rgba(16,44,84,.05);transition:.18s ease}
 .pcard:hover{transform:translateY(-4px);box-shadow:0 14px 28px rgba(16,44,84,.11)}
 .pcard h3{font-size:20px;color:var(--ct,var(--c))}
-.pshot{height:140px;border-radius:14px;background:color-mix(in srgb,var(--c) 12%,#fff);display:grid;place-items:center;overflow:hidden;margin-bottom:2px}
-.pshot img{height:100%;width:100%;object-fit:contain;mix-blend-mode:multiply}
+.pshot{position:relative;height:140px;border-radius:14px;background:color-mix(in srgb,var(--c) 12%,#fff);overflow:hidden;margin-bottom:2px}
+.pshot img{position:absolute;inset:0;height:100%;width:100%;object-fit:contain;mix-blend-mode:multiply}
+.pshot .ph{position:absolute;inset:0;display:grid;place-items:center}
 .pshot .ph{font-family:var(--display);font-size:34px;color:var(--ct,var(--c));opacity:.55}
 .phero-grid{display:grid;gap:24px;align-items:center}
 @media(min-width:900px){.phero-grid{grid-template-columns:1.25fr .75fr}}
@@ -269,7 +273,7 @@ var CONFIG = {
    ======================================================================= */
 var P = [
 {
-  slug:'sinus', img:'', src:'https://homeocan.ca/en/collections/kids-0-9/products/sinus-oral-solution-25-ml-kids-0-9', name:'Sinus', uz:'Sinusit va tumov', color:'green',
+  slug:'sinus', img:'/images/sinus.webp', src:'https://homeocan.ca/en/collections/kids-0-9/products/sinus-oral-solution-25-ml-kids-0-9', name:'Sinus', uz:'Sinusit va tumov', color:'green',
   form:'Peroral tomchilar', vol:'25 ml', flavor:'Malina', age:'0 yoshdan',
   tags:['tumov','burun bitishi','shamollash'],
   lead:'Shamollash vaqtidagi sinusit alomatlari: tumov, aksirish, koʻzdan yosh oqishi, tomoq taʼsirlanishi, bosh ogʻriqlari.',
@@ -287,7 +291,7 @@ var P = [
         ['Cuprum metallicum X8','Metall mis','Koʻz, burun va tomoqning spazmi va qichishishi']]
 },
 {
-  slug:'all-allergies', img:'', src:'https://homeocan.ca/en/collections/kids-0-9/products/all-allergies-25-ml-kids-0-9', name:'All Allergies', uz:'Allergiyaning barcha turlari', color:'yellow',
+  slug:'all-allergies', img:'/images/all-allergies.webp', src:'https://homeocan.ca/en/collections/kids-0-9/products/all-allergies-25-ml-kids-0-9', name:'All Allergies', uz:'Allergiyaning barcha turlari', color:'yellow',
   form:'Peroral tomchilar', vol:'25 ml', flavor:'Banan', age:'0 yoshdan',
   tags:['allergiya','aksirish','koʻz qichishishi'],
   lead:'Mavsumiy allergiya: aksirish, burun bitishi, tomoq va teri taʼsirlanishi, koʻzdan yosh oqishi, koʻzlarning qichishishi.',
@@ -306,7 +310,7 @@ var P = [
         ['Cuprum metallicum D8','Mis','Spazmlar, tirishish holatlari']]
 },
 {
-  slug:'pain-fever', img:'', src:'https://homeocan.ca/en/collections/kids-0-9/products/pain-fever-25-ml-kids-0-9', name:'Pain & Fever', uz:'Ogʻriq va isitma', color:'teal',
+  slug:'pain-fever', img:'/images/pain-fever.webp', src:'https://homeocan.ca/en/collections/kids-0-9/products/pain-fever-25-ml-kids-0-9', name:'Pain & Fever', uz:'Ogʻriq va isitma', color:'teal',
   form:'Peroral tomchilar', vol:'25 ml', flavor:'Gilos', age:'0 yoshdan',
   tags:['isitma','ogʻriq','tish ogʻrigʻi','bosh ogʻrigʻi'],
   lead:'Haroratni tushirishga yordam beradi, ogʻriqni yengillashtiradi: angina, bosh ogʻrigʻi, tish ogʻrigʻi, umumiy ogʻriq sezgisi.',
@@ -323,7 +327,7 @@ var P = [
         ['Thuja occidentalis 8X','Gʻarbiy tuya','Surunkali yalligʻlanish holatlari']]
 },
 {
-  slug:'colic', img:'', src:'https://homeocan.ca/en/collections/kids-0-9/products/colic-25-ml-kids-0-9', name:'Colic', uz:'Qorin sanchigʻi', color:'pink',
+  slug:'colic', img:'/images/colic.webp', src:'https://homeocan.ca/en/collections/kids-0-9/products/colic-25-ml-kids-0-9', name:'Colic', uz:'Qorin sanchigʻi', color:'pink',
   form:'Peroral tomchilar', vol:'25 ml', flavor:'Malina', age:'0 yoshdan',
   tags:['sanchiq','gaz','koʻngil aynishi'],
   lead:'Abdominal sanchiq, gaz hosil boʻlishi, koʻngil aynishi, kekirish, spazmlar, tajanglik.',
@@ -338,7 +342,7 @@ var P = [
         ['Dioscorea villosa 6X','Yovvoyi yams','Meteorizm, tarang holatda yaxshilanadigan ogʻriqlar']]
 },
 {
-  slug:'teething', img:'', src:'https://homeocan.ca/en/collections/kids-0-9/products/teething-25-ml-kids-0-9', name:'Teething', uz:'Tish chiqishi', color:'lilac',
+  slug:'teething', img:'/images/teething.webp', src:'https://homeocan.ca/en/collections/kids-0-9/products/teething-25-ml-kids-0-9', name:'Teething', uz:'Tish chiqishi', color:'lilac',
   form:'Peroral tomchilar', vol:'25 ml', flavor:'Apelsin', age:'0 yoshdan',
   tags:['tish chiqishi','milk ogʻrigʻi','injiqlik'],
   lead:'Tish chiqish paytida milk ogʻrigʻi, tajanglik, qoʻzgʻalish.',
@@ -352,7 +356,7 @@ var P = [
         ['Hypericum perforatum 5CH','Teshik barg dalachoyi','Oʻtkir nevralgik ogʻriq']]
 },
 {
-  slug:'homeocoksinum', img:'', src:'https://homeocan.ca/en/collections/kids-0-9/products/homeocoksinum-oral-solution-25-ml-kids-0-9', name:'Homeocoksinum', uz:'Gripp belgilarida', color:'red',
+  slug:'homeocoksinum', img:'/images/homeocoksinum.webp', src:'https://homeocan.ca/en/collections/kids-0-9/products/homeocoksinum-oral-solution-25-ml-kids-0-9', name:'Homeocoksinum', uz:'Gripp belgilarida', color:'red',
   form:'Peroral eritma', vol:'25 ml', flavor:'Malina', age:'0 yoshdan',
   tags:['gripp','shamollash','isitma'],
   lead:'Grippning boshlanishi: isitma, titroq, aʼzolar ogʻrigʻi, tumov, holsizlik.',
@@ -363,7 +367,7 @@ var P = [
   comp:[['Anas barbariae hepatis et cordis extractum 200C','Oʻrdak jigari va yuragi avtolizati','Grippga oʻxshash alomatlarning boshlanishi']]
 },
 {
-  slug:'flu-buster', img:'', src:'https://homeocan.ca/en/collections/kids-0-9', name:'Homeocoksinum Flu Buster', uz:'Sublingval granulalar', color:'red',
+  slug:'flu-buster', img:'/images/flu-buster.webp', src:'https://homeocan.ca/en/collections/kids-0-9', name:'Homeocoksinum Flu Buster', uz:'Sublingval granulalar', color:'red',
   form:'Sublingval granulalar', vol:'12 ta tuba', flavor:'Neytral', age:'0 yoshdan',
   tags:['gripp','shamollash','yoʻlga qulay'],
   lead:'Grippning boshlanishi: isitma, titroq, aʼzolar ogʻrigʻi, tumov, holsizlik.',
@@ -374,7 +378,7 @@ var P = [
   comp:[['Anas barbariae hepatis et cordis extractum 200C','Oʻrdak jigari va yuragi avtolizati','Grippga oʻxshash alomatlarning boshlanishi']]
 },
 {
-  slug:'calm', img:'', src:'https://homeocan.ca/en/collections/kids-0-9/products/calm-syrup-100-ml-kids-0-9', name:'Calm', uz:'Tinchlantiruvchi sirop', color:'purple',
+  slug:'calm', img:'/images/calm.webp', src:'https://homeocan.ca/en/collections/kids-0-9/products/calm-syrup-100-ml-kids-0-9', name:'Calm', uz:'Tinchlantiruvchi sirop', color:'purple',
   form:'Sirop', vol:'100 ml', flavor:'Uzum', age:'0 yoshdan',
   tags:['uyqu','bezovtalik','giperfaollik'],
   lead:'Asabiylik, bezovtalik, qoʻzgʻalish, uxlay olmaslik muammolari, giperfaollik.',
@@ -394,7 +398,7 @@ var P = [
         ['Cocculus indicus 8X','Kokkulyus indikus','Bosh aylanishi, bosh ogʻriqlari, koʻngil aynishi']]
 },
 {
-  slug:'throat-ease', img:'', src:'https://homeocan.ca/en/collections/kids-0-9/products/throat-ease-syrup-kids-0-9', name:'Throat Ease', uz:'Tomoq uchun sirop', color:'red',
+  slug:'throat-ease', img:'/images/throat-ease.webp', src:'https://homeocan.ca/en/collections/kids-0-9/products/throat-ease-syrup-kids-0-9', name:'Throat Ease', uz:'Tomoq uchun sirop', color:'red',
   form:'Sirop', vol:'100 ml', flavor:'Karamel', age:'0 yoshdan',
   tags:['tomoq ogʻrigʻi','xirillash','yutish qiyinligi'],
   lead:'Tomoq ogʻrigʻi: achishish, yutishda qiyinlik, ovoz xirillashi, taʼsirlanish, qizarish.',
@@ -411,7 +415,7 @@ var P = [
         ['Natrum sulphuricum 8X','Natriy sulfati','Shilliq qavat shishi']]
 },
 {
-  slug:'day-syrup', img:'', src:'https://homeocan.ca/en/collections/kids-0-9/products/day-syrup-kids-0-9-homeocan', name:'Day Syrup', uz:'Kunduzgi yoʻtal siropi', color:'green',
+  slug:'day-syrup', img:'/images/day-syrup.webp', src:'https://homeocan.ca/en/collections/kids-0-9/products/day-syrup-kids-0-9-homeocan', name:'Day Syrup', uz:'Kunduzgi yoʻtal siropi', color:'green',
   form:'Sirop', vol:'100 ml', flavor:'Yumshoq', age:'0 yoshdan',
   tags:['yoʻtal','shamollash','balgʻam'],
   lead:'Yoʻtal, shamollash, gripp, burun bitishi, shilimshiq, aʼzolar ogʻrigʻi, isitma.',
@@ -474,6 +478,7 @@ var TXT={yellow:{tile:'#4A3800',ink:'#8A6800'},lilac:{tile:'#382a52',ink:'#7A62A
 function ct(c){ return (TXT[c]&&TXT[c].ink)||'var(--'+c+')'; }
 function tt(c){ return (TXT[c]&&TXT[c].tile)||'#fff'; }
 function bySlug(s){ for(var i=0;i<P.length;i++) if(P[i].slug===s) return P[i]; return null; }
+function altText(p){ return 'Kids 0-9 '+p.name+' — '+p.uz+'. Bolalar uchun gomeopatik vosita qadogʻi.'; }
 function cartCount(){ var n=0; for(var k in cart) n+=cart[k]; return n; }
 function saveCart(){ store('kids09_cart',cart); }
 function toast(m){ var t=document.createElement('div'); t.className='toast'; t.textContent=m; document.body.appendChild(t); setTimeout(function(){ if(t.parentNode)t.parentNode.removeChild(t); },2400); }
@@ -493,7 +498,7 @@ document.getElementById('burger').onclick=function(){ NAV.classList.toggle('open
 /* ---------- umumiy bloklar ---------- */
 function pcard(p){
   return '<article class="pcard" style="--c:var(--'+p.color+');--ct:'+ct(p.color)+';--btxt:'+tt(p.color)+'">'+
-    '<div class="pshot">'+(p.img?'<img src="'+esc(p.img)+'" alt="'+esc(p.name)+'" loading="lazy">':'<span class="ph">0-9</span>')+'</div>'+
+    '<div class="pshot">'+(p.img?'<img src="'+esc(p.img)+'" alt="'+esc(altText(p))+'" loading="lazy">':'<span class="ph">0-9</span>')+'</div>'+
     '<div><h3>'+esc(p.name)+'</h3><p class="sub">'+esc(p.uz)+'</p></div>'+
     '<p class="desc">'+esc(p.desc)+'</p>'+
     '<div class="tagrow">'+p.tags.map(function(t){return '<span class="tag c">'+esc(t)+'</span>';}).join('')+'</div>'+
@@ -515,8 +520,9 @@ function vHome(){
    '<a class="btn-ghost" href="/qayerdan-olish">Yaqin dorixonani topish</a></div>'+
    '<div class="hero-facts"><span><b>10</b> ta mahsulot</span><span><b>DIN-HM</b> Health Canada</span><span><b>0–9</b> yosh</span><span>spirtsiz · shakarsiz</span></div></div>'+
    '<div class="boxwall">'+P.slice(0,9).map(function(p){
-      return '<a href="/mahsulot/'+p.slug+'" style="--c:var(--'+p.color+');color:'+tt(p.color)+'"><span class="bw-09">0-9</span>'+
-        '<span><span class="bw-n">'+esc(p.name)+'</span><br><span class="bw-s">'+esc(p.uz)+'</span></span></a>';
+      return '<a href="/mahsulot/'+p.slug+'" style="--c:var(--'+p.color+');color:'+tt(p.color)+'">'+
+        (p.img?'<img src="'+esc(p.img)+'" alt="'+esc(altText(p))+'" loading="lazy">':'<span class="bw-09">0-9</span>')+
+        '<span class="bw-txt"><span class="bw-n">'+esc(p.name)+'</span><br><span class="bw-s">'+esc(p.uz)+'</span></span></a>';
    }).join('')+'</div>'+
    '</div></section>'+
 
@@ -578,7 +584,7 @@ function vProduct(slug){
    '<div class="hero-cta"><button class="btn" style="color:'+tt(p.color)+'" data-add="'+p.slug+'">Savatga qoʻshish</button>'+
    '<a class="btn-ghost" href="/qayerdan-olish">Qayerdan olish</a></div>'+
    '<p class="note" style="margin-top:14px">Ishlab chiqaruvchining rasmiy sahifasi: <a href="'+esc(p.src)+'" target="_blank" rel="noopener">homeocan.ca ↗</a></p></div>'+
-   '<div class="phero-shot">'+(p.img?'<img src="'+esc(p.img)+'" alt="'+esc(p.name)+'">':'<span class="ph">0-9</span>')+'</div>'+
+   '<div class="phero-shot">'+(p.img?'<img src="'+esc(p.img)+'" alt="'+esc(altText(p))+'">':'<span class="ph">0-9</span>')+'</div>'+
    '</div></section>'+
 
    '<section class="sec"><div class="wrap"><div class="grid g2">'+
