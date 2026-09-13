@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" rx="120" fill="#FFFFFF"/>
+  <rect x="14" y="14" width="484" height="484" rx="106" fill="none" stroke="#E3E8F0" stroke-width="16"/>
+  <g font-family="'Fredoka', 'Nunito Sans', system-ui, -apple-system, sans-serif" font-weight="700">
+    <!-- kids line -->
+    <g transform="translate(0, 172)">
+      <text x="110" y="0" font-size="115" fill="#0B62BE" text-anchor="middle">k</text>
+      <circle cx="160" cy="-35" r="10" fill="#B9A6D6"/>
+      <text x="200" y="0" font-size="115" fill="#7AC143" text-anchor="middle">i</text>
+      <circle cx="242" cy="-35" r="10" fill="#B9A6D6"/>
+      <text x="286" y="0" font-size="115" fill="#E5187E" text-anchor="middle">d</text>
+      <circle cx="334" cy="-35" r="10" fill="#B9A6D6"/>
+      <text x="382" y="0" font-size="115" fill="#F58220" text-anchor="middle">s</text>
+    </g>
+    <!-- 0-9 line -->
+    <text x="256" y="405" font-size="225" fill="#0B62BE" text-anchor="middle" letter-spacing="-6">0-9</text>
+  </g>
+</svg>
