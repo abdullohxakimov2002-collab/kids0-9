@@ -100,9 +100,12 @@ a.cart-btn{background:var(--blue);color:#fff;padding:9px 17px;display:inline-fle
 
 /* boxwall */
 .boxwall{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding-bottom:40px}
-.boxwall a{position:relative;aspect-ratio:3/4;border-radius:16px;background:var(--c);display:flex;flex-direction:column;justify-content:space-between;padding:12px 11px;color:#fff;overflow:hidden;box-shadow:0 6px 16px rgba(16,44,84,.14);transition:transform .18s ease,box-shadow .18s ease}
+.boxwall a{position:relative;aspect-ratio:3/4;border-radius:16px;background:var(--c);display:flex;flex-direction:column;justify-content:flex-end;padding:12px 11px;color:#fff;overflow:hidden;box-shadow:0 6px 16px rgba(16,44,84,.14);transition:transform .18s ease,box-shadow .18s ease}
 .boxwall a:hover{transform:translateY(-5px);box-shadow:0 14px 26px rgba(16,44,84,.2);text-decoration:none}
+.boxwall a img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;z-index:0}
+.boxwall a::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.72) 100%);z-index:1}
 .boxwall .bw-09{font-family:var(--display);font-size:26px;font-weight:600;line-height:1;opacity:.95}
+.boxwall .bw-txt{position:relative;z-index:2}
 .boxwall .bw-n{font-family:var(--display);font-size:15px;font-weight:600;line-height:1.15}
 .boxwall .bw-s{font-size:11px;font-weight:700;opacity:.88;line-height:1.3}
 @media(max-width:520px){.boxwall{grid-template-columns:repeat(2,1fr)}}
@@ -518,8 +521,9 @@ function vHome(){
    '<a class="btn-ghost" href="/ru/qayerdan-olish">Найти ближайшую аптеку</a></div>'+
    '<div class="hero-facts"><span><b>10</b> продуктов</span><span><b>DIN-HM</b> Health Canada</span><span><b>0–9</b> лет</span><span>без спирта · без сахара</span></div></div>'+
    '<div class="boxwall">'+P.slice(0,9).map(function(p){
-      return '<a href="/ru/mahsulot/'+p.slug+'" style="--c:var(--'+p.color+');color:'+tt(p.color)+'"><span class="bw-09">0-9</span>'+
-        '<span><span class="bw-n">'+esc(p.name)+'</span><br><span class="bw-s">'+esc(p.uz)+'</span></span></a>';
+      return '<a href="/ru/mahsulot/'+p.slug+'" style="--c:var(--'+p.color+');color:'+tt(p.color)+'">'+
+        (p.img?'<img src="'+esc(p.img)+'" alt="'+esc(p.name)+'" loading="lazy">':'<span class="bw-09">0-9</span>')+
+        '<span class="bw-txt"><span class="bw-n">'+esc(p.name)+'</span><br><span class="bw-s">'+esc(p.uz)+'</span></span></a>';
    }).join('')+'</div>'+
    '</div></section>'+
 
