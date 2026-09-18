@@ -492,6 +492,7 @@ var NAVLINKS=[['/mahsulotlar','Mahsulotlar'],['/qayerdan-olish','Qayerdan olish'
 function paintNav(){
   var h=location.pathname||'/', n=cartCount();
   NAV.innerHTML = NAVLINKS.map(function(l){ return '<a href="'+l[0]+'" class="'+(h.indexOf(l[0])===0?'on':'')+'">'+l[1]+'</a>'; }).join('')+
+    '<a href="/ru" style="font-weight:800;color:var(--muted)">RU</a>'+
     '<a href="/buyurtma" class="cart-btn">Savat'+(n?' <b>'+n+'</b>':'')+'</a>';
   document.getElementById('foot-contact').innerHTML =
     '<p class="note" style="margin-top:10px;line-height:2"><a href="tel:'+CONFIG.phone.replace(/\s/g,'')+'">'+esc(CONFIG.phone)+'</a><br><a href="mailto:'+esc(CONFIG.email)+'">'+esc(CONFIG.email)+'</a><br><a href="https://t.me/'+esc(CONFIG.telegram)+'">t.me/'+esc(CONFIG.telegram)+'</a></p>';

@@ -5,6 +5,8 @@
     "rewrites": [
       { "source": "/bilim-marafoni", "destination": "/bilim-marafoni/index.html" },
       { "source": "/bilim-marafoni/**", "destination": "/bilim-marafoni/index.html" },
+      { "source": "/ru", "destination": "/ru/index.html" },
+      { "source": "/ru/**", "destination": "/ru/index.html" },
       { "source": "**", "destination": "/index.html" }
     ]
   },
