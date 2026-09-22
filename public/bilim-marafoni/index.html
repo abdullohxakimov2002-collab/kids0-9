@@ -353,8 +353,21 @@ function batchUpdateResults(ids,patch){
 var S={ready:false,view:'enter',tab:'rank',authed:false,setup:null,results:[],
   me:null,session:null,review:null,editQ:null,editP:null,editS:null,bulk:false,
   enterChain:'',enterBranch:'',enterBranchId:'',enterOther:false,chain:'',mergeFrom:null,
-  stageFilter:'all',qStage:'all'};
+  stageFilter:'all',qStage:'all',showErrors:false};
 var app=document.getElementById('app'), timerId=null;
+
+/* ====== JARAYONNI BROWZERDA SAQLASH (bosqichni to'xtatib chiqib ketsa ham davom etadi) ====== */
+var LS_KEY='kids09-bm-progress-v1';
+function loadLocal(){
+  try{ var raw=localStorage.getItem(LS_KEY); return raw?JSON.parse(raw):null; }catch(e){ return null; }
+}
+function saveLocal(){
+  try{
+    if(!S.me){ localStorage.removeItem(LS_KEY); return; }
+    localStorage.setItem(LS_KEY, JSON.stringify({ver:BANK_VER, me:S.me, session:S.session}));
+  }catch(e){}
+}
+function clearLocal(){ try{ localStorage.removeItem(LS_KEY); }catch(e){} }
 
 function esc(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 function pct(a,b){ return b>0?Math.round(a/b*100):0; }
@@ -578,8 +591,20 @@ function viewTest(){
     '</div></div></div>';
 }
 
+function reviewItemHtml(d,label){
+  var html='<div style="margin-bottom:18px"><div class="q-num">'+label+'</div>'+
+    '<div style="font-size:15.5px;font-weight:700;margin:6px 0 10px">'+esc(d.text)+'</div>';
+  d.options.forEach(function(o,oi){
+    var cl=oi===d.correct?' ok':(oi===d.chosen?' bad':'');
+    var mk=oi===d.correct?' \u2713':(oi===d.chosen?' \u2715':'');
+    html+='<div class="opt'+cl+'" style="cursor:default"><span class="key">'+String.fromCharCode(65+oi)+'</span><span>'+esc(o)+mk+'</span></div>';
+  });
+  if(d.expl) html+='<div class="expl"><b>Izoh</b>'+esc(d.expl)+'</div>';
+  return html+'</div>';
+}
 function viewDone(){
   var r=S.review,c=S.setup.config,ok=r.percent>=c.passPercent;
+  var wrong=[]; r.detail.forEach(function(d,i){ if(d.chosen!==d.correct) wrong.push({d:d,i:i}); });
   var html='<div class="enter"><div class="card" style="text-align:center">'+
     '<div class="eyebrow">'+r.stageN+'-bosqich natijasi</div>'+
     '<div class="score-ring"><div class="score-big'+(ok?'':' fail')+'">'+r.percent+'%</div>'+
@@ -587,20 +612,20 @@ function viewDone(){
     '<div style="font-size:12.5px;color:var(--muted);font-weight:700">to\u2018g\u2018ri javob</div>'+
     '<div style="margin-top:10px"><span class="verdict '+(ok?'v-pass':'v-fail')+'">'+(ok?'O\u2018tdi':'O\u2018tmadi')+'</span></div></div></div>'+
     '<p style="color:var(--muted);font-weight:600;margin:0">'+fmtDur(r.durationSec)+'</p>'+
-    '<button class="btn" style="margin-top:16px" data-act="to-stages">Bosqichlar ro\u2018yxatiga qaytish</button></div>';
+    '<div class="stack" style="justify-content:center;margin-top:16px">'+
+    '<button class="btn" data-act="to-stages">Bosqichlar ro\u2018yxatiga qaytish</button>'+
+    (wrong.length?'<button class="btn-ghost" data-act="toggle-errors">'+(S.showErrors?'Xatolarni yashirish':'Xatolarni ko\u2018rish ('+wrong.length+')')+'</button>':'')+
+    '</div></div>';
+  if(!wrong.length){
+    html+='<div class="card" style="text-align:center"><p class="hint" style="margin:0">Barcha savollarga to\u2018g\u2018ri javob berdingiz \u2014 xato yo\u2018q!</p></div>';
+  }else if(S.showErrors){
+    html+='<div class="card"><div class="card-h"><h2>Xatolaringiz</h2><span class="eyebrow">'+wrong.length+' ta savol</span></div>';
+    wrong.forEach(function(w){ html+=reviewItemHtml(w.d,'Savol '+(w.i+1)); });
+    html+='</div>';
+  }
   if(c.showReview){
     html+='<div class="card"><div class="card-h"><h2>Javoblar tahlili</h2></div>';
-    r.detail.forEach(function(d,i){
-      html+='<div style="margin-bottom:18px"><div class="q-num">Savol '+(i+1)+'</div>'+
-        '<div style="font-size:15.5px;font-weight:700;margin:6px 0 10px">'+esc(d.text)+'</div>';
-      d.options.forEach(function(o,oi){
-        var cl=oi===d.correct?' ok':(oi===d.chosen?' bad':'');
-        var mk=oi===d.correct?' \u2713':(oi===d.chosen?' \u2715':'');
-        html+='<div class="opt'+cl+'" style="cursor:default"><span class="key">'+String.fromCharCode(65+oi)+'</span><span>'+esc(o)+mk+'</span></div>';
-      });
-      if(d.expl) html+='<div class="expl"><b>Izoh</b>'+esc(d.expl)+'</div>';
-      html+='</div>';
-    });
+    r.detail.forEach(function(d,i){ html+=reviewItemHtml(d,'Savol '+(i+1)); });
     html+='</div>';
   }
   return html+'</div>';
@@ -940,6 +965,7 @@ function startStage(sid){
   });
   S.session={stageId:sid,stageN:st.n,stageTitle:st.title,questions:qs,answers:new Array(qs.length).fill(null),
     idx:0,startedAt:Date.now(),endAt:Date.now()+(c.timeLimitMin>0?c.timeLimitMin*60000:0)};
+  S.showErrors=false; saveLocal();
   S.view='test'; render(); window.scrollTo(0,0);
   if(c.timeLimitMin>0){ clearInterval(timerId); timerId=setInterval(tick,1000); }
 }
@@ -959,7 +985,7 @@ function finish(auto){
     chainId:S.me.chainId,chainName:S.me.chainName,branchId:S.me.branchId,branchName:S.me.branchName,first:S.me.first,last:S.me.last,
     score:score,total:s.questions.length,percent:pct(score,s.questions.length),
     durationSec:Math.round((Date.now()-s.startedAt)/1000),detail:detail};
-  S.review=r; S.session=null; S.view='done';
+  S.review=r; S.session=null; S.view='done'; S.showErrors=false; saveLocal();
   render(); window.scrollTo(0,0);
   addResultDoc(r).then(function(saved){ S.results.push(saved); }).catch(function(){ toast('Natija saqlanmadi — internetni tekshiring'); });
 }
@@ -998,7 +1024,7 @@ app.addEventListener('click',function(e){
   if(a==='go-admin'){ S.view='admin'; render(); window.scrollTo(0,0); return; }
   if(a==='exit-admin'){ S.view='enter'; S.editQ=S.editP=S.editS=null; S.bulk=false; render(); return; }
   if(a==='admin-logout'){ auth.signOut(); S.view='enter'; render(); return; }
-  if(a==='logout'){ S.me=null; S.view='enter'; render(); return; }
+  if(a==='logout'){ S.me=null; S.session=null; clearLocal(); S.view='enter'; render(); return; }
   if(a==='use-list'){ e.preventDefault(); S.enterOther=false; render(); return; }
   if(a==='login'){
     var em=document.getElementById('ad-email').value.trim(), pw=document.getElementById('ad-pass').value;
@@ -1029,14 +1055,16 @@ app.addEventListener('click',function(e){
     var ch=chainById(cid);
     S.me={chainId:cid,chainName:ch?ch.name:'',branchId:br.id,branchName:br.name,first:f,last:l};
     S.enterChain=cid; S.enterBranch=br.name; S.enterBranchId=br.id;
+    saveLocal();
     render(); window.scrollTo(0,0); return;
   }
   if(a==='start-stage'){ startStage(id); return; }
-  if(a==='pick'){ S.session.answers[S.session.idx]=parseInt(el.getAttribute('data-i'),10); render(); return; }
-  if(a==='next'){ if(S.session.idx<S.session.questions.length-1){S.session.idx++;render();window.scrollTo(0,0);} return; }
-  if(a==='prev'){ if(S.session.idx>0){S.session.idx--;render();window.scrollTo(0,0);} return; }
+  if(a==='pick'){ S.session.answers[S.session.idx]=parseInt(el.getAttribute('data-i'),10); saveLocal(); render(); return; }
+  if(a==='next'){ if(S.session.idx<S.session.questions.length-1){S.session.idx++;saveLocal();render();window.scrollTo(0,0);} return; }
+  if(a==='prev'){ if(S.session.idx>0){S.session.idx--;saveLocal();render();window.scrollTo(0,0);} return; }
   if(a==='finish'){ finish(false); return; }
   if(a==='to-stages'){ S.review=null; S.view='enter'; render(); window.scrollTo(0,0); return; }
+  if(a==='toggle-errors'){ S.showErrors=!S.showErrors; render(); return; }
 
   if(a==='toggle-stage'){
     var st=stageById(id); st.open=!st.open; saveSetup(); render();
@@ -1207,7 +1235,7 @@ app.addEventListener('click',function(e){
   }
   if(a==='factory'){
     if(!confirm('Hammasi boshlang\u2018ich holatga qaytariladi. Davom etilsinmi?')) return;
-    S.setup=JSON.parse(JSON.stringify(DEFAULT_SETUP)); S.me=null;
+    S.setup=JSON.parse(JSON.stringify(DEFAULT_SETUP)); S.me=null; S.session=null; clearLocal();
     saveSetup(); clearAllResults().then(function(){ S.results=[]; render(); });
     return;
   }
@@ -1232,7 +1260,24 @@ Promise.all([sGet(SETUP_KEY),loadResults()]).then(function(v){
     S.setup=JSON.parse(JSON.stringify(DEFAULT_SETUP)); sSet(SETUP_KEY,S.setup);
   }
   S.results=v[1];
+
+  var loc=loadLocal();
+  if(loc&&loc.ver===BANK_VER&&loc.me&&chainById(loc.me.chainId)&&branchById(loc.me.branchId)){
+    S.me=loc.me;
+    S.enterChain=loc.me.chainId; S.enterBranch=loc.me.branchName; S.enterBranchId=loc.me.branchId;
+    if(loc.session&&loc.session.stageId){
+      var rst=stageById(loc.session.stageId);
+      if(rst&&rst.open&&Array.isArray(loc.session.questions)&&loc.session.questions.length&&Array.isArray(loc.session.answers)){
+        S.session=loc.session; S.view='test';
+      }
+    }
+    saveLocal();
+  }else if(loc){
+    clearLocal();
+  }
+
   S.ready=true; render();
+  if(S.view==='test'&&S.setup.config.timeLimitMin>0){ clearInterval(timerId); timerId=setInterval(tick,1000); }
 }).catch(function(){ S.setup=JSON.parse(JSON.stringify(DEFAULT_SETUP)); S.results=[]; S.ready=true; render(); });
 
 auth.onAuthStateChanged(function(u){
