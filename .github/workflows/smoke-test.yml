@@ -1,0 +1,21 @@
+name: Smoke test
+on:
+  pull_request:
+  push:
+    branches-ignore:
+      - main          # main uchun firebase-hosting-merge.yml o'zi chaqiradi
+  workflow_call:
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install Playwright + Chromium
+        run: |
+          npm install -g playwright@1.56.1
+          npx -y playwright@1.56.1 install --with-deps chromium
+      - name: Run smoke test
+        run: NODE_PATH="$(npm root -g)" node tools/smoke-test.js

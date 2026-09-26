@@ -4,7 +4,14 @@ on:
     branches:
       - main
 jobs:
+  # 1) Avval smoke-test: UZ/RU sahifalar, savat, test, "Bilim marafoni" oqimi.
+  #    Test yiqilsa — deploy qilinmaydi (buzilgan kod saytga chiqmaydi).
+  test:
+    uses: ./.github/workflows/smoke-test.yml
+  # 2) Faqat Hosting deploy qilinadi. firestore.rules bu yerda deploy QILINMAYDI —
+  #    uni qo'lda: firebase deploy --only firestore:rules
   build_and_deploy:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
