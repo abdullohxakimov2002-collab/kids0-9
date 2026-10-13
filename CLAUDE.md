@@ -414,3 +414,9 @@ izohi, kompaniya matnidagi "натуральных" so'zi olib tashlandi (UZ'da 
 
 **O'zgarmagan narsalar:** dizayn, UZ matnlari, URL'lar, Firestore tuzilishi,
 `firestore.rules`, marafon mantiqining qolgan qismi.
+
+### 2026-10-13 — `/mob` lending sahifasi (Claude)
+- Yangi mustaqil link-in-bio/lending sahifa: `public/mob/index.html` (`https://kids09.uz/mob`). Bu sahifa `site.js`/`i18n` qolipiga kirmaydi — o‘zining CSS/JS’i bor.
+- Mahsulot rasmlari base64 o‘rniga `public/images/*.webp` dan olinadi (`IMG` xaritasi: fayl nomlari repo’dagi nomlarga moslangan, masalan `all-allergies.webp`, `day-syrup.webp`).
+- Ob-havo bloki OpenWeather kalitini ochiq ishlatadi (CLAUDE.md 9-bo‘lim, 16-qoida bilan bir xil yondashuv). Kalit suiiste’mol bo‘lsa, yangisini yarating.
+- `og:image` (`og.jpg`) fayli hali yo‘q — ijtimoiy tarmoqlarda ulashishda rasm chiqmaydi.

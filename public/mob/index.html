@@ -1,0 +1,983 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Kids 0–9 — Kanadaning Homeocan kompaniyasi bolalar mahsulotlari liniyasi: tarkib, shakl, yosh guruhi va qayerdan olish.">
+<meta name="theme-color" content="#0579DA">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kids 0–9 · Homeocan">
+<meta property="og:description" content="Kids 0–9 — Kanadaning Homeocan kompaniyasi bolalar mahsulotlari liniyasi: tarkib, shakl, yosh guruhi va qayerdan olish.">
+<meta property="og:image" content="og.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23fff'/%3E%3Ctext x='32' y='44' font-family='Arial' font-weight='900' font-size='30' text-anchor='middle' fill='%230579DA'%3E0-9%3C/text%3E%3C/svg%3E">
+<title>Kids 0–9 Homeocan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Onest:wght@400;500;600;700&display=swap">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}[hidden]{display:none!important}</style>
+</head>
+<body>
+<style>
+/* Layout: telefon uchun bitta ustun (link-in-bio), qadoqdagi rangli nom lentasi — har bir mahsulot kartochkasining asosi */
+:root{
+  --bg:#EEF4FB; --surface:#FFFFFF; --surface-2:#F6F9FD; --ink:#1B2740; --muted:#5A6883; --line:#DCE5F1;
+  --blue:#0579DA; --blue-ink:#045FAD; --blue-soft:#E2EFFC; --on-blue:#FFFFFF; --dot:#D7CDEB;
+  --alert:#B3261E; --alert-soft:#FDECEA; --alert-line:#F4C7C3;
+  --scrim:rgba(14,24,44,.48); --shadow:0 1px 2px rgba(20,40,80,.06),0 8px 22px -12px rgba(20,40,80,.22);
+  --tile:#FFFFFF; --k-blue:#0579DA; --k-green:#5CB531; --k-pink:#E5187E; --k-orange:#F5871F; --k-dot:#C9B8E3;
+  --display:'Nunito','Onest',ui-rounded,system-ui,sans-serif;
+  --body:'Onest',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --col:520px; --r:18px; --ease:cubic-bezier(.22,1,.36,1);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0D1524; --surface:#162034; --surface-2:#1B2840; --ink:#E8EEF8; --muted:#9CABC4; --line:#28364F;
+  --blue:#5AAEF2; --blue-ink:#8CC6F7; --blue-soft:#17304E; --on-blue:#0B1424; --dot:#2A2F4E;
+  --alert:#FF8A80; --alert-soft:#3A1D20; --alert-line:#5C2B2E;
+  --scrim:rgba(0,0,0,.6); --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 24px -12px rgba(0,0,0,.6); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0D1524; --surface:#162034; --surface-2:#1B2840; --ink:#E8EEF8; --muted:#9CABC4; --line:#28364F;
+  --blue:#5AAEF2; --blue-ink:#8CC6F7; --blue-soft:#17304E; --on-blue:#0B1424; --dot:#2A2F4E;
+  --alert:#FF8A80; --alert-soft:#3A1D20; --alert-line:#5C2B2E;
+  --scrim:rgba(0,0,0,.6); --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 24px -12px rgba(0,0,0,.6); color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.55 var(--body);-webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(var(--dot) 1.2px,transparent 1.3px);background-size:22px 22px;background-attachment:fixed}
+img{max-width:100%;display:block}
+a{color:var(--blue-ink)}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none;padding:0}
+:focus-visible{outline:3px solid var(--k-orange);outline-offset:2px;border-radius:10px}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1.15;text-wrap:balance}
+p{margin:0}
+.col{max-width:var(--col);margin:0 auto;padding-inline:16px;padding-block:0 120px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- profil ---------- */
+.topbar{display:flex;justify-content:space-between;align-items:center;padding-block:14px 4px}
+.iconbtn{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:var(--surface);box-shadow:var(--shadow);color:var(--ink)}
+.iconbtn svg{width:19px;height:19px}
+.lang{display:flex;background:var(--surface);border-radius:12px;padding:3px;box-shadow:var(--shadow)}
+.lang button{min-width:44px;height:34px;border-radius:9px;font:800 13px/1 var(--display);letter-spacing:.06em;color:var(--muted)}
+.lang button[aria-pressed="true"]{background:var(--blue);color:var(--on-blue)}
+.profile{text-align:center;display:grid;justify-items:center;gap:10px;padding-block:6px 4px}
+.logo{display:inline-grid;justify-items:center;background:var(--tile);border-radius:24px;padding:12px 18px 9px;
+  box-shadow:0 0 0 1px var(--line),0 14px 28px -14px rgba(5,121,218,.7);position:relative}
+.logo-kids{display:flex;gap:5px;align-items:center;font:800 19px/1 var(--display)}
+.logo-kids i{width:5px;height:5px;border-radius:50%;background:var(--k-dot)}
+.logo-09{font:900 50px/.92 var(--display);color:var(--k-blue);letter-spacing:-.01em;margin-top:2px}
+.logo-09 sup{font-size:10px;font-weight:800;vertical-align:top;margin-left:1px}
+.profile h1{font-size:28px;font-weight:900;letter-spacing:-.01em;margin-top:4px}
+.handle{font:700 13px/1 var(--body);color:var(--muted);letter-spacing:.02em}
+.bio{max-width:34ch;color:var(--ink);opacity:.86;font-size:15px}
+.facts{list-style:none;margin:6px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;width:100%}
+.facts li{background:var(--surface);border-radius:14px;padding:10px 6px;box-shadow:var(--shadow);display:grid;gap:2px;min-width:0}
+.facts b{font:900 22px/1 var(--display);color:var(--blue-ink);font-variant-numeric:tabular-nums}
+.facts span{font-size:11.5px;line-height:1.25;color:var(--muted);font-weight:600}
+
+/* ---------- ob-havo va havo sifati ---------- */
+.air{margin-top:16px;background:var(--surface);border-radius:22px;box-shadow:var(--shadow);padding:14px 14px 12px;display:grid;gap:12px;animation:rise .6s var(--ease) .2s backwards}
+.air-head{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.air-t{font:800 11.5px/1 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0}
+.air-ctl{display:flex;align-items:center;gap:6px}
+.air-ctl select{height:34px;border-radius:10px;border:0;background:var(--surface-2);box-shadow:inset 0 0 0 1.5px var(--line);color:var(--ink);font:700 13.5px/1 var(--body);padding:0 28px 0 11px;appearance:none;-webkit-appearance:none;
+  background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 15px) 15px,calc(100% - 10px) 15px;background-size:5px 5px;background-repeat:no-repeat}
+.air-rf{width:34px;height:34px;border-radius:10px;background:var(--surface-2);box-shadow:inset 0 0 0 1.5px var(--line);display:grid;place-items:center;color:var(--ink)}
+.air-rf svg{width:17px;height:17px}
+.air-rf.spin svg{animation:spin .9s linear infinite}
+.wx{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center}
+.wx-ic{width:54px;height:54px;border-radius:16px;background:var(--blue-soft);color:var(--blue-ink);display:grid;place-items:center}
+.wx-ic.sun{background:color-mix(in srgb,var(--k-orange) 16%,var(--surface));color:var(--k-orange)}
+.wx-ic svg{width:32px;height:32px}
+.wx-t{display:block;font:900 34px/1 var(--display);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.wx-c{display:block;font-weight:600;font-size:14px;color:var(--ink);margin-top:3px}
+.wx-m{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:0}
+.wx-m div{background:var(--surface-2);border-radius:11px;padding:7px 9px;min-width:0}
+.wx-m dt{font:700 10.5px/1.2 var(--body);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.wx-m dd{margin:2px 0 0;font:800 14.5px/1.2 var(--display);font-variant-numeric:tabular-nums}
+.aq{border-radius:16px;background:color-mix(in srgb,var(--aq) 14%,var(--surface));padding:11px 12px;display:grid;gap:9px}
+.aq-top{display:grid;grid-template-columns:auto 1fr;gap:11px;align-items:center}
+.aq-n{min-width:52px;height:46px;padding:0 8px;border-radius:13px;background:var(--aq);color:var(--aq-on);display:grid;place-items:center;font:900 22px/1 var(--display);font-variant-numeric:tabular-nums}
+.aq-top b{display:block;font:800 15.5px/1.2 var(--display)}
+.aq-top small{display:block;font-size:12px;color:var(--muted);margin-top:2px;font-variant-numeric:tabular-nums}
+.aq-top>div{min-width:0}
+.aq-bar{position:relative;display:grid;grid-template-columns:repeat(6,1fr);gap:2px;height:7px}
+.aq-bar span{border-radius:4px}
+.aq-bar i{position:absolute;top:50%;width:15px;height:15px;border-radius:50%;background:var(--aq);box-shadow:0 0 0 3px var(--surface),0 1px 4px rgba(0,0,0,.3);transform:translate(-50%,-50%);transition:left .6s var(--ease)}
+.aq-tip{font-size:13.5px;line-height:1.45}
+.aq-tip b{font-weight:800}
+.air-foot{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-size:11.5px;color:var(--muted)}
+.air-foot a{color:var(--muted)}
+.air-msg{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;background:var(--surface-2);border-radius:14px;padding:12px 14px;font-size:14px}
+.air-msg>span{min-width:0}
+.air-why{display:block;font-size:12px;color:var(--muted);margin-top:3px}
+.air-msg button{height:34px;padding:0 14px;border-radius:10px;background:var(--blue);color:var(--on-blue);font-weight:800;font-size:13px}
+.sk{display:block;border-radius:10px;background:linear-gradient(90deg,var(--surface-2) 25%,var(--line) 50%,var(--surface-2) 75%);background-size:300% 100%;animation:sk 1.4s linear infinite}
+@keyframes sk{from{background-position:100% 0}to{background-position:-200% 0}}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ---------- stories ---------- */
+.stories{margin:22px -16px 0;display:flex;gap:8px;-webkit-mask-image:linear-gradient(90deg,#000 0,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 0,#000 88%,transparent);overflow-x:auto;padding:4px 16px 8px;scroll-snap-type:x proximity;scrollbar-width:none}
+.stories::-webkit-scrollbar{display:none}
+.story{flex:0 0 auto;width:88px;display:grid;justify-items:center;gap:6px;scroll-snap-align:start;animation:pop .6s var(--ease) backwards;animation-delay:calc(var(--i)*45ms + 150ms)}
+.story .ring{width:70px;height:70px;border-radius:50%;padding:3px;background:conic-gradient(from 200deg,var(--c),color-mix(in srgb,var(--c) 45%,#fff),var(--c));transition:transform .35s var(--ease)}
+.story .ring img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:50% 42%;border:3px solid var(--bg);background:#fff;transform:scale(1.001)}
+.story span{font:700 10.5px/1.2 var(--body);color:var(--ink);text-align:center;max-width:88px;overflow-wrap:normal;word-break:normal}
+@media(hover:hover){.story:hover .ring{transform:scale(1.07) rotate(-4deg)}}
+
+/* ---------- havola tugmalari ---------- */
+.links{display:grid;gap:10px;margin-top:18px}
+.lk{display:grid;grid-template-columns:46px 1fr auto;align-items:center;gap:14px;background:var(--surface);border-radius:var(--r);padding:11px 14px 11px 11px;
+  text-decoration:none;color:var(--ink);box-shadow:var(--shadow);transition:transform .25s var(--ease),box-shadow .25s var(--ease);animation:rise .55s var(--ease) backwards;animation-delay:calc(var(--i)*55ms + 260ms)}
+.lk:active{transform:scale(.98)}
+@media(hover:hover){.lk:hover{transform:translateY(-2px)}}
+.lk .ic{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:var(--ic);color:#fff}
+.lk .ic svg{width:23px;height:23px}
+.lk b{display:block;font:800 16px/1.2 var(--display)}
+.lk small{display:block;font-size:13px;color:var(--muted);margin-top:2px;overflow-wrap:anywhere}
+.lk .chev{color:var(--muted);width:18px;height:18px}
+.lk.primary{background:var(--blue);color:var(--on-blue)}
+.lk.primary small,.lk.primary .chev{color:inherit;opacity:.82}
+.lk.primary .ic{background:color-mix(in srgb,var(--on-blue) 18%,transparent);color:inherit}
+.lk.offi .ic{box-shadow:inset 0 0 0 1.5px var(--line);color:var(--k-blue);font:900 15px/1 var(--display);letter-spacing:-.02em}
+.lk.empty small{color:var(--k-orange);font-weight:600}
+.lk>span{min-width:0}
+
+/* ---------- bo'limlar ---------- */
+.sec{margin-top:44px;scroll-margin-top:16px}
+.eyebrow{font:800 11.5px/1 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--blue-ink)}
+.sec h2{font-size:24px;font-weight:900;margin:8px 0 8px;letter-spacing:-.01em}
+.lead{color:var(--muted);font-size:14.5px;max-width:60ch}
+
+/* katalog */
+.chips{display:flex;gap:8px;overflow-x:auto;margin:16px -16px 0;padding:2px 16px 6px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;height:36px;padding:0 15px;border-radius:999px;background:var(--surface);box-shadow:inset 0 0 0 1.5px var(--line);font-weight:700;font-size:13.5px;color:var(--muted);white-space:nowrap}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);box-shadow:none}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.pc{display:flex;flex-direction:column;align-items:stretch;text-align:left;background:var(--surface);border-radius:20px;padding:8px 8px 13px;box-shadow:var(--shadow);
+  transition:transform .3s var(--ease),box-shadow .3s var(--ease);min-width:0;animation:rise .5s var(--ease) backwards;animation-delay:calc(var(--i)*40ms)}
+@media(hover:hover){.pc:hover{transform:translateY(-3px)}}
+.pc:active{transform:scale(.98)}
+.pc .ph{aspect-ratio:1;border-radius:14px;overflow:hidden;background:#fff;max-width:100%}
+.pc .ph img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
+@media(hover:hover){.pc:hover .ph img{transform:scale(1.05)}}
+.band{align-self:flex-start;display:inline-block;margin:11px 5px 0;padding:5px 11px 6px;border-radius:9px;background:var(--c);color:var(--on);font:800 15px/1.1 var(--display);max-width:calc(100% - 10px)}
+.pc .th{margin:7px 6px 0;font-size:13px;line-height:1.3;font-weight:600;color:var(--ink)}
+.pc .mt{margin:5px 6px 0;font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center}
+.fl{display:inline-flex;align-items:center;gap:5px}
+.fl i{width:8px;height:8px;border-radius:50%;background:var(--f)}
+.pc.wide{grid-column:1/-1;flex-direction:row;align-items:center;gap:6px}
+.pc.wide .ph{width:44%;flex:0 0 44%}
+.pc.wide .tx{flex:1;min-width:0;padding-bottom:4px}
+.pc .tx{display:flex;flex-direction:column;min-width:0}
+.hint{margin-top:14px;display:flex;gap:10px;align-items:flex-start;background:var(--blue-soft);border-radius:14px;padding:12px 14px;font-size:13.5px;color:var(--ink)}
+.hint svg{flex:0 0 18px;width:18px;height:18px;color:var(--blue-ink);margin-top:2px}
+
+/* liniya haqida */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.ab{background:var(--surface);border-radius:var(--r);padding:14px;box-shadow:var(--shadow);min-width:0}
+.ab h3{font-size:15.5px;font-weight:800;margin-bottom:5px}
+.ab p{font-size:13.5px;color:var(--muted);line-height:1.5}
+.ab .sw{display:flex;gap:5px;margin-top:9px;flex-wrap:wrap}
+.ab .sw i{width:16px;height:16px;border-radius:50%;background:var(--f);box-shadow:0 0 0 2px var(--surface),0 0 0 3px var(--line)}
+@media(max-width:400px){.about{grid-template-columns:1fr}}
+
+/* qoidalar */
+.rules{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:10px}
+.rules li{display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:start;background:var(--surface);border-radius:var(--r);padding:13px 14px;box-shadow:var(--shadow)}
+.rules .ri{width:40px;height:40px;border-radius:12px;background:var(--blue-soft);color:var(--blue-ink);display:grid;place-items:center}
+.rules .ri svg{width:21px;height:21px}
+.rules b{display:block;font:800 15.5px/1.25 var(--display)}
+.rules span{display:block;font-size:13.5px;color:var(--muted);margin-top:3px}
+.rules li>div{min-width:0}
+
+/* shoshilinch */
+.alert{background:var(--alert-soft);border:1.5px solid var(--alert-line);border-radius:22px;padding:18px 16px}
+.alert .eyebrow{color:var(--alert)}
+.alert h2{color:var(--ink)}
+.alert ul{margin:10px 0 0;padding:0;list-style:none;display:grid;gap:8px}
+.alert li{display:grid;grid-template-columns:18px 1fr;gap:9px;font-size:14px;line-height:1.45}
+.alert li::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--alert);margin:7px 0 0 4px}
+.sos{margin-top:14px;display:flex;align-items:center;justify-content:center;gap:10px;height:50px;border-radius:14px;background:var(--alert);color:var(--surface);font:900 17px/1 var(--display);text-decoration:none}
+.sos svg{width:20px;height:20px}
+.src{margin-top:10px;font-size:11.5px;color:var(--muted)}
+
+/* savollar */
+.faq{margin-top:14px;display:grid;gap:8px}
+.faq details{background:var(--surface);border-radius:16px;box-shadow:var(--shadow);overflow:hidden}
+.faq summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr 26px;gap:12px;align-items:center;padding:14px 14px 14px 16px;font:800 15px/1.3 var(--display)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary i{width:26px;height:26px;border-radius:50%;background:var(--blue-soft);color:var(--blue-ink);display:grid;place-items:center;font-style:normal;font-weight:800;font-size:17px;transition:transform .35s var(--ease)}
+.faq details[open] summary i{transform:rotate(45deg)}
+.faq details p{padding:0 16px 15px;font-size:14px;color:var(--muted);line-height:1.6;max-width:62ch}
+.faq details[open] p{animation:rise .4s var(--ease) backwards}
+
+/* dorixonalar */
+.ph-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.ph-list span{background:var(--surface);border-radius:12px;padding:9px 13px;font-weight:700;font-size:14px;box-shadow:var(--shadow);display:inline-flex;align-items:center;gap:8px}
+.ph-list span::before{content:'';width:10px;height:10px;background:linear-gradient(var(--k-green),var(--k-green)) center/10px 3.4px no-repeat,linear-gradient(var(--k-green),var(--k-green)) center/3.4px 10px no-repeat}
+
+.botcta{margin-top:14px;display:grid;grid-template-columns:46px 1fr;gap:12px;align-items:center;background:var(--surface);border-radius:var(--r);padding:11px 14px 11px 11px;text-decoration:none;color:var(--ink);box-shadow:var(--shadow),inset 0 0 0 2px #E8453C}
+.botcta .bi{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font:900 16px/1 var(--display);color:#E8453C;background:var(--surface);box-shadow:inset 0 0 0 4px #E8453C}
+.botcta b{display:block;font:800 16px/1.2 var(--display)}
+.botcta small{display:block;font-size:13px;color:var(--muted);margin-top:2px}
+.botcta>span{min-width:0}
+.sub2{margin-top:18px;font-size:13.5px;color:var(--muted)}
+/* futer */
+.foot{margin-top:48px;border-top:1px solid var(--line);padding-top:22px;display:grid;gap:16px;font-size:13.5px}
+.foot h3{font:800 11.5px/1 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.foot p{color:var(--ink);line-height:1.5}
+.cp{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:6px}
+.cp code{font:600 14px/1 var(--body);user-select:all;font-variant-numeric:tabular-nums}
+.cp button{height:28px;padding:0 10px;border-radius:8px;background:var(--blue-soft);color:var(--blue-ink);font-weight:700;font-size:12px}
+.bfq{border:2px solid var(--ink);border-radius:12px;padding:12px 14px;font:800 15px/1.35 var(--display);text-align:center}
+.disc{font-size:12.5px;color:var(--muted);line-height:1.55}
+.wm{display:flex;justify-content:center;align-items:baseline;gap:.02em;font:900 clamp(56px,19vw,120px)/.9 var(--display);letter-spacing:-.03em;margin-top:8px;user-select:none}
+.wm .sp{width:.22em}
+.wm .n{color:var(--k-blue)}
+
+/* pastki panel */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:40;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));pointer-events:none;
+  transform:translateY(110%);visibility:hidden;transition:transform .45s var(--ease),visibility 0s linear .45s}
+.dock.on{transform:none;visibility:visible;transition:transform .45s var(--ease)}
+.dock-in{max-width:calc(var(--col) - 32px);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:8px;pointer-events:auto;background:var(--surface);border-radius:18px;padding:7px;box-shadow:0 12px 36px -10px rgba(10,25,55,.45),0 0 0 1px var(--line)}
+.dock a,.dock button{height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;gap:8px;font:800 15px/1 var(--display);text-decoration:none}
+.dock .a1{background:var(--blue);color:var(--on-blue)}
+.dock .a2{background:var(--blue-soft);color:var(--blue-ink)}
+.dock svg{width:19px;height:19px}
+
+/* mahsulot oynasi */
+.sheet-wrap{position:fixed;inset:0;z-index:60;display:grid;align-items:end;justify-items:center}
+.scrim{position:absolute;inset:0;background:var(--scrim);animation:fade .3s ease}
+.sheet{position:relative;width:100%;max-width:560px;max-height:92vh;max-height:92dvh;overflow-y:auto;overscroll-behavior:contain;background:var(--surface);border-radius:26px 26px 0 0;
+  padding:0 0 calc(18px + env(safe-area-inset-bottom,0px));animation:up .45s var(--ease)}
+@media(min-width:700px){.sheet-wrap{align-items:center}.sheet{border-radius:26px;max-height:88vh}}
+.sh-top{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:linear-gradient(var(--surface) 70%,transparent)}
+.grab{position:absolute;left:50%;top:6px;width:40px;height:4px;border-radius:4px;background:var(--line);transform:translateX(-50%)}
+.sh-nav{display:flex;gap:6px}
+.sh-btn{width:38px;height:38px;border-radius:12px;background:var(--surface-2);display:grid;place-items:center;color:var(--ink)}
+.sh-btn svg{width:18px;height:18px}
+.sh-body{padding:0 18px;display:grid;gap:16px}
+.sh-hero{display:grid;grid-template-columns:42% 1fr;gap:14px;align-items:center}
+.sh-hero .ph{border-radius:18px;overflow:hidden;background:#fff;aspect-ratio:1;max-width:100%}
+.sh-hero .ph img{width:100%;height:100%;object-fit:cover}
+.sh-hero .sub{font-size:12px;font-weight:700;color:var(--muted);margin-top:8px}
+.sh-hero .band{margin:0;font-size:19px;padding:7px 13px 8px;border-radius:11px}
+.sh-hero>div{min-width:0}
+.sh-hero .th{margin-top:9px;font:800 16px/1.3 var(--display)}
+.spec{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.spec div{background:var(--surface-2);border-radius:12px;padding:9px 11px;min-width:0}
+.spec dt{font:700 10.5px/1.2 var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.spec dd{margin:3px 0 0;font-weight:700;font-size:13.5px;line-height:1.35}
+.spec dl{margin:0}
+.blk h3{font:800 11.5px/1 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.blk p{font-size:14.5px;line-height:1.55}
+.blk .sm{font-size:12.5px;color:var(--muted);margin-top:7px}
+.note{display:grid;grid-template-columns:20px 1fr;gap:10px;background:color-mix(in srgb,var(--k-orange) 13%,var(--surface));border-radius:14px;padding:12px 14px;font-size:14px;line-height:1.5}
+.note svg{width:20px;height:20px;color:var(--k-orange)}
+.comp{display:flex;flex-wrap:wrap;gap:6px}
+.comp span{border-radius:9px;padding:5px 9px;background:var(--surface-2);box-shadow:inset 0 0 0 1px var(--line);font-size:13px;font-style:italic}
+.sh-cta{display:grid;gap:8px}
+.sh-cta a,.sh-cta button{height:50px;border-radius:14px;display:flex;align-items:center;justify-content:center;gap:9px;font:800 15.5px/1 var(--display);text-decoration:none}
+.sh-cta .a1{background:var(--c);color:var(--on)}
+.sh-cta .a2{background:var(--surface-2);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+.sh-cta svg{width:19px;height:19px}
+
+.toast{position:fixed;left:50%;bottom:calc(86px + env(safe-area-inset-bottom,0px));z-index:80;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:11px 18px;border-radius:999px;font-weight:700;font-size:14px;box-shadow:0 10px 30px rgba(0,0,0,.25);animation:toast .35s var(--ease);max-width:calc(100% - 32px);text-align:center}
+
+@keyframes rise{from{opacity:0;transform:translateY(12px)}}
+@keyframes pop{from{opacity:0;transform:scale(.7)}}
+@keyframes up{from{transform:translateY(40px);opacity:.4}}
+@keyframes fade{from{opacity:0}}
+@keyframes toast{from{opacity:0;transform:translate(-50%,10px)}}
+.profile>*{animation:rise .6s var(--ease) backwards}
+.profile>:nth-child(2){animation-delay:.05s}.profile>:nth-child(3){animation-delay:.1s}.profile>:nth-child(4){animation-delay:.15s}.profile>:nth-child(5){animation-delay:.2s}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+
+<div class="col">
+  <div class="topbar">
+    <button class="iconbtn" id="share" type="button" aria-label="Ulashish" data-i-aria="a_share">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 8 5-5 5 5"/><path d="M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg>
+    </button>
+    <div class="lang" role="group" aria-label="Til / Язык">
+      <button type="button" data-lang="uz" aria-pressed="true">UZ</button>
+      <button type="button" data-lang="ru" aria-pressed="false">RU</button>
+    </div>
+  </div>
+
+  <header class="profile">
+    <div class="logo" aria-hidden="true">
+      <span class="logo-kids"><span style="color:var(--k-blue)">K</span><i></i><span style="color:var(--k-green)">i</span><i></i><span style="color:var(--k-pink)">d</span><i></i><span style="color:var(--k-orange)">s</span></span>
+      <span class="logo-09">0–9<sup>®</sup></span>
+    </div>
+    <h1>Kids 0–9</h1>
+    <p class="handle">Homeocan · <span data-i="canada">Kanada</span></p>
+    <p class="bio" data-i="bio">Kanadaning Homeocan kompaniyasi ishlab chiqargan bolalar mahsulotlari liniyasi. Tarkib, shakl va qayerdan olish — shu sahifada.</p>
+    <ul class="facts">
+      <li><b>9</b><span data-i="f1">bolalar mahsuloti</span></li>
+      <li><b>6</b><span data-i="f2">xil ta’m: mevali va karamel</span></li>
+      <li><b>1987</b><span data-i="f3">Homeocan tashkil topgan yil</span></li>
+    </ul>
+  </header>
+
+  <section class="air" id="havo" aria-labelledby="h-air">
+    <div class="air-head">
+      <h2 class="air-t" id="h-air" data-i="air_t">Ob-havo va havo sifati</h2>
+      <div class="air-ctl">
+        <label class="sr" for="city" data-i="air_city">Shahar</label>
+        <select id="city"></select>
+        <button type="button" class="air-rf" id="airRf" aria-label="Yangilash" data-i-aria="air_rf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg></button>
+      </div>
+    </div>
+    <div id="airBody" aria-live="polite"></div>
+  </section>
+
+  <nav class="stories" id="stories" aria-label="Mahsulotlar" data-i-aria="a_stories"></nav>
+
+  <nav class="links" id="links" aria-label="Havolalar" data-i-aria="a_links"></nav>
+
+  <section class="sec" id="katalog" aria-labelledby="h-kat">
+    <p class="eyebrow" data-i="kat_e">Katalog</p>
+    <h2 id="h-kat" data-i="kat_h">Mahsulotni qadoq rangidan toping</h2>
+    <p class="lead" data-i="kat_p">Har bir mahsulot qadog‘i o‘z rangiga ega. Kartochkani bosing — tarkib, shakl va yosh guruhi ochiladi.</p>
+    <div class="chips" role="group" aria-label="Saralash" data-i-aria="a_filter">
+      <button class="chip" type="button" data-f="all" aria-pressed="true" data-i="c_all">Hammasi</button>
+      <button class="chip" type="button" data-f="drops" aria-pressed="false" data-i="c_drops">Tomchilar · 25 ml</button>
+      <button class="chip" type="button" data-f="syrup" aria-pressed="false" data-i="c_syrup">Siroplar · 100 ml</button>
+      <button class="chip" type="button" data-f="adult" aria-pressed="false" data-i="c_adult">Kattalar uchun</button>
+    </div>
+    <div class="grid" id="grid"></div>
+    <p class="hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.5v.5"/></svg><span data-i="kat_hint">Mahsulot nomi tashxis emas. Tanlashda farmatsevt yoki pediatr bilan maslahatlashing.</span></p>
+  </section>
+
+  <section class="sec" id="haqida" aria-labelledby="h-ab">
+    <p class="eyebrow" data-i="ab_e">Liniya haqida</p>
+    <h2 id="h-ab" data-i="ab_h">Kanadadan, bolalar uchun</h2>
+    <div class="about">
+      <div class="ab"><h3 data-i="ab1_h">Ishlab chiqaruvchi</h3><p data-i="ab1_p">Homeocan Inc., Monreal (Kanada). Kompaniyaga 1987-yilda farmatsevt Michèle Boisvert asos solgan, bolalar liniyasi 1998-yilda boshlangan.</p></div>
+      <div class="ab"><h3 data-i="ab2_h">Ikki shakl</h3><p data-i="ab2_p">Pipetkali tomchilar — 25 ml, siroplar — 100 ml. Kattalar uchun alohida granulalar ham bor.</p></div>
+      <div class="ab"><h3 data-i="ab3_h">Ta’mlar</h3><p data-i="ab3_p">Malina, uzum, banan, gilos, apelsin va karamel. Har bir mahsulotning ta’mi qadoqda ko‘rsatilgan.</p>
+        <div class="sw" aria-hidden="true"><i style="--f:#E0245E"></i><i style="--f:#7B3FA0"></i><i style="--f:#F2CF3A"></i><i style="--f:#B3122E"></i><i style="--f:#F7941D"></i><i style="--f:#B87333"></i></div></div>
+      <div class="ab"><h3 data-i="ab4_h">Ochiq tarkib</h3><p data-i="ab4_p">Faol va yordamchi moddalar ro‘yxati har bir mahsulot kartochkasida.</p></div>
+    </div>
+  </section>
+
+  <section class="sec" id="foydalanish" aria-labelledby="h-ru">
+    <p class="eyebrow" data-i="ru_e">To‘g‘ri foydalanish</p>
+    <h2 id="h-ru" data-i="ru_h">Berishdan oldin 4 qoida</h2>
+    <ul class="rules">
+      <li><span class="ri"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/></svg></span><div><b data-i="r1_h">Yo‘riqnomani o‘qing</b><span data-i="r1_p">Yosh guruhi, doza va qabul soni har bir mahsulotda har xil. Ularni qadoq ichidagi yo‘riqnomadan tekshiring.</span></div></li>
+      <li><span class="ri"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3 4 5 6.6 5 9.5A5 5 0 0 1 7 12.5C7 9.6 9 7 12 3z"/></svg></span><div><b data-i="r2_h">Tomchilar — ichish uchun</b><span data-i="r2_p">Pipetkadagi eritma og‘iz orqali beriladi. Burun, ko‘z yoki quloqqa tomizilmaydi.</span></div></li>
+      <li><span class="ri"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20 15 9"/><ellipse cx="17.5" cy="6.5" rx="3.5" ry="2.6" transform="rotate(-45 17.5 6.5)"/></svg></span><div><b data-i="r3_h">Siropni o‘lchab bering</b><span data-i="r3_p">Millilitrni o‘lchov qoshiqchasi yoki shpris bilan o‘lchang. Oddiy oshxona qoshig‘i aniq o‘lchamaydi.</span></div></li>
+      <li><span class="ri"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10z"/></svg></span><div><b data-i="r4_h">Davolashni o‘zingiz o‘zgartirmang</b><span data-i="r4_p">Mahsulotlar shifokor tayinlagan dorilarning o‘rnini bosmaydi. Davolashni to‘xtatish yoki almashtirishni shifokor bilan hal qiling.</span></div></li>
+    </ul>
+  </section>
+
+  <section class="sec alert" id="yordam" aria-labelledby="h-sos">
+    <p class="eyebrow" data-i="sos_e">Muhim</p>
+    <h2 id="h-sos" data-i="sos_h">Bu belgilarda kutmang — tez yordam chaqiring</h2>
+    <ul>
+      <li data-i="s1">Nafas olish qiyinlashsa, lab yoki teri ko‘karsa</li>
+      <li data-i="s2">Lab, til yoki tomoq shishsa</li>
+      <li data-i="s3">Bola qiyin uyg‘onsa, juda holsiz bo‘lsa yoki tutqanoq tutsa</li>
+      <li data-i="s4">Bola suyuqlik yoki so‘lakni yuta olmasa</li>
+      <li data-i="s5">3 oygacha chaqaloqda harorat 38 °C va undan yuqori, 3–6 oylikda 39 °C va undan yuqori</li>
+      <li data-i="s6">Bola emmasa, siydik kam bo‘lsa yoki odatdagidan boshqacha yig‘lasa</li>
+    </ul>
+    <a class="sos" href="tel:103"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span data-i="sos_btn">Tez yordam — 103</span></a>
+    <p class="src" data-i="sos_src">Ro‘yxat to‘liq emas. Bola holatidan xavotirda bo‘lsangiz, shifokorga murojaat qiling. NHS (Buyuk Britaniya) tavsiyalari asosida.</p>
+  </section>
+
+  <section class="sec" id="savollar" aria-labelledby="h-faq">
+    <p class="eyebrow" data-i="faq_e">Savol-javob</p>
+    <h2 id="h-faq" data-i="faq_h">Ota-onalar ko‘p so‘raydigan savollar</h2>
+    <div class="faq">
+      <details><summary><span data-i="q1">Bu mahsulotlar dori vositasimi?</span><i aria-hidden="true">+</i></summary><p data-i="a1">Yo‘q. Kids 0–9 mahsulotlari O‘zbekistonda biologik faol qo‘shimcha sifatida sotiladi — qadoqda «Biologik faol qo‘shimcha. Dori vositasi emas» deb yozilgan. Ishlab chiqaruvchi qo‘llanish tavsifini an’anaviy foydalanishga asoslaydi; bu zamonaviy klinik tadqiqotlarda isbotlangan samaradorlik degani emas. Mahsulotlar shifokor tayinlagan davoning o‘rnini bosmaydi.</p></details>
+      <details><summary><span data-i="q2">Farzandimga qaysi biri mos?</span><i aria-hidden="true">+</i></summary><p data-i="a2">Mahsulot nomi tashxis emas. Bolaning yoshi, alomatlari va ular qachondan beri davom etayotganini farmatsevt yoki pediatrga ayting — shunda mos variantni birga tanlaysiz. Mahsulotlar haqidagi savollaringizga biz ham javob beramiz.</p></details>
+      <details><summary><span data-i="q3">Sinus tomchilarini burunga tomizsa bo‘ladimi?</span><i aria-hidden="true">+</i></summary><p data-i="a3">Yo‘q. Kids 0–9 dagi barcha tomchilar ichish uchun mo‘ljallangan. Ularni burun, ko‘z yoki quloqqa tomizmang.</p></details>
+      <details><summary><span data-i="q4">Homeocoksinum va Homeocoksinum Flu Buster farqi nimada?</span><i aria-hidden="true">+</i></summary><p data-i="a4">Homeocoksinum (Kids 0–9) — 0–9 yoshli bolalar uchun 25 ml ichiladigan tomchilar. Homeocoksinum Flu Buster — kattalar va 13 yoshdan katta bolalar uchun til ostida eritiladigan granulalar, tarkibida saxaroza va laktoza bor. Qabul tartibi har xil, qadoqlarni adashtirmang.</p></details>
+      <details><summary><span data-i="q5">Tarkibida konservant yoki shakar bormi?</span><i aria-hidden="true">+</i></summary><p data-i="a5">Suyuq mahsulotlarda konservant sifatida natriy benzoat va kaliy sorbat, shirinlik uchun sorbitol bor. Mevali ta’mni aromatizator beradi. Flu Buster granulalarida saxaroza va laktoza bor. To‘liq tarkib har bir mahsulot kartochkasida.</p></details>
+      <details><summary><span data-i="q6">Qancha vaqtda yordam beradi?</span><i aria-hidden="true">+</i></summary><p data-i="a6">Aniq muddat yoki natijani va’da qila olmaymiz. Yo‘riqnomadagi qabul oralig‘i ta’sir boshlanadigan vaqt degani emas. Alomatlar saqlansa yoki kuchaysa, shifokorga murojaat qiling.</p></details>
+      <details><summary><span data-i="q7">Boshqa dorilar bilan birga berish mumkinmi?</span><i aria-hidden="true">+</i></summary><p data-i="a7">Bolaga berilayotgan barcha dori va qo‘shimchalar ro‘yxatini farmatsevt yoki pediatr bilan tekshiring. Shifokor tayinlagan davoni o‘zingiz to‘xtatmang.</p></details>
+      <details><summary><span data-i="q8">Narxi qancha?</span><i aria-hidden="true">+</i></summary><p data-i="a8">Narx dorixonaga qarab farq qilishi mumkin. Joriy narx va mahsulot bor dorixonalarni ArzonApteka botida ko‘rasiz: «Buyurtma berish» tugmasini bosing. Savollar bo‘lsa, Telegram orqali yozing.</p></details>
+    </div>
+  </section>
+
+  <section class="sec" id="dorixonalar" aria-labelledby="h-ph">
+    <p class="eyebrow" data-i="ph_e">Buyurtma</p>
+    <h2 id="h-ph" data-i="ph_h">Qayerdan sotib olish</h2>
+    <p class="lead" data-i="ph_p">Joriy narx va mahsulot bor dorixonalarni ArzonApteka boti ko‘rsatadi. Bot «kids 0-9» so‘rovi yozilgan holda ochiladi — yuborish tugmasini bosing.</p>
+    <a class="botcta" id="botcta" href="#" target="_blank" rel="noopener"><span class="bi" aria-hidden="true">AA</span><span><b data-i="bot_h">ArzonApteka’da qidirish</b><small>@arzonaptekabot · kids 0-9</small></span></a>
+    <p class="sub2" data-i="ph_p2">Hamkor dorixona tarmoqlari. Borishdan oldin mahsulot borligini aniqlang.</p>
+    <div class="ph-list" id="pharm"></div>
+  </section>
+
+  <footer class="foot">
+    <div><h3 data-i="ft_m">Ishlab chiqaruvchi</h3><p data-i="ft_m_p">Homeocan Inc., 5655 Rue de Marseille, Monreal, Kvebek, Kanada</p></div>
+    <div><h3 data-i="ft_d">O‘zbekistonda</h3><p data-i="ft_d_p">«Greenery Tex» MChJ, Toshkent sh., Chilonzor tumani, Chilonzor ko‘chasi, 55-uy</p><div id="contacts"></div></div>
+    <p class="bfq" data-i="bfq">Biologik faol qo‘shimcha. Dori vositasi emas.</p>
+    <p class="disc" data-i="disc">Sahifadagi ma’lumot tanishish uchun berilgan va shifokor maslahatining o‘rnini bosmaydi. Qo‘llashdan oldin yo‘riqnoma bilan tanishing.</p>
+    <p class="disc"><span data-i="upd">Ma’lumot yangilangan:</span> <span id="upd"></span></p>
+    <div class="wm" aria-hidden="true"><span style="color:var(--k-blue)">k</span><span style="color:var(--k-green)">i</span><span style="color:var(--k-pink)">d</span><span style="color:var(--k-orange)">s</span><span class="sp"></span><span class="n">0–9</span></div>
+  </footer>
+</div>
+
+<div class="dock" id="dock" aria-hidden="true"><div class="dock-in" id="dockIn"></div></div>
+<div class="sheet-wrap" id="sheetWrap" hidden><div class="scrim" data-close></div><section class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sh-name"></section></div>
+
+<script>
+/* ===================================================================
+   SOZLAMALAR — faqat shu blokni to‘ldiring. Bo‘sh qolgan havola tugmasi
+   "havola qo‘shilmagan" deb ko‘rinadi va bosilganda hech qayerga olib bormaydi.
+   =================================================================== */
+var CONFIG = {
+  order:       {bot:'arzonaptekabot', text:'kids 0-9'},  // Buyurtma: bot shu matn yozilgan holda ochiladi
+  telegram:    'kids09_uz',            // admin — savollar uchun (@ belgisisiz)
+  channel:     'kids09uz',             // Telegram kanal
+  instagram:   'kids09.ca',
+  youtube:     'https://www.youtube.com/@KIDS0-9_homeocan',
+  phone:       '',                     // yangi raqam kelganda: '+998XXXXXXXXX' — bo‘sh bo‘lsa telefon tugmasi ko‘rinmaydi
+  phoneLabel:  '',                     // ko‘rinadigan shakli: '+998 XX XXX XX XX'
+  email:       'grenerytex@mail.ru',   // yo‘riqnomadagi manzil — tasdiqlang
+  official:    'https://kids09.uz/',   // rasmiy sayt
+  site:        'https://homeocan.ca/en', // ishlab chiqaruvchi
+  /* Ob-havo va havo sifati — OpenWeather Free (tijorat foydalanishga ruxsat, ODbL).
+     Shart: sahifada "Weather data © OpenWeather" yozuvi turishi kerak — blok o‘zi chiqaradi.
+     Kalit sahifa kodida ochiq turadi; suiiste’mol bo‘lsa, home.openweathermap.org/api_keys da yangisini yarating. */
+  weather:     {provider:'openweather', key:'56a4f43944b871758253f2ba5ae60433', city:'tashkent', refreshMin:10},
+  updated:     '09.10.2026',
+  pharmacies:  ['Eco Pharm','Binar pharm','Bilol pharm','A-mega bek','Zayd-pharm','Grand pharm','Poli vita pharm','+03','Pharm smart','Onko-pharm','Mironshox','A5','Prosperiti']
+};
+
+/* Mahsulot rasmlari — loyihaning public/images/ papkasidan */
+var IMG = {
+  "allergies": "/images/all-allergies.webp",
+  "calm": "/images/calm.webp",
+  "colic": "/images/colic.webp",
+  "daysyrup": "/images/day-syrup.webp",
+  "flubuster": "/images/flu-buster.webp",
+  "homeocoksinum": "/images/homeocoksinum.webp",
+  "painfever": "/images/pain-fever.webp",
+  "sinus": "/images/sinus.webp",
+  "teething": "/images/teething.webp",
+  "throat": "/images/throat-ease.webp"
+};
+
+/* Mahsulotlar: manba — loyiha bilim bazasi v1.0 va O‘zbekiston yo‘riqnoma loyihalari */
+var FLAV = {
+  orange:{c:'#F7941D',uz:'Apelsin',ru:'Апельсин'}, rasp:{c:'#E0245E',uz:'Malina',ru:'Малина'}, banana:{c:'#F2CF3A',uz:'Banan',ru:'Банан'},
+  cherry:{c:'#B3122E',uz:'Gilos',ru:'Вишня'}, grape:{c:'#7B3FA0',uz:'Uzum',ru:'Виноград'}, caramel:{c:'#B87333',uz:'Karamel',ru:'Карамель'}
+};
+var EXC = {
+  uz:function(a){return 'tozalangan suv, sorbitol, '+a+', natriy benzoat, kaliy sorbat, limon kislotasi'},
+  ru:function(a){return 'очищенная вода, сорбитол, '+a+', бензоат натрия, сорбат калия, лимонная кислота'}
+};
+var AR = {
+  orange:{uz:'apelsin aromatizatori',ru:'ароматизатор «Апельсин»'}, rg:{uz:'malina va uzum aromatizatori',ru:'ароматизатор «Малина и виноград»'},
+  banana:{uz:'banan aromatizatori',ru:'ароматизатор «Банан»'}, cherry:{uz:'gilos aromatizatori',ru:'ароматизатор «Вишня»'}, caramel:{uz:'karamel',ru:'карамель'}
+};
+var FORM = {
+  drops:{uz:'Ichish uchun tomchilar',ru:'Капли для приёма внутрь',short:{uz:'Tomchilar',ru:'Капли'},vol:{uz:'25 ml',ru:'25 мл'}},
+  syrup:{uz:'Sirop',ru:'Сироп',short:{uz:'Sirop',ru:'Сироп'},vol:{uz:'100 ml',ru:'100 мл'}},
+  adult:{uz:'Til ostiga granulalar',ru:'Гранулы под язык',short:{uz:'Granulalar',ru:'Гранулы'},vol:{uz:'1 g li tubalar',ru:'Тубы по 1 г'}}
+};
+var AGE09 = {uz:'0–9 yosh',ru:'0–9 лет'};
+
+var P = [
+ {id:'teething',name:'Teething',type:'drops',c:'#E9719F',on:'#FFFFFF',fl:'orange',ar:'orange',
+  th:{uz:'Tish chiqishi davri',ru:'Прорезывание зубов'},
+  d:{uz:'Ishlab chiqaruvchi tish chiqishi davrida milkdagi noqulaylik va bezovtalik mavzusida taqdim etadi. Milkka surtiladigan gel emas — ichiladigan tomchilar.',
+     ru:'Производитель позиционирует продукт для периода прорезывания зубов: дискомфорт в дёснах и беспокойство. Это не гель для дёсен, а капли для приёма внутрь.'},
+  n:{uz:'Harorat 38 °C va undan yuqori bo‘lsa yoki ich ketsa, buni tish chiqishiga bog‘lamang — pediatrga murojaat qiling.',
+     ru:'Если температура 38 °C и выше или начался понос, не списывайте это на зубы — обратитесь к педиатру.'},
+  comp:['Chamomilla','Arnica montana','Borax','Hypericum perforatum']},
+ {id:'colic',name:'Colic',type:'drops',c:'#E0057A',on:'#FFFFFF',fl:'rasp',ar:'rg',
+  th:{uz:'Qorin sanchig‘i va gaz',ru:'Колики и газики'},
+  d:{uz:'Ishlab chiqaruvchi qorin sanchig‘i, gaz, ko‘ngil aynishi, kekirish va bezovtalik mavzusida taqdim etadi.',
+     ru:'Производитель позиционирует продукт при коликах, газиках, тошноте, отрыжке и беспокойстве.'},
+  n:{uz:'Bola emmasa, vazn olmasa yoki odatdagidan boshqacha yig‘lasa — pediatrga murojaat qiling.',
+     ru:'Если ребёнок отказывается от еды, плохо набирает вес или плачет необычно — обратитесь к педиатру.'},
+  comp:['Colocynthis','Magnesia phosphorica','Chamomilla','Dioscorea villosa']},
+ {id:'sinus',name:'Sinus',type:'drops',c:'#039B76',on:'#FFFFFF',fl:'rasp',ar:'rg',
+  th:{uz:'Tumov va aksirish',ru:'Насморк и чихание'},
+  d:{uz:'Ishlab chiqaruvchi aksirish, burun oqishi, ko‘z yoshlanishi, bosh og‘rig‘i va tomoq qichishishi mavzusida taqdim etadi.',
+     ru:'Производитель позиционирует продукт при чихании, насморке, слезотечении, головной боли и раздражении горла.'},
+  n:{uz:'Faqat ichish uchun — burunga tomizilmaydi.',ru:'Только для приёма внутрь — не закапывать в нос.'},
+  comp:['Pulsatilla','Allium cepa','Arsenicum album','Nux vomica','Euphrasia officinalis','Sabadilla','Aralia racemosa','Cuprum metallicum']},
+ {id:'allergies',name:'All Allergies',type:'drops',c:'#F0CA2D',on:'#3A2C00',fl:'banana',ar:'banana',
+  th:{uz:'Allergik alomatlar',ru:'Аллергические симптомы'},
+  d:{uz:'Ishlab chiqaruvchi aksirish, burun bitishi, tomoq va teri qichishishi, ko‘z yoshlanishi kabi allergik alomatlar mavzusida taqdim etadi.',
+     ru:'Производитель позиционирует продукт при аллергических симптомах: чихание, заложенность носа, раздражение горла и кожи, слезотечение.'},
+  n:{uz:'Lab, til yoki tomoq shishsa, nafas qiyinlashsa — mahsulotni kutmang, darhol 103 ga qo‘ng‘iroq qiling.',
+     ru:'При отёке губ, языка или горла и затруднённом дыхании не ждите действия продукта — сразу звоните 103.'},
+  comp:['Pulsatilla','Allium cepa','Arsenicum album','Nux vomica','Euphrasia officinalis','Sabadilla','Sticta pulmonaria','Aralia racemosa','Cuprum metallicum']},
+ {id:'painfever',name:'Pain and Fever',type:'drops',c:'#0F8FD0',on:'#FFFFFF',fl:'cherry',ar:'cherry',
+  th:{uz:'Og‘riq va isitma',ru:'Боль и жар'},
+  d:{uz:'Ishlab chiqaruvchi isitma va og‘riq — tomoq og‘rig‘i, bosh og‘rig‘i, tish og‘rig‘i va umumiy og‘riq mavzusida taqdim etadi.',
+     ru:'Производитель позиционирует продукт при жаре и боли: боль в горле, головная и зубная боль, ломота.'},
+  n:{uz:'Haroratni tushiruvchi dori o‘rnini bosmaydi. Harorat yuqori bo‘lsa yoki 2 kundan ortiq davom etsa — shifokorga murojaat qiling.',
+     ru:'Не заменяет жаропонижающие средства. При высокой температуре или если она держится дольше 2 дней — обратитесь к врачу.'},
+  comp:['Arnica montana','Belladonna','Ferrum phosphoricum','Hypericum perforatum','Ledum palustre','Thuja occidentalis']},
+ {id:'homeocoksinum',name:'Homeocoksinum',type:'drops',c:'#DB1E1A',on:'#FFFFFF',fl:'rasp',ar:'rg',
+  th:{uz:'Shamollash boshlanishi',ru:'Начало простуды'},
+  d:{uz:'Ishlab chiqaruvchi grippsimon holat boshlanishidagi isitma, titroq, burun oqishi, og‘riq va holsizlik mavzusida taqdim etadi.',
+     ru:'Производитель позиционирует продукт в начале гриппоподобного состояния: жар, озноб, насморк, ломота и слабость.'},
+  n:{uz:'Kattalar uchun granulali Homeocoksinum Flu Buster bilan adashtirmang — yosh guruhi va qabul tartibi boshqa.',
+     ru:'Не путайте с гранулами Homeocoksinum Flu Buster для взрослых: у них другой возраст и порядок приёма.'},
+  comp:['Anas barbariae hepatis et cordis extractum']},
+ {id:'calm',name:'Calm',type:'syrup',c:'#9346B8',on:'#FFFFFF',fl:'grape',ar:'rg',
+  age:{uz:'0–9 yosh (0–5 va 6–9 yosh uchun alohida doza)',ru:'0–9 лет (отдельная доза для 0–5 и 6–9 лет)'},
+  th:{uz:'Bezovtalik va asabiylik',ru:'Беспокойство и возбудимость'},
+  d:{uz:'Ishlab chiqaruvchi bezovtalik, qo‘zg‘aluvchanlik va asabiylik mavzusida taqdim etadi.',
+     ru:'Производитель позиционирует продукт при беспокойстве, возбудимости и нервозности.'},
+  n:{uz:'Siropni o‘lchov qoshiqchasi bilan o‘lchang. Bola odatdagidan qiyin uyg‘onsa — shifokorga murojaat qiling.',
+     ru:'Отмеряйте сироп мерной ложкой. Если ребёнка труднее разбудить, чем обычно, — обратитесь к врачу.'},
+  comp:['Argentum nitricum','Asa foetida','Avena sativa','Cocculus indicus','Hyoscyamus niger','Ignatia amara','Paeonia officinalis','Stramonium','Valeriana officinalis']},
+ {id:'throat',name:'Throat Ease',type:'syrup',c:'#D0333A',on:'#FFFFFF',fl:'caramel',ar:'caramel',
+  age:{uz:'0–9 yosh (0–6 va 7–9 yosh uchun alohida doza)',ru:'0–9 лет (отдельная доза для 0–6 и 7–9 лет)'},
+  th:{uz:'Tomoq noqulayligi',ru:'Дискомфорт в горле'},
+  d:{uz:'Ishlab chiqaruvchi tomoqdagi achishish, yutishdagi noqulaylik, ovoz xirillashi va qichishish mavzusida taqdim etadi.',
+     ru:'Производитель позиционирует продукт при жжении в горле, дискомфорте при глотании, осиплости и раздражении.'},
+  n:{uz:'Bola so‘lak yoki suyuqlikni yuta olmasa — zudlik bilan shifokorga murojaat qiling.',
+     ru:'Если ребёнок не может глотать слюну или жидкость — срочно обратитесь к врачу.'},
+  comp:['Arsenicum album','Arum triphyllum','Kali phosphoricum','Hepar sulphuris calcareum','Mercurius solubilis','Natrum sulphuricum']},
+ {id:'daysyrup',name:'Day Syrup',type:'syrup',c:'#86BF14',on:'#1D3300',fl:'caramel',ar:'caramel',
+  age:{uz:'0–9 yosh (0–6 va 7–9 yosh uchun alohida doza)',ru:'0–9 лет (отдельная доза для 0–6 и 7–9 лет)'},
+  th:{uz:'Yo‘tal va shamollash',ru:'Кашель и простуда'},
+  d:{uz:'Ishlab chiqaruvchi kunduzgi sirop sifatida yo‘tal, shamollash, burun bitishi va balg‘am mavzusida taqdim etadi.',
+     ru:'Производитель позиционирует его как дневной сироп при кашле, простуде, заложенности носа и мокроте.'},
+  n:{uz:'Yo‘tal 5 kundan oshsa yoki nafas olish qiyinlashsa — shifokorga murojaat qiling.',
+     ru:'Если кашель длится дольше 5 дней или дыхание затруднено — обратитесь к врачу.'},
+  comp:['Drosera rotundifolia','Arnica montana','Bryonia alba','Ipecacuanha','Cetraria islandica','Belladonna','Coccus cacti','Stannum metallicum']},
+ {id:'flubuster',name:'Homeocoksinum Flu Buster',type:'adult',c:'#C40207',on:'#FFFFFF',fl:null,
+  age:{uz:'Kattalar va 13 yoshdan katta bolalar',ru:'Взрослые и дети старше 13 лет'}, ageShort:{uz:'13+ va kattalar',ru:'13+ и взрослые'},
+  th:{uz:'Kattalar uchun: shamollash',ru:'Для взрослых: простуда'},
+  d:{uz:'Til ostida eritiladigan granulalar. Ishlab chiqaruvchi shamollash va grippsimon alomatlar mavzusida taqdim etadi. Kids 0–9 liniyasiga kirmaydi.',
+     ru:'Гранулы для рассасывания под языком. Производитель позиционирует их при простуде и гриппоподобных симптомах. Не входит в линейку Kids 0–9.'},
+  n:{uz:'0–9 yoshli bolalar uchun emas. Homiladorlik va emizish davrida — faqat shifokor tavsiyasi bilan.',
+     ru:'Не для детей 0–9 лет. При беременности и грудном вскармливании — только по рекомендации врача.'},
+  comp:['Anas barbariae hepatis et cordis extractum'], exc:{uz:'saxaroza, laktoza',ru:'сахароза, лактоза'}}
+];
+
+/* Matnlar: o‘zbekchasi HTMLdan olinadi, ruschasi shu yerda */
+var T = {uz:{
+  a_off:'Rasmiy sayt', web:'Sayt',
+  air_rf_done:'Yangilandi', w_feels:'His qilinishi', w_hum:'Namlik', w_wind:'Shamol', w_ms:'m/s', aq_name:'Havo sifati · US AQI', kids_tip:'Bolalar uchun:',
+  why_401:'Kod 401: ma’lumot manbasi kirishni rad etdi (API kaliti hali faollashmagan bo‘lishi mumkin).', why_429:'Kod 429: so‘rovlar limiti tugadi.', why_net:'Manbaga ulanib bo‘lmadi (internet yoki sahifa sozlamasi tashqi so‘rovni to‘smoqda).', why_to:'Javob kutish vaqti tugadi.', why_nokey:'API kaliti kiritilmagan.',
+  loading:'Yuklanmoqda…', air_err:'Ob-havo ma’lumoti hozir yuklanmadi.', retry:'Qayta urinish', asof:'holatiga', src:'Manba', scale:'AQI shkalasi: US EPA',
+  a_order:'Buyurtma berish', a_order_s:'ArzonApteka boti: narx va dorixonalar', a_ask:'Savol berish', a_phone:'Qo‘ng‘iroq qilish', a_ig:'Instagram', a_ch:'Telegram kanal', a_ph:'Qayerdan sotib olish', a_ph_s:'ArzonApteka va hamkor dorixonalar', a_site:'Ishlab chiqaruvchi sayti',
+  empty:'Havola hali qo‘shilmagan', copied:'Havola nusxalandi', num_copied:'Nusxalandi', copy:'Nusxalash', copy_fail:'Nusxalab bo‘lmadi — matnni belgilab oling',
+  d_cat:'Katalog', d_order:'Buyurtma', d_ask:'Savol', d_call:'Qo‘ng‘iroq',
+  s_desc:'Ishlab chiqaruvchi tavsifi', s_form:'Shakli', s_vol:'Hajmi', s_age:'Yosh', s_fl:'Ta’mi', s_imp:'Muhim', s_comp:'Faol komponentlar',
+  s_comp_n:'Suyultirish darajasi va miqdori — qadoq ichidagi yo‘riqnomada.', s_exc:'Yordamchi moddalar', s_use:'Qabul tartibi',
+  s_use_p:'Yoshga mos doza va qabul soni qadoq ichidagi yo‘riqnomada ko‘rsatilgan. Qo‘llashdan oldin farmatsevt yoki pediatr bilan maslahatlashing.',
+  s_order:'Buyurtma berish', s_ask:'Savol berish', s_call:'Qo‘ng‘iroq qilish', s_link:'Mahsulot havolasini nusxalash', s_close:'Yopish', s_prev:'Oldingi mahsulot', s_next:'Keyingi mahsulot',
+  s_adult:'Kattalar uchun', tel:'Telefon', mail:'E-mail', noflav:'—'
+},ru:{
+  canada:'Канада', bio:'Детская линейка канадской компании Homeocan. Состав, формы выпуска и где купить — на этой странице.',
+  f1:'детских продуктов', f2:'вкусов: фрукты и карамель', f3:'год основания Homeocan',
+  a_share:'Поделиться', a_stories:'Продукты', a_links:'Ссылки', a_filter:'Фильтр',
+  kat_e:'Каталог', kat_h:'Найдите продукт по цвету упаковки', kat_p:'У каждого продукта свой цвет упаковки. Нажмите на карточку — откроются состав, форма выпуска и возраст.',
+  c_all:'Все', c_drops:'Капли · 25 мл', c_syrup:'Сиропы · 100 мл', c_adult:'Для взрослых',
+  kat_hint:'Название продукта — не диагноз. При выборе посоветуйтесь с фармацевтом или педиатром.',
+  ab_e:'О линейке', ab_h:'Из Канады — для детей',
+  ab1_h:'Производитель', ab1_p:'Homeocan Inc., Монреаль (Канада). Компанию в 1987 году основала фармацевт Мишель Буавер (Michèle Boisvert), детская линейка выпускается с 1998 года.',
+  ab2_h:'Две формы', ab2_p:'Капли с пипеткой — 25 мл, сиропы — 100 мл. Для взрослых есть отдельные гранулы.',
+  ab3_h:'Вкусы', ab3_p:'Малина, виноград, банан, вишня, апельсин и карамель. Вкус каждого продукта указан на упаковке.',
+  ab4_h:'Открытый состав', ab4_p:'Активные и вспомогательные вещества — в карточке каждого продукта.',
+  ru_e:'Правильное применение', ru_h:'4 правила перед применением',
+  r1_h:'Читайте инструкцию', r1_p:'Возраст, доза и кратность приёма у каждого продукта свои. Сверяйтесь с инструкцией в упаковке.',
+  r2_h:'Капли — для приёма внутрь', r2_p:'Раствор из пипетки дают через рот. Не закапывайте его в нос, глаза или уши.',
+  r3_h:'Отмеряйте сироп', r3_p:'Отмеряйте миллилитры мерной ложкой или шприцем. Обычная столовая ложка не даёт точной дозы.',
+  r4_h:'Не меняйте лечение сами', r4_p:'Продукты не заменяют лекарства, назначенные врачом. Отмену или замену лечения обсуждайте с врачом.',
+  sos_e:'Важно', sos_h:'При этих признаках не ждите — вызовите скорую',
+  s1:'Затруднённое дыхание, посинение губ или кожи', s2:'Отёк губ, языка или горла', s3:'Ребёнка трудно разбудить, он очень вялый или у него судороги',
+  s4:'Ребёнок не может глотать жидкость или слюну', s5:'Температура 38 °C и выше у малыша до 3 месяцев, 39 °C и выше — в 3–6 месяцев', s6:'Отказ от еды, мало мочи или необычный плач',
+  sos_btn:'Скорая помощь — 103', sos_src:'Список не полный. Если вас тревожит состояние ребёнка, обратитесь к врачу. По материалам рекомендаций NHS (Великобритания).',
+  faq_e:'Вопросы и ответы', faq_h:'Частые вопросы родителей',
+  q1:'Это лекарства?', a1:'Нет. В Узбекистане продукты Kids 0–9 реализуются как биологически активные добавки — на упаковке указано «Биологически активная добавка. Не является лекарственным средством». Производитель основывает описание применения на традиционном использовании; это не означает эффективность, доказанную современными клиническими исследованиями. Продукты не заменяют лечение, назначенное врачом.',
+  q2:'Какой продукт подойдёт моему ребёнку?', a2:'Название продукта — не диагноз. Расскажите фармацевту или педиатру о возрасте ребёнка, симптомах и их длительности — так вы вместе выберете подходящий вариант. На вопросы о продуктах ответим и мы.',
+  q3:'Можно ли закапывать Sinus в нос?', a3:'Нет. Все капли Kids 0–9 предназначены для приёма внутрь. Не закапывайте их в нос, глаза или уши.',
+  q4:'Чем Homeocoksinum отличается от Homeocoksinum Flu Buster?', a4:'Homeocoksinum (Kids 0–9) — капли 25 мл для приёма внутрь для детей 0–9 лет. Homeocoksinum Flu Buster — гранулы для рассасывания под языком для взрослых и детей старше 13 лет, в составе есть сахароза и лактоза. Порядок приёма разный, не перепутайте упаковки.',
+  q5:'Есть ли в составе консерванты или сахар?', a5:'В жидких продуктах в качестве консервантов — бензоат натрия и сорбат калия, для сладости — сорбитол. Фруктовый вкус дают ароматизаторы. В гранулах Flu Buster есть сахароза и лактоза. Полный состав — в карточке каждого продукта.',
+  q6:'Как быстро помогает?', a6:'Мы не можем обещать конкретный срок или результат. Интервал между приёмами в инструкции — не время наступления эффекта. Если симптомы сохраняются или усиливаются, обратитесь к врачу.',
+  q7:'Можно ли давать вместе с другими лекарствами?', a7:'Проверьте список всех лекарств и добавок, которые получает ребёнок, с фармацевтом или педиатром. Не отменяйте самостоятельно лечение, назначенное врачом.',
+  q8:'Сколько стоит?', a8:'Цена может отличаться в разных аптеках. Актуальные цены и аптеки с наличием покажет бот ArzonApteka — нажмите «Заказать». Если есть вопросы, напишите нам в Telegram.',
+  ph_e:'Заказ', ph_h:'Где купить', ph_p:'Актуальные цены и аптеки с наличием показывает бот ArzonApteka. Бот откроется с готовым запросом «kids 0-9» — нажмите «Отправить».',
+  bot_h:'Искать в ArzonApteka', ph_p2:'Аптечные сети-партнёры. Перед визитом уточните наличие продукта.',
+  ft_m:'Производитель', ft_m_p:'Homeocan Inc., 5655 Rue de Marseille, Монреаль, Квебек, Канада',
+  ft_d:'В Узбекистане', ft_d_p:'ООО «Greenery Tex», г. Ташкент, Чиланзарский район, ул. Чиланзар, 55',
+  bfq:'Биологически активная добавка. Не является лекарственным средством.',
+  disc:'Информация на странице носит ознакомительный характер и не заменяет консультацию врача. Перед применением ознакомьтесь с инструкцией.',
+  upd:'Информация обновлена:',
+  a_off:'Официальный сайт', web:'Сайт', air_t:'Погода и качество воздуха', air_city:'Город', air_rf:'Обновить',
+  air_rf_done:'Обновлено', w_feels:'Ощущается', w_hum:'Влажность', w_wind:'Ветер', w_ms:'м/с', aq_name:'Качество воздуха · US AQI', kids_tip:'Детям:',
+  why_401:'Код 401: источник отклонил доступ (возможно, API-ключ ещё не активирован).', why_429:'Код 429: исчерпан лимит запросов.', why_net:'Нет соединения с источником (интернет или настройки страницы блокируют внешний запрос).', why_to:'Истекло время ожидания ответа.', why_nokey:'API-ключ не указан.',
+  loading:'Загрузка…', air_err:'Не удалось загрузить данные о погоде.', retry:'Повторить', asof:'данные на', src:'Источник', scale:'Шкала AQI: US EPA',
+  a_order:'Заказать', a_order_s:'Бот ArzonApteka: цены и аптеки', a_ask:'Задать вопрос', a_phone:'Позвонить', a_ig:'Instagram', a_ch:'Telegram-канал', a_ph:'Где купить', a_ph_s:'ArzonApteka и аптеки-партнёры', a_site:'Сайт производителя',
+  empty:'Ссылка ещё не добавлена', copied:'Ссылка скопирована', num_copied:'Скопировано', copy:'Копировать', copy_fail:'Не удалось скопировать — выделите текст',
+  d_cat:'Каталог', d_order:'Заказать', d_ask:'Вопрос', d_call:'Позвонить',
+  s_desc:'Описание производителя', s_form:'Форма', s_vol:'Объём', s_age:'Возраст', s_fl:'Вкус', s_imp:'Важно', s_comp:'Активные компоненты',
+  s_comp_n:'Степень разведения и количество — в инструкции в упаковке.', s_exc:'Вспомогательные вещества', s_use:'Способ применения',
+  s_use_p:'Доза по возрасту и кратность приёма указаны в инструкции в упаковке. Перед применением посоветуйтесь с фармацевтом или педиатром.',
+  s_order:'Заказать', s_ask:'Задать вопрос', s_call:'Позвонить', s_link:'Скопировать ссылку на продукт', s_close:'Закрыть', s_prev:'Предыдущий продукт', s_next:'Следующий продукт',
+  s_adult:'Для взрослых', tel:'Телефон', mail:'E-mail', noflav:'—'
+}};
+
+var ICON = {
+  tg:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.4 4.2 2.9 11.3c-1 .4-1 1.6.1 1.9l4.6 1.5 1.8 5.5c.3.8 1.3 1 1.9.4l2.6-2.5 4.6 3.4c.7.5 1.7.1 1.9-.8l3-14.3c.2-1-.8-1.8-2-1.2zM9.6 14.2l8.6-7.6-6.8 8.9-.3 3.4z"/></svg>',
+  phone:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>',
+  ig:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>',
+  ch:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4h3l6 4V6L7 10z"/><path d="M17 9a4 4 0 0 1 0 6M19.5 6.5a7.5 7.5 0 0 1 0 11"/></svg>',
+  ph:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.1-7-11.5a7 7 0 0 1 14 0C19 14.9 12 21 12 21z"/><path d="M12 6.5v6M9 9.5h6"/></svg>',
+  site:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.8 3.8 5.8 3.8 9s-1.3 6.2-3.8 9c-2.5-2.8-3.8-5.8-3.8-9S9.5 5.8 12 3z"/></svg>',
+  off:'0–9',
+  cart:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2.2l2.3 11h10.8l2-8H6.3"/><circle cx="9.5" cy="19.5" r="1.4"/><circle cx="17" cy="19.5" r="1.4"/></svg>',
+  yt:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 7.2a2.6 2.6 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.6 2.6 0 0 0 2.4 7.2 27 27 0 0 0 2 12a27 27 0 0 0 .4 4.8 2.6 2.6 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.6 2.6 0 0 0 1.8-1.8A27 27 0 0 0 22 12a27 27 0 0 0-.4-4.8zM10 15V9l5.2 3z"/></svg>',
+  chev:'<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>',
+  grid:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="6.5" height="6.5" rx="2"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="2"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="2"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="2"/></svg>',
+  x:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>',
+  l:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></svg>',
+  r:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>',
+  warn:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5M12 17.2v.3"/></svg>',
+  link:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M10 14a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1 1"/><path d="M14 10a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1-1"/></svg>'
+};
+
+(function(){
+  var lang = 'uz', filter = 'all', current = -1, lastFocus = null;
+  var $ = function(s,r){return (r||document).querySelector(s)};
+  var $$ = function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+
+  /* O‘zbekcha matnlarni HTMLdan yig‘ish */
+  $$('[data-i]').forEach(function(el){ var k=el.getAttribute('data-i'); if(!(k in T.uz)) T.uz[k]=el.innerHTML; });
+  $$('[data-i-aria]').forEach(function(el){ var k=el.getAttribute('data-i-aria'); if(!(k in T.uz)) T.uz[k]=el.getAttribute('aria-label'); });
+  function t(k){ return (T[lang] && T[lang][k]!=null) ? T[lang][k] : (T.uz[k]!=null ? T.uz[k] : k); }
+  function L(o){ return o ? (o[lang]||o.uz) : ''; }
+
+  try{ var saved = localStorage.getItem('k09-lang'); if(saved==='ru'||saved==='uz') lang = saved; }catch(e){}
+
+  function tgUrl(){ return CONFIG.telegram ? 'https://t.me/'+CONFIG.telegram.replace(/^@/,'') : ''; }
+  /* t.me/<bot>?text=… — bot chati ochilganda yozish maydonida matn tayyor turadi */
+  function orderUrl(){ return CONFIG.order && CONFIG.order.bot ? 'https://t.me/'+CONFIG.order.bot.replace(/^@/,'')+(CONFIG.order.text?'?text='+encodeURIComponent(CONFIG.order.text):'') : ''; }
+  function age(p){ return L(p.age) || L(AGE09); }
+
+  function toast(msg){
+    var old = $('.toast'); if(old) old.remove();
+    var d = document.createElement('div'); d.className='toast'; d.setAttribute('role','status'); d.textContent=msg;
+    document.body.appendChild(d); setTimeout(function(){ d.remove(); }, 2400);
+  }
+  function copy(text, okMsg){
+    function fallback(){
+      var ta=document.createElement('textarea'); ta.value=text; ta.setAttribute('readonly',''); ta.style.position='fixed'; ta.style.opacity='0';
+      document.body.appendChild(ta); ta.select(); var ok=false; try{ ok=document.execCommand('copy'); }catch(e){}
+      ta.remove(); toast(ok ? okMsg : t('copy_fail'));
+    }
+    try{ navigator.clipboard.writeText(text).then(function(){ toast(okMsg); }, fallback); }catch(e){ fallback(); }
+  }
+  function pageUrl(hash){ return location.href.split('#')[0] + (hash ? '#'+hash : ''); }
+
+  /* ---------- chizish ---------- */
+  function renderStories(){
+    $('#stories').innerHTML = P.map(function(p,i){
+      return '<button type="button" class="story" data-open="'+i+'" style="--c:'+p.c+';--i:'+i+'"><span class="ring"><img src="'+(IMG[p.id]||'')+'" alt="" loading="lazy" width="64" height="64"></span><span>'+esc(p.name.replace('Homeocoksinum Flu Buster','Flu Buster'))+'</span></button>';
+    }).join('');
+  }
+  function linkRow(o,i){
+    var has = !!o.href, cls = 'lk'+(o.primary&&has?' primary':'')+(has?'':' empty');
+    var sub = has ? o.sub : t('empty');
+    var attrs = has ? ' href="'+esc(o.href)+'"'+(o.ext?' target="_blank" rel="noopener"':'') : ' href="#" data-empty="1" aria-disabled="true"';
+    return '<a class="'+cls+(o.offi?' offi':'')+'"'+attrs+' style="--i:'+i+';--ic:'+o.ic+'"><span class="ic">'+o.icon+'</span><span><b>'+o.title+'</b><small>'+esc(sub)+'</small></span>'+ICON.chev+'</a>';
+  }
+  function renderLinks(){
+    var rows = [
+      {title:t('a_order'), sub:t('a_order_s'), href:orderUrl(), icon:ICON.cart, ic:'#E8453C', ext:1, primary:1},
+      {title:t('a_off'), sub:CONFIG.official.replace(/^https?:\/\//,'').replace(/\/$/,''), href:CONFIG.official, icon:ICON.off, ic:'#FFFFFF', ext:1, offi:1},
+      {title:t('a_ask'), sub:'Telegram · @'+CONFIG.telegram.replace(/^@/,''), href:tgUrl(), icon:ICON.tg, ic:'#229ED9', ext:1},
+      {title:t('a_ig'), sub:'@'+CONFIG.instagram.replace(/^@/,''), href:CONFIG.instagram?'https://www.instagram.com/'+CONFIG.instagram.replace(/^@/,'')+'/':'', icon:ICON.ig, ic:'linear-gradient(45deg,#F5A623,#E1306C 55%,#833AB4)', ext:1},
+      {title:t('a_ch'), sub:'t.me/'+CONFIG.channel.replace(/^@/,''), href:CONFIG.channel?'https://t.me/'+CONFIG.channel.replace(/^@/,''):'', icon:ICON.ch, ic:'#1C7FC0', ext:1},
+      {title:'YouTube', sub:CONFIG.youtube.replace(/^https?:\/\/(www\.)?youtube\.com\//,''), href:CONFIG.youtube, icon:ICON.yt, ic:'#E62117', ext:1},
+      {title:t('a_phone'), sub:CONFIG.phoneLabel, href:CONFIG.phone?'tel:'+CONFIG.phone:'', icon:ICON.phone, ic:'#2E9E5B', opt:1},
+      {title:t('a_ph'), sub:t('a_ph_s'), href:'#dorixonalar', icon:ICON.ph, ic:'#5CB531'},
+      {title:t('a_site'), sub:CONFIG.site.replace(/^https?:\/\//,'').replace(/\/.*$/,''), href:CONFIG.site, icon:ICON.site, ic:'#0579DA', ext:1}
+    ].filter(function(r){ return !(r.opt && !r.href); });
+    $('#links').innerHTML = rows.map(linkRow).join('');
+  }
+  function card(p,i,wide){
+    var f = p.fl ? FLAV[p.fl] : null;
+    var meta = '<span>'+FORM[p.type].short[lang]+' · '+FORM[p.type].vol[lang]+'</span><span>'+(p.ageShort?L(p.ageShort):L(AGE09))+'</span>'+(f?'<span class="fl" style="--f:'+f.c+'"><i></i>'+f[lang]+'</span>':'');
+    return '<button type="button" class="pc'+(wide?' wide':'')+'" data-open="'+P.indexOf(p)+'" style="--c:'+p.c+';--on:'+p.on+';--i:'+i+'">'+
+      '<span class="ph"><img src="'+(IMG[p.id]||'')+'" alt="'+esc(p.name)+'" loading="lazy" width="300" height="300"></span>'+
+      '<span class="tx"><span class="band">'+esc(p.name)+'</span><span class="th">'+L(p.th)+'</span><span class="mt">'+meta+'</span></span></button>';
+  }
+  function renderGrid(){
+    var list = P.filter(function(p){ return filter==='all' || p.type===filter; });
+    $('#grid').innerHTML = list.map(function(p,i){ return card(p,i, list.length%2===1 && i===list.length-1); }).join('');
+  }
+  function renderPharm(){
+    $('#pharm').innerHTML = CONFIG.pharmacies.map(function(n){ return '<span>'+esc(n)+'</span>'; }).join('');
+  }
+  function renderContacts(){
+    var h='';
+    if(CONFIG.phoneLabel) h+='<div class="cp"><span>'+t('tel')+':</span> <code>'+esc(CONFIG.phoneLabel)+'</code><button type="button" data-copy="'+esc(CONFIG.phoneLabel)+'">'+t('copy')+'</button></div>';
+    if(CONFIG.official) h+='<div class="cp"><span>'+t('web')+':</span> <a href="'+esc(CONFIG.official)+'" target="_blank" rel="noopener"><code>'+esc(CONFIG.official.replace(/^https?:\/\//,'').replace(/\/$/,''))+'</code></a></div>';
+    if(CONFIG.telegram) h+='<div class="cp"><span>Telegram:</span> <a href="'+tgUrl()+'" target="_blank" rel="noopener"><code>@'+esc(CONFIG.telegram.replace(/^@/,''))+'</code></a></div>';
+    if(CONFIG.email) h+='<div class="cp"><span>'+t('mail')+':</span> <code>'+esc(CONFIG.email)+'</code><button type="button" data-copy="'+esc(CONFIG.email)+'">'+t('copy')+'</button></div>';
+    $('#contacts').innerHTML = h; $('#upd').textContent = CONFIG.updated;
+  }
+  function renderDock(){
+    var a1 = orderUrl() ? '<a class="a1" href="'+orderUrl()+'" target="_blank" rel="noopener">'+ICON.cart+t('d_order')+'</a>' : '<a class="a1" href="#katalog">'+ICON.grid+t('d_cat')+'</a>';
+    var a2 = tgUrl() ? '<a class="a2" href="'+tgUrl()+'" target="_blank" rel="noopener">'+ICON.tg+t('d_ask')+'</a>'
+           : (CONFIG.phone ? '<a class="a2" href="tel:'+CONFIG.phone+'">'+ICON.phone+t('d_call')+'</a>' : '<a class="a2" href="#dorixonalar">'+ICON.ph+t('a_ph')+'</a>');
+    $('#dockIn').innerHTML = a1 + a2;
+  }
+
+  /* ---------- mahsulot oynasi ---------- */
+  function sheetHTML(p){
+    var f = p.fl ? FLAV[p.fl] : null;
+    var exc = p.exc ? L(p.exc) : EXC[lang](AR[p.ar][lang]);
+    var ask = (orderUrl() ? '<a class="a1" href="'+orderUrl()+'" target="_blank" rel="noopener">'+ICON.cart+t('s_order')+'</a>' : '')+
+              (tgUrl() ? '<a class="a2" href="'+tgUrl()+'" target="_blank" rel="noopener">'+ICON.tg+t('s_ask')+'</a>' : '');
+    return '<div class="sh-top"><span class="grab" aria-hidden="true"></span>'+
+      '<div class="sh-nav"><button type="button" class="sh-btn" data-nav="-1" aria-label="'+t('s_prev')+'">'+ICON.l+'</button><button type="button" class="sh-btn" data-nav="1" aria-label="'+t('s_next')+'">'+ICON.r+'</button></div>'+
+      '<button type="button" class="sh-btn" data-close aria-label="'+t('s_close')+'">'+ICON.x+'</button></div>'+
+      '<div class="sh-body" style="--c:'+p.c+';--on:'+p.on+'">'+
+        '<div class="sh-hero"><div class="ph"><img src="'+(IMG[p.id]||'')+'" alt="'+esc(p.name)+'" width="300" height="300"></div>'+
+        '<div><span class="band" id="sh-name">'+esc(p.name)+'</span><p class="th">'+L(p.th)+'</p><p class="sub">'+(p.type==='adult'?t('s_adult')+' · Homeocan':'Kids 0–9 · Homeocan')+'</p></div></div>'+
+        '<dl class="spec"><div><dt>'+t('s_form')+'</dt><dd>'+FORM[p.type][lang]+'</dd></div><div><dt>'+t('s_vol')+'</dt><dd>'+FORM[p.type].vol[lang]+'</dd></div>'+
+          '<div><dt>'+t('s_age')+'</dt><dd>'+age(p)+'</dd></div><div><dt>'+t('s_fl')+'</dt><dd>'+(f?f[lang]:t('noflav'))+'</dd></div></dl>'+
+        '<div class="blk"><h3>'+t('s_desc')+'</h3><p>'+L(p.d)+'</p></div>'+
+        '<div class="note" role="note">'+ICON.warn+'<div><b>'+t('s_imp')+':</b> '+L(p.n)+'</div></div>'+
+        '<div class="blk"><h3>'+t('s_comp')+'</h3><div class="comp">'+p.comp.map(function(c){return '<span lang="la">'+esc(c)+'</span>'}).join('')+'</div><p class="sm">'+t('s_comp_n')+'</p></div>'+
+        '<div class="blk"><h3>'+t('s_exc')+'</h3><p>'+exc+'</p></div>'+
+        '<div class="blk"><h3>'+t('s_use')+'</h3><p>'+t('s_use_p')+'</p></div>'+
+        '<div class="sh-cta">'+ask+'<button type="button" class="a2" data-copylink="'+p.id+'">'+ICON.link+t('s_link')+'</button></div>'+
+      '</div>';
+  }
+  function openSheet(i, keepFocus){
+    if(i<0||i>=P.length) return;
+    var wrap=$('#sheetWrap'), sh=$('#sheet');
+    if(wrap.hidden){ lastFocus=document.activeElement; }
+    current=i; sh.innerHTML=sheetHTML(P[i]); sh.scrollTop=0;
+    wrap.hidden=false; document.documentElement.style.overflow='hidden';
+    try{ history.replaceState(null,'',pageUrl(P[i].id)); }catch(e){}
+    if(!keepFocus){ var c=sh.querySelector('[data-close]'); c && c.focus({preventScroll:true}); }
+  }
+  function closeSheet(){
+    var wrap=$('#sheetWrap'); if(wrap.hidden) return;
+    wrap.hidden=true; document.documentElement.style.overflow=''; current=-1;
+    try{ history.replaceState(null,'',pageUrl('')); }catch(e){}
+    if(lastFocus && lastFocus.focus) lastFocus.focus({preventScroll:true});
+  }
+
+  /* ---------- til ---------- */
+  function applyLang(){
+    document.documentElement.lang = lang==='ru' ? 'ru' : 'uz';
+    $$('[data-i]').forEach(function(el){ el.innerHTML = t(el.getAttribute('data-i')); });
+    $$('[data-i-aria]').forEach(function(el){ el.setAttribute('aria-label', t(el.getAttribute('data-i-aria'))); });
+    $$('.lang button').forEach(function(b){ b.setAttribute('aria-pressed', String(b.getAttribute('data-lang')===lang)); });
+    renderLinks(); renderGrid(); renderContacts(); renderDock();
+    if(typeof renderCities==='function'){ renderCities(); renderAir(); }
+    var bc=$('#botcta'); if(orderUrl()){ bc.href=orderUrl(); bc.hidden=false; } else bc.hidden=true;
+    if(current>-1) openSheet(current, true);
+  }
+
+  /* ---------- hodisalar ---------- */
+  document.addEventListener('click', function(e){
+    var el;
+    if((el=e.target.closest('[data-open]'))){ openSheet(+el.getAttribute('data-open')); return; }
+    if((el=e.target.closest('[data-close]'))){ closeSheet(); return; }
+    if((el=e.target.closest('[data-nav]'))){ openSheet((current + +el.getAttribute('data-nav') + P.length) % P.length, true); return; }
+    if((el=e.target.closest('[data-copy]'))){ copy(el.getAttribute('data-copy'), t('num_copied')); return; }
+    if((el=e.target.closest('[data-copylink]'))){ copy(pageUrl(el.getAttribute('data-copylink')), t('copied')); return; }
+    if((el=e.target.closest('[data-empty]'))){ e.preventDefault(); toast(t('empty')); return; }
+    if((el=e.target.closest('[data-lang]'))){ lang=el.getAttribute('data-lang'); try{ localStorage.setItem('k09-lang',lang); }catch(err){} applyLang(); return; }
+    if((el=e.target.closest('[data-f]'))){
+      filter=el.getAttribute('data-f');
+      $$('[data-f]').forEach(function(b){ b.setAttribute('aria-pressed', String(b===el)); });
+      renderGrid(); return;
+    }
+    if((el=e.target.closest('a[href^="#"]')) && current>-1){ closeSheet(); }
+  });
+  $('#share').addEventListener('click', function(){
+    var url=pageUrl('');
+    if(navigator.share){ navigator.share({title:'Kids 0–9', url:url}).catch(function(err){ if(!err || err.name!=='AbortError') copy(url, t('copied')); }); }
+    else copy(url, t('copied'));
+  });
+  document.addEventListener('keydown', function(e){
+    if($('#sheetWrap').hidden) return;
+    if(e.key==='Escape'){ closeSheet(); }
+    else if(e.key==='ArrowRight'){ openSheet((current+1)%P.length, true); }
+    else if(e.key==='ArrowLeft'){ openSheet((current-1+P.length)%P.length, true); }
+    else if(e.key==='Tab'){
+      var f=$$('#sheet a[href],#sheet button'); if(!f.length) return;
+      var first=f[0], last=f[f.length-1];
+      if(e.shiftKey && document.activeElement===first){ e.preventDefault(); last.focus(); }
+      else if(!e.shiftKey && document.activeElement===last){ e.preventDefault(); first.focus(); }
+    }
+  });
+  /* pastga surib yopish (telefon) */
+  (function(){
+    var sh=$('#sheet'), y0=null, dy=0;
+    sh.addEventListener('touchstart', function(e){ y0 = sh.scrollTop<=0 ? e.touches[0].clientY : null; dy=0; }, {passive:true});
+    sh.addEventListener('touchmove', function(e){ if(y0===null) return; dy=e.touches[0].clientY-y0; if(dy>0) sh.style.transform='translateY('+dy+'px)'; }, {passive:true});
+    sh.addEventListener('touchend', function(){ if(y0===null) return; sh.style.transform=''; if(dy>110) closeSheet(); y0=null; });
+  })();
+  /* pastki panel: havolalar ekrandan chiqqanda ko‘rinadi */
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(en){
+      var past = !en[0].isIntersecting && en[0].boundingClientRect.top < 0;
+      var d=$('#dock'); d.classList.toggle('on', past); d.setAttribute('aria-hidden', String(!past));
+    }).observe($('#links'));
+  }
+  function fromHash(){
+    var h=(location.hash||'').slice(1);
+    for(var i=0;i<P.length;i++){ if(P[i].id===h){ openSheet(i); return; } }
+  }
+  window.addEventListener('hashchange', fromHash);
+
+  /* ---------- ob-havo va havo sifati ---------- */
+  var CITIES = [
+    {id:'tashkent',uz:'Toshkent',ru:'Ташкент',lat:41.3111,lon:69.2797},{id:'samarkand',uz:'Samarqand',ru:'Самарканд',lat:39.6542,lon:66.9597},
+    {id:'bukhara',uz:'Buxoro',ru:'Бухара',lat:39.7747,lon:64.4286},{id:'andijan',uz:'Andijon',ru:'Андижан',lat:40.7821,lon:72.3442},
+    {id:'namangan',uz:'Namangan',ru:'Наманган',lat:40.9983,lon:71.6726},{id:'fergana',uz:'Farg‘ona',ru:'Фергана',lat:40.3864,lon:71.7864},
+    {id:'nukus',uz:'Nukus',ru:'Нукус',lat:42.4600,lon:59.6003},{id:'karshi',uz:'Qarshi',ru:'Карши',lat:38.8606,lon:65.7891},
+    {id:'termez',uz:'Termiz',ru:'Термез',lat:37.2242,lon:67.2783},{id:'urgench',uz:'Urganch',ru:'Ургенч',lat:41.5500,lon:60.6333},
+    {id:'jizzakh',uz:'Jizzax',ru:'Джизак',lat:40.1158,lon:67.8422},{id:'navoi',uz:'Navoiy',ru:'Навои',lat:40.0844,lon:65.3792},
+    {id:'gulistan',uz:'Guliston',ru:'Гулистан',lat:40.4897,lon:68.7842}
+  ];
+  /* US EPA AQI toifalari va bolalar uchun tavsiya (EPA AQI yo‘riqnomasi asosida) */
+  var AQ = [
+    {max:50, c:'#00E400',on:'#0A3A0A',uz:'Yaxshi',ru:'Хорошо',
+     tuz:'ochiq havoda sayr va o‘yin uchun qulay.',tru:'подходит для прогулок и игр на улице.'},
+    {max:100,c:'#FFFF00',on:'#3A3500',uz:'O‘rtacha',ru:'Умеренно',
+     tuz:'ko‘pchilik uchun maqbul. Havoga juda sezgir bolalar uzoq va jadal o‘yinlarni kamaytirgani ma’qul.',tru:'приемлемо для большинства. Особо чувствительным детям лучше сократить долгие и активные игры на улице.'},
+    {max:150,c:'#FF7E00',on:'#3A1C00',uz:'Sezgir guruhlar uchun noqulay',ru:'Вредно для чувствительных групп',
+     tuz:'ochiq havodagi uzoq yoki jadal faollikni kamaytirgan ma’qul.',tru:'лучше сократить длительную или интенсивную активность на улице.'},
+    {max:200,c:'#FF0000',on:'#FFFFFF',uz:'Zararli',ru:'Вредно',
+     tuz:'ochiq havodagi uzoq yoki jadal faollikdan saqlangan ma’qul.',tru:'лучше избегать длительной или интенсивной активности на улице.'},
+    {max:300,c:'#8F3F97',on:'#FFFFFF',uz:'Juda zararli',ru:'Очень вредно',
+     tuz:'ochiq havoda jismoniy faollikdan saqlangan ma’qul.',tru:'лучше избегать любой физической активности на улице.'},
+    {max:1e9,c:'#7E0023',on:'#FFFFFF',uz:'Xavfli',ru:'Опасно',
+     tuz:'xonada qolgan ma’qul; ochiq havodagi faollikdan saqlaning.',tru:'лучше оставаться в помещении и избегать активности на улице.'}
+  ];
+  var WXI = {
+    sun:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.5 1.5M17.2 17.2l1.5 1.5M5.3 18.7l1.5-1.5M17.2 6.8l1.5-1.5"/></svg>',
+    moon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M19.5 14.5A8 8 0 0 1 9.5 4.5a8 8 0 1 0 10 10z"/></svg>',
+    partly:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 3v1.6M3.6 8.5H5.2M5 5l1.1 1.1M12.2 6.1A4 4 0 0 0 5.4 10.6"/><path d="M8 20h9.5a3.5 3.5 0 0 0 .4-7 5 5 0 0 0-9.6 1.2A3 3 0 0 0 8 20z"/></svg>',
+    cloud:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M7 19h10.5a4 4 0 0 0 .5-8 6 6 0 0 0-11.5 1.5A3.3 3.3 0 0 0 7 19z"/></svg>',
+    rain:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 15h10.5a4 4 0 0 0 .5-8 6 6 0 0 0-11.5 1.5A3.3 3.3 0 0 0 7 15z"/><path d="M8 18.5l-1 2.5M12.5 18.5l-1 2.5M17 18.5l-1 2.5"/></svg>',
+    snow:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 15h10.5a4 4 0 0 0 .5-8 6 6 0 0 0-11.5 1.5A3.3 3.3 0 0 0 7 15z"/><path d="M8 19h.01M12 21h.01M16 19h.01"/></svg>',
+    storm:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 15h10.5a4 4 0 0 0 .5-8 6 6 0 0 0-11.5 1.5A3.3 3.3 0 0 0 7 15z"/><path d="m12.5 15-2 3.5h3l-2 3.5"/></svg>',
+    fog:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 9h16M6 13h12M4 17h16"/></svg>'
+  };
+  var COND = {
+    clear:{uz:'Ochiq osmon',ru:'Ясно'}, partly:{uz:'Qisman bulutli',ru:'Переменная облачность'}, cloudy:{uz:'Bulutli',ru:'Облачно'},
+    fog:{uz:'Tuman yoki g‘ubor',ru:'Туман или дымка'}, drizzle:{uz:'Mayda yomg‘ir',ru:'Морось'}, rain:{uz:'Yomg‘ir',ru:'Дождь'},
+    showers:{uz:'Jala',ru:'Ливень'}, snow:{uz:'Qor',ru:'Снег'}, storm:{uz:'Momaqaldiroq',ru:'Гроза'}
+  };
+  function wmo(c){ return c===0?'clear':c<=2?'partly':c===3?'cloudy':(c===45||c===48)?'fog':c<=57?'drizzle':c<=67?'rain':c<=77?'snow':c<=82?'showers':c<=86?'snow':'storm'; }
+  function owm(id){ return id<300?'storm':id<400?'drizzle':id<505?'rain':id===511?'snow':id<600?'showers':id<700?'snow':id<800?'fog':id===800?'clear':id<=802?'partly':'cloudy'; }
+  function icon(k,day){ return k==='clear'?(day?'sun':'moon'):k==='partly'?'partly':k==='cloudy'?'cloud':k==='fog'?'fog':k==='snow'?'snow':k==='storm'?'storm':'rain'; }
+  /* EPA formulasi bo‘yicha konsentratsiyadan AQI (OpenWeather uchun) */
+  function epa(v,bp){ for(var i=0;i<bp.length;i++){ var b=bp[i]; if(v<=b[1]) return Math.round((b[3]-b[2])/(b[1]-b[0])*(v-b[0])+b[2]); } return 500; }
+  var BP25=[[0,9,0,50],[9.1,35.4,51,100],[35.5,55.4,101,150],[55.5,125.4,151,200],[125.5,225.4,201,300],[225.5,325.4,301,500]];
+  var BP10=[[0,54,0,50],[55,154,51,100],[155,254,101,150],[255,354,151,200],[355,424,201,300],[425,604,301,500]];
+
+  var WC = CONFIG.weather || {}, wCity = WC.city || 'tashkent', wState = {d:null, err:false, busy:false, at:0}, wTimer = null;
+  try{ var sc = localStorage.getItem('k09-city'); if(sc && CITIES.some(function(c){return c.id===sc})) wCity = sc; }catch(e){}
+  function cityObj(){ for(var i=0;i<CITIES.length;i++) if(CITIES[i].id===wCity) return CITIES[i]; return CITIES[0]; }
+  function wUrls(c){
+    if(WC.provider==='openweather'){
+      var q='lat='+c.lat+'&lon='+c.lon+'&appid='+encodeURIComponent(WC.key||'');
+      return {w:'https://api.openweathermap.org/data/2.5/weather?units=metric&'+q, a:'https://api.openweathermap.org/data/2.5/air_pollution?'+q};
+    }
+    var k = WC.key ? '&apikey='+encodeURIComponent(WC.key) : '', pre = WC.key ? 'customer-' : '';
+    var ll='latitude='+c.lat+'&longitude='+c.lon+'&timezone=Asia%2FTashkent';
+    return {w:'https://'+pre+'api.open-meteo.com/v1/forecast?'+ll+'&current=temperature_2m,apparent_temperature,relative_humidity_2m,weather_code,wind_speed_10m,is_day&wind_speed_unit=ms'+k,
+            a:'https://'+pre+'air-quality-api.open-meteo.com/v1/air-quality?'+ll+'&current=us_aqi,pm2_5,pm10'+k};
+  }
+  function hhmm(ms){ try{ return new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Tashkent',hour:'2-digit',minute:'2-digit'}).format(new Date(ms)); }catch(e){ return ''; } }
+  function parseW(w,a){
+    if(WC.provider==='openweather'){
+      var x=(a.list||[])[0]||{}, cp=x.components||{}, wid=(w.weather||[])[0]||{};
+      return {t:w.main.temp, f:w.main.feels_like, h:w.main.humidity, wind:w.wind&&w.wind.speed, k:owm(wid.id), day:/d$/.test(wid.icon||'d'),
+              pm25:cp.pm2_5, pm10:cp.pm10, aqi:(cp.pm2_5!=null||cp.pm10!=null)?Math.max(epa(Math.floor((cp.pm2_5||0)*10)/10,BP25),epa(Math.floor(cp.pm10||0),BP10)):null,
+              time:hhmm((w.dt||Date.now()/1000)*1000), src:'Weather data © OpenWeather', srcUrl:'https://openweathermap.org/', attr:1};
+    }
+    var c=w.current||{}, q=a.current||{};
+    return {t:c.temperature_2m, f:c.apparent_temperature, h:c.relative_humidity_2m, wind:c.wind_speed_10m, k:wmo(c.weather_code), day:c.is_day===1,
+            pm25:q.pm2_5, pm10:q.pm10, aqi:q.us_aqi, time:String(c.time||'').slice(11,16), src:'Open-Meteo.com (CC BY 4.0)', srcUrl:'https://open-meteo.com/'};
+  }
+  function num(v,d){ return (v==null||isNaN(v)) ? '—' : (d ? Number(v).toFixed(d) : Math.round(v)); }
+  function renderAir(){
+    var box=$('#airBody'), d=wState.d;
+    if(!d && !wState.err){
+      box.innerHTML='<div class="wx"><span class="sk" style="width:54px;height:54px;border-radius:16px"></span><div style="display:grid;gap:7px"><span class="sk" style="width:90px;height:30px"></span><span class="sk" style="width:130px;height:14px"></span></div></div><span class="sk" style="height:66px;border-radius:16px;margin-top:12px"></span><span class="sr">'+t('loading')+'</span>';
+      return;
+    }
+    if(!d){
+      var why = wState.why==='401' ? t('why_401') : wState.why==='429' ? t('why_429') : wState.why==='net' ? t('why_net') : wState.why==='timeout' ? t('why_to') : wState.why==='nokey' ? t('why_nokey') : (wState.why ? 'HTTP '+wState.why : '');
+      box.innerHTML='<div class="air-msg"><span>'+t('air_err')+(why?'<small class="air-why">'+why+'</small>':'')+'</span><button type="button" data-air-retry>'+t('retry')+'</button></div>'; return;
+    }
+    var lvl=0; if(d.aqi!=null){ while(lvl<AQ.length-1 && d.aqi>AQ[lvl].max) lvl++; }
+    var A=AQ[lvl], lo=lvl?AQ[lvl-1].max:0, hi=lvl===5?500:A.max, frac=d.aqi==null?0:Math.min(1,Math.max(0,(d.aqi-lo)/(hi-lo)));
+    var pos=((lvl+frac)/6*100).toFixed(1);
+    var cond=COND[d.k]||COND.cloudy, ic=icon(d.k,d.day);
+    var aqHtml = d.aqi==null ? '' :
+      '<div class="aq" style="--aq:'+A.c+';--aq-on:'+A.on+'"><div class="aq-top"><span class="aq-n">'+num(d.aqi)+'</span><div><b>'+A[lang]+'</b><small>'+t('aq_name')+' · PM2.5 '+num(d.pm25)+' · PM10 '+num(d.pm10)+' µg/m³</small></div></div>'+
+      '<div class="aq-bar" aria-hidden="true">'+AQ.map(function(x){return '<span style="background:'+x.c+'"></span>'}).join('')+'<i style="left:'+pos+'%"></i></div>'+
+      '<p class="aq-tip"><b>'+t('kids_tip')+'</b> '+(lang==='ru'?A.tru:A.tuz)+'</p></div>';
+    box.innerHTML =
+      '<div class="wx"><span class="wx-ic'+(ic==='sun'?' sun':'')+'" aria-hidden="true">'+WXI[ic]+'</span><div><span class="wx-t">'+num(d.t)+'°C</span><span class="wx-c">'+cond[lang]+'</span></div></div>'+
+      '<dl class="wx-m" style="margin-top:12px"><div><dt>'+t('w_feels')+'</dt><dd>'+num(d.f)+'°</dd></div><div><dt>'+t('w_hum')+'</dt><dd>'+num(d.h)+'%</dd></div><div><dt>'+t('w_wind')+'</dt><dd>'+num(d.wind,1)+' '+t('w_ms')+'</dd></div></dl>'+
+      (aqHtml?'<div style="margin-top:10px">'+aqHtml+'</div>':'')+
+      '<div class="air-foot" style="margin-top:10px"><span>'+L(cityObj())+' · '+(lang==='ru'?t('asof')+' '+d.time:d.time+' '+t('asof'))+'</span><span>'+(d.attr?'':t('src')+': ')+'<a href="'+d.srcUrl+'" target="_blank" rel="noopener">'+d.src+'</a> · '+t('scale')+'</span></div>';
+  }
+  function renderCities(){
+    $('#city').innerHTML = CITIES.map(function(c){ return '<option value="'+c.id+'"'+(c.id===wCity?' selected':'')+'>'+L(c)+'</option>'; }).join('');
+  }
+  function loadAir(manual){
+    if(wState.busy) return;
+    if(WC.provider==='openweather' && !WC.key){ wState.err=true; wState.why='nokey'; wState.d=null; renderAir(); return; }
+    var c=cityObj(), u=wUrls(c), to=null;
+    wState.busy=true; $('#airRf').classList.add('spin');
+    /* fetch’ga qo‘shimcha parametr (signal) berilmaydi — ba’zi ko‘rish oynalari uni uzata olmaydi; kutish vaqti Promise.race bilan */
+    function j(url){
+      var req = fetch(url).then(function(r){ if(!r.ok){ var e=new Error('HTTP '+r.status); e.status=r.status; throw e; } return r.json(); });
+      var lim = new Promise(function(_,rej){ to=setTimeout(function(){ var e=new Error('timeout'); e.name='AbortError'; rej(e); },12000); });
+      return Promise.race([req, lim]);
+    }
+    Promise.all([j(u.w), j(u.a).catch(function(){ return {}; })]).then(function(r){
+      if(c.id!==wCity) return;
+      wState.d=parseW(r[0],r[1]); wState.err=false; wState.why=''; wState.at=Date.now();
+      try{ localStorage.setItem('k09-air-'+(WC.provider||'')+'-'+c.id, JSON.stringify({d:wState.d, at:wState.at})); }catch(e){}
+      renderAir(); if(manual) toast(t('air_rf_done'));
+    }).catch(function(e){
+      if(c.id!==wCity) return;
+      wState.why = e && e.status ? String(e.status) : (e && e.name==='AbortError' ? 'timeout' : 'net');
+      try{ console.warn('[Kids 0-9] ob-havo:', wState.why, e); }catch(x){}
+      if(!wState.d){ wState.err=true; renderAir(); }
+    }).then(function(){ clearTimeout(to); wState.busy=false; $('#airRf').classList.remove('spin'); });
+  }
+  function setCity(id){
+    wCity=id; wState={d:null,err:false,busy:false,at:0,why:''};
+    try{ localStorage.setItem('k09-city',id); var cached=JSON.parse(localStorage.getItem('k09-air-'+(WC.provider||'')+'-'+id)||'null');
+      if(cached && Date.now()-cached.at < 60*60*1000){ wState.d=cached.d; wState.at=cached.at; } }catch(e){}
+    renderAir(); loadAir(false);
+  }
+  $('#city').addEventListener('change', function(){ setCity(this.value); });
+  $('#airRf').addEventListener('click', function(){ loadAir(true); });
+  $('#airBody').addEventListener('click', function(e){ if(e.target.closest('[data-air-retry]')){ wState.err=false; renderAir(); loadAir(true); } });
+  var refreshMs = Math.max(5, WC.refreshMin||10)*60*1000;
+  wTimer = setInterval(function(){ if(!document.hidden) loadAir(false); }, refreshMs);
+  document.addEventListener('visibilitychange', function(){ if(!document.hidden && Date.now()-wState.at > refreshMs) loadAir(false); });
+
+  renderStories(); renderPharm(); applyLang(); fromHash(); setCity(wCity);
+})();
+</script>
+
+</body>
+</html>
